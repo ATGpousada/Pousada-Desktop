@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pousada_desktop;
 
 namespace Pousada_desktop
 {
@@ -15,6 +16,11 @@ namespace Pousada_desktop
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var cmd 
         }
     }
 }

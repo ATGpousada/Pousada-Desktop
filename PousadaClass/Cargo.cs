@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pousada_desktop
+namespace PousadaClass
 {
-    internal class Funcionario
+    internal class Cargo
     {
     }
 }
