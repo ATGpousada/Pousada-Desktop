@@ -13,14 +13,34 @@ using PousadaClass;
 
 namespace PousadaDesk
 {
-    public partial class Form1 : Form
+    public partial class FrmPrincipal : Form
     {
-        public Form1()
+        public FrmPrincipal()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cadastroFuncionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

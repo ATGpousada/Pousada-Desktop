@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Pousada_desktop
 {
-    public partial class FrmFunc : Form
+    public partial class CadastrarFuncionario : Form
     {
-        public FrmFunc()
+        public CadastrarFuncionario()
         {
             InitializeComponent();
+        }
+
+        private void PgsFun_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
