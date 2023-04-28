@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace PousadaClass
 {
-    internal class Cargo
+    public class Cargo
     {
+        // class cargo
     }
 }
