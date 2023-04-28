@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Pousada_desktop;
+using Google.Protobuf.WellKnownTypes;
+using MySql.Data.MySqlClient;
+using PousadaClass;
 
-namespace Pousada_desktop
+namespace PousadaDesk
 {
     public partial class Form1 : Form
     {
@@ -18,9 +20,9 @@ namespace Pousada_desktop
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            var cmd 
+
         }
     }
 }

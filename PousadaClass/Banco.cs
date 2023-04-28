@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace PousadaClass
 {
@@ -12,7 +13,7 @@ namespace PousadaClass
         private static string strConn;
         public static MySqlCommand Abrir()
         {
-            strConn = @"server=127.0.0.1;database=ti93sysdb;port=3306;user id=root;password=usbw";
+            strConn = @"server=127.0.0.1;database=pousada;port=3306;user id=root;";
             MySqlCommand cmd = new MySqlCommand();
             try // TENTAR ABRIR // Fluxos alternativos (Especificação de Caso de Uso)
             {
@@ -39,5 +40,4 @@ namespace PousadaClass
             }
         }
     }
-}
 }
