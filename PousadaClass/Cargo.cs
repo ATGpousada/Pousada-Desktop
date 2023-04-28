@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
-using static Mysqlx.Notice.Warning.Types;
 
 namespace PousadaClass
 {
@@ -77,6 +76,52 @@ namespace PousadaClass
             }
             Banco.Fechar(cmd);
             return lista;
+        }
+
+        /// <summary>
+        /// Retornando do banco de dados o ID do nivel pedido
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static Cargo ObterPorId(int id)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select * from cargos where id = " + id;
+            var dr = cmd.ExecuteReader();
+            Cargo cargo = null;
+            while (dr.Read())
+            {
+                cargo = new Cargo(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2),
+                    dr.GetDateTime(3)
+                    );
+            }
+            return cargo;
+        }
+
+        /// <summary>
+        /// Atualizando o Cargo do Funcionario no Banco de dados
+        /// </summary>
+        public void Atualizar()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update cargos set nome = @nome, descricao = @desc where id = @id";
+            cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
+            cmd.Parameters.Add("@desc", MySqlDbType.VarChar).Value = Descricao;
+            cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = Id;
+            cmd.ExecuteNonQuery();
+            Banco.Fechar(cmd);
+        }
+
+        public void ArquivarCargo()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update cargos set arquivar_em = default where id = @id";
+            cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = Id;
+            cmd.ExecuteNonQuery();
+            Banco.Fechar(cmd);
         }
     }
 }
