@@ -9,7 +9,7 @@ using MySqlX.XDevAPI;
 
 namespace PousadaClass
 {
-    internal class Cargo
+    public class Cargo
     {
         // Atributos
         private int id;
@@ -24,6 +24,7 @@ namespace PousadaClass
         public DateTime Arquivar { get => arquivar; set => arquivar = value; }
 
         // Construtor
+        public Cargo() { }
         public Cargo(int id, string nome, string descricao, DateTime arquivar)
         {
             Id = id;
