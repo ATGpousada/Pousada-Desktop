@@ -29,29 +29,30 @@
         private void InitializeComponent()
         {
             this.PgsFun = new System.Windows.Forms.TabControl();
+            this.tbDados = new System.Windows.Forms.TabPage();
+            this.txtIdFunc = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnAlterarFunc = new System.Windows.Forms.Button();
+            this.btnInserirFunc = new System.Windows.Forms.Button();
+            this.CbPeriodo = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCpf = new System.Windows.Forms.TextBox();
+            this.TxtRG = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.CbCargo = new System.Windows.Forms.ComboBox();
+            this.TxtSalario = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.MskDataNasc = new System.Windows.Forms.MaskedTextBox();
+            this.TxtEmail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tbEndereço = new System.Windows.Forms.TabPage();
             this.tbContato = new System.Windows.Forms.TabPage();
-            this.tbDados = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TxtName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TxtEmail = new System.Windows.Forms.TextBox();
-            this.MskDataNasc = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtSalario = new System.Windows.Forms.TextBox();
-            this.CbCargo = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TxtRG = new System.Windows.Forms.TextBox();
-            this.txtCpf = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.CbPeriodo = new System.Windows.Forms.ComboBox();
-            this.btnInserirFunc = new System.Windows.Forms.Button();
-            this.btnAlterarFunc = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtIdFunc = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.PgsFun.SuspendLayout();
             this.tbDados.SuspendLayout();
             this.SuspendLayout();
@@ -69,28 +70,9 @@
             this.PgsFun.TabIndex = 0;
             this.PgsFun.SelectedIndexChanged += new System.EventHandler(this.PgsFun_SelectedIndexChanged);
             // 
-            // tbEndereço
-            // 
-            this.tbEndereço.Location = new System.Drawing.Point(4, 29);
-            this.tbEndereço.Name = "tbEndereço";
-            this.tbEndereço.Padding = new System.Windows.Forms.Padding(3);
-            this.tbEndereço.Size = new System.Drawing.Size(705, 343);
-            this.tbEndereço.TabIndex = 0;
-            this.tbEndereço.Text = "Endereço";
-            this.tbEndereço.UseVisualStyleBackColor = true;
-            // 
-            // tbContato
-            // 
-            this.tbContato.Location = new System.Drawing.Point(4, 29);
-            this.tbContato.Name = "tbContato";
-            this.tbContato.Padding = new System.Windows.Forms.Padding(3);
-            this.tbContato.Size = new System.Drawing.Size(705, 343);
-            this.tbContato.TabIndex = 1;
-            this.tbContato.Text = "Contato";
-            this.tbContato.UseVisualStyleBackColor = true;
-            // 
             // tbDados
             // 
+            this.tbDados.Controls.Add(this.checkBox1);
             this.tbDados.Controls.Add(this.txtIdFunc);
             this.tbDados.Controls.Add(this.label9);
             this.tbDados.Controls.Add(this.btnAlterarFunc);
@@ -119,38 +101,131 @@
             this.tbDados.Text = "Dados Pessoais";
             this.tbDados.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // txtIdFunc
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(112, 116);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nome :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.txtIdFunc.Location = new System.Drawing.Point(517, 438);
+            this.txtIdFunc.Name = "txtIdFunc";
+            this.txtIdFunc.Size = new System.Drawing.Size(49, 26);
+            this.txtIdFunc.TabIndex = 20;
             // 
-            // TxtName
+            // label9
             // 
-            this.TxtName.Location = new System.Drawing.Point(65, 137);
-            this.TxtName.Name = "TxtName";
-            this.TxtName.Size = new System.Drawing.Size(166, 26);
-            this.TxtName.TabIndex = 1;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(513, 420);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(30, 20);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "ID:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // label2
+            // btnAlterarFunc
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(362, 116);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Email :";
+            this.btnAlterarFunc.Location = new System.Drawing.Point(659, 425);
+            this.btnAlterarFunc.Name = "btnAlterarFunc";
+            this.btnAlterarFunc.Size = new System.Drawing.Size(140, 39);
+            this.btnAlterarFunc.TabIndex = 18;
+            this.btnAlterarFunc.Text = "Alterar";
+            this.btnAlterarFunc.UseVisualStyleBackColor = true;
             // 
-            // TxtEmail
+            // btnInserirFunc
             // 
-            this.TxtEmail.Location = new System.Drawing.Point(324, 139);
-            this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(152, 26);
-            this.TxtEmail.TabIndex = 3;
+            this.btnInserirFunc.Location = new System.Drawing.Point(278, 425);
+            this.btnInserirFunc.Name = "btnInserirFunc";
+            this.btnInserirFunc.Size = new System.Drawing.Size(140, 39);
+            this.btnInserirFunc.TabIndex = 17;
+            this.btnInserirFunc.Text = "Inserir";
+            this.btnInserirFunc.UseVisualStyleBackColor = true;
+            // 
+            // CbPeriodo
+            // 
+            this.CbPeriodo.FormattingEnabled = true;
+            this.CbPeriodo.Location = new System.Drawing.Point(817, 137);
+            this.CbPeriodo.Name = "CbPeriodo";
+            this.CbPeriodo.Size = new System.Drawing.Size(152, 28);
+            this.CbPeriodo.TabIndex = 16;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(848, 114);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 20);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Periodo :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(871, 295);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 20);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "CPF :";
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(817, 318);
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(166, 26);
+            this.txtCpf.TabIndex = 13;
+            // 
+            // TxtRG
+            // 
+            this.TxtRG.Location = new System.Drawing.Point(579, 318);
+            this.TxtRG.Name = "TxtRG";
+            this.TxtRG.Size = new System.Drawing.Size(144, 26);
+            this.TxtRG.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(617, 295);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 20);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "RG :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(358, 293);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 20);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Cargo :";
+            // 
+            // CbCargo
+            // 
+            this.CbCargo.FormattingEnabled = true;
+            this.CbCargo.Location = new System.Drawing.Point(324, 316);
+            this.CbCargo.Name = "CbCargo";
+            this.CbCargo.Size = new System.Drawing.Size(152, 28);
+            this.CbCargo.TabIndex = 9;
+            // 
+            // TxtSalario
+            // 
+            this.TxtSalario.Location = new System.Drawing.Point(65, 320);
+            this.TxtSalario.Name = "TxtSalario";
+            this.TxtSalario.Size = new System.Drawing.Size(166, 26);
+            this.TxtSalario.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(112, 297);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Salário :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(575, 112);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(162, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Data de Nascimento :";
             // 
             // MskDataNasc
             // 
@@ -162,130 +237,72 @@
             this.MskDataNasc.TabIndex = 4;
             this.MskDataNasc.ValidatingType = typeof(System.DateTime);
             // 
-            // label3
+            // TxtEmail
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(575, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Data de Nascimento :";
+            this.TxtEmail.Location = new System.Drawing.Point(324, 139);
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.Size = new System.Drawing.Size(152, 26);
+            this.TxtEmail.TabIndex = 3;
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(112, 297);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Salário :";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(362, 116);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Email :";
             // 
-            // TxtSalario
+            // TxtName
             // 
-            this.TxtSalario.Location = new System.Drawing.Point(65, 320);
-            this.TxtSalario.Name = "TxtSalario";
-            this.TxtSalario.Size = new System.Drawing.Size(166, 26);
-            this.TxtSalario.TabIndex = 7;
+            this.TxtName.Location = new System.Drawing.Point(65, 137);
+            this.TxtName.Name = "TxtName";
+            this.TxtName.Size = new System.Drawing.Size(166, 26);
+            this.TxtName.TabIndex = 1;
             // 
-            // CbCargo
+            // label1
             // 
-            this.CbCargo.FormattingEnabled = true;
-            this.CbCargo.Location = new System.Drawing.Point(324, 316);
-            this.CbCargo.Name = "CbCargo";
-            this.CbCargo.Size = new System.Drawing.Size(152, 28);
-            this.CbCargo.TabIndex = 9;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(112, 116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nome :";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label5
+            // tbEndereço
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(358, 293);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 20);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Cargo :";
+            this.tbEndereço.Location = new System.Drawing.Point(4, 29);
+            this.tbEndereço.Name = "tbEndereço";
+            this.tbEndereço.Padding = new System.Windows.Forms.Padding(3);
+            this.tbEndereço.Size = new System.Drawing.Size(1058, 560);
+            this.tbEndereço.TabIndex = 0;
+            this.tbEndereço.Text = "Endereço";
+            this.tbEndereço.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // tbContato
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(617, 295);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 20);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "RG :";
+            this.tbContato.Location = new System.Drawing.Point(4, 29);
+            this.tbContato.Name = "tbContato";
+            this.tbContato.Padding = new System.Windows.Forms.Padding(3);
+            this.tbContato.Size = new System.Drawing.Size(1058, 560);
+            this.tbContato.TabIndex = 1;
+            this.tbContato.Text = "Contato";
+            this.tbContato.UseVisualStyleBackColor = true;
             // 
-            // TxtRG
+            // checkBox1
             // 
-            this.TxtRG.Location = new System.Drawing.Point(579, 318);
-            this.TxtRG.Name = "TxtRG";
-            this.TxtRG.Size = new System.Drawing.Size(144, 26);
-            this.TxtRG.TabIndex = 12;
-            // 
-            // txtCpf
-            // 
-            this.txtCpf.Location = new System.Drawing.Point(817, 318);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(166, 26);
-            this.txtCpf.TabIndex = 13;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(871, 295);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 20);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "CPF :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(848, 114);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 20);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Periodo :";
-            // 
-            // CbPeriodo
-            // 
-            this.CbPeriodo.FormattingEnabled = true;
-            this.CbPeriodo.Location = new System.Drawing.Point(817, 137);
-            this.CbPeriodo.Name = "CbPeriodo";
-            this.CbPeriodo.Size = new System.Drawing.Size(152, 28);
-            this.CbPeriodo.TabIndex = 16;
-            // 
-            // btnInserirFunc
-            // 
-            this.btnInserirFunc.Location = new System.Drawing.Point(292, 463);
-            this.btnInserirFunc.Name = "btnInserirFunc";
-            this.btnInserirFunc.Size = new System.Drawing.Size(140, 39);
-            this.btnInserirFunc.TabIndex = 17;
-            this.btnInserirFunc.Text = "Inserir";
-            this.btnInserirFunc.UseVisualStyleBackColor = true;
-            // 
-            // btnAlterarFunc
-            // 
-            this.btnAlterarFunc.Location = new System.Drawing.Point(552, 463);
-            this.btnAlterarFunc.Name = "btnAlterarFunc";
-            this.btnAlterarFunc.Size = new System.Drawing.Size(140, 39);
-            this.btnAlterarFunc.TabIndex = 18;
-            this.btnAlterarFunc.Text = "Alterar";
-            this.btnAlterarFunc.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(719, 472);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 20);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "ID:";
-            // 
-            // txtIdFunc
-            // 
-            this.txtIdFunc.Location = new System.Drawing.Point(754, 469);
-            this.txtIdFunc.Name = "txtIdFunc";
-            this.txtIdFunc.Size = new System.Drawing.Size(38, 26);
-            this.txtIdFunc.TabIndex = 20;
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox1.Location = new System.Drawing.Point(897, 486);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(86, 24);
+            this.checkBox1.TabIndex = 21;
+            this.checkBox1.Text = "Arquivar";
+            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // CadastrarFuncionario
             // 
@@ -328,5 +345,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnAlterarFunc;
         private System.Windows.Forms.Button btnInserirFunc;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
