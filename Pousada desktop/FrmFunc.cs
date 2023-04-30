@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PousadaClass;
 
 namespace Pousada_desktop
 {
@@ -35,6 +36,18 @@ namespace Pousada_desktop
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void CadastrarFuncionario_Load(object sender, EventArgs e)
+        {
+            CarregaCargo();
+        }
+
+        private void CarregaCargo()
+        {
+            cmbCargo.DataSource = Cargo.Listar();
+            cmbCargo.ValueMember = "Id";
+            cmbCargo.DisplayMember = "NOME";
         }
     }
 }

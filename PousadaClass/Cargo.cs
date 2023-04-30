@@ -33,6 +33,13 @@ namespace PousadaClass
             Arquivar = arquivar;
         }
 
+        public Cargo(int id, string nome, string descricao)
+        {
+            Id = id;
+            Nome = nome;
+            Descricao = descricao;
+        }
+
         public Cargo(string nome, string descricao)
         {
             Nome = nome;
@@ -59,20 +66,18 @@ namespace PousadaClass
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>
-        public static List<Cargo> Listar(string nome = "")
+        public static List<Cargo> Listar()
         {
             List<Cargo> lista = new List<Cargo>();
             MySqlCommand cmd = Banco.Abrir();
-            if (nome.Length > 0)
-                cmd.CommandText = "select * from cargos where nome like '%" + nome + "%'";
-            else
-                cmd.CommandText = "select * from cargos";
+            cmd.CommandText = "select * from cargos";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 lista.Add(new Cargo(
-                        dr.GetString(0),
-                        dr.GetString(1)
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2)
                     ));
             }
             Banco.Fechar(cmd);

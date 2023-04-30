@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
 using PousadaClass;
+using Pousada_desktop;
 
 namespace PousadaDesk
 {
@@ -18,6 +19,7 @@ namespace PousadaDesk
         public FrmPrincipal()
         {
             InitializeComponent();
+            this.IsMdiContainer = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -42,7 +44,10 @@ namespace PousadaDesk
 
         private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            CadastrarFuncionario func = new CadastrarFuncionario();
+            func.MdiParent = this;
+            func.Show();
+            
         }
     }
 }

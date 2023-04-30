@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.customInstaller1 = new MySql.Data.MySqlClient.CustomInstaller();
             this.cadastroFuncionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quartoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,7 +97,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private MySql.Data.MySqlClient.CustomInstaller customInstaller1;
         private System.Windows.Forms.ToolStripMenuItem cadastroFuncionarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem funcionarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reservaToolStripMenuItem;
