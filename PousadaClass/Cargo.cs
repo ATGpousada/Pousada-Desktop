@@ -49,7 +49,7 @@ namespace PousadaClass
         /// <summary>
         /// Inserir Cargo no Banco de dados
         /// </summary>
-        public void Criar()
+        public void Inserir()
         {
             var cmd = Banco.Abrir();
             cmd.CommandText = "insert cargos (nome, descricao) values (@nome, @descricao)";
@@ -70,7 +70,7 @@ namespace PousadaClass
         {
             List<Cargo> lista = new List<Cargo>();
             MySqlCommand cmd = Banco.Abrir();
-            cmd.CommandText = "select * from cargos";
+            cmd.CommandText = "select * from cargos where arquivar_em is null";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -92,7 +92,7 @@ namespace PousadaClass
         public static Cargo ObterPorId(int id)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "select * from cargos where id = " + id;
+            cmd.CommandText = "select id, nome, descricao from cargos where id = " + id;
             var dr = cmd.ExecuteReader();
             Cargo cargo = null;
             while (dr.Read())
@@ -100,8 +100,7 @@ namespace PousadaClass
                 cargo = new Cargo(
                     dr.GetInt32(0),
                     dr.GetString(1),
-                    dr.GetString(2),
-                    dr.GetDateTime(3)
+                    dr.GetString(2)
                     );
             }
             return cargo;

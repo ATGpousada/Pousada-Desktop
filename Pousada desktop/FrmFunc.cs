@@ -41,6 +41,8 @@ namespace Pousada_desktop
         private void CadastrarFuncionario_Load(object sender, EventArgs e)
         {
             CarregaCargo();
+            dtpDataNasc.Format = DateTimePickerFormat.Custom;
+            dtpDataNasc.CustomFormat = "dd/MM/yyyy";
         }
 
         private void CarregaCargo()
@@ -48,6 +50,18 @@ namespace Pousada_desktop
             cmbCargo.DataSource = Cargo.Listar();
             cmbCargo.ValueMember = "Id";
             cmbCargo.DisplayMember = "NOME";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Funcionario func = new Funcionario(
+                txtNome.Text, dtpDataNasc.Value, txtCpf.Text, txtRg.Text, Convert.ToDouble(txtSalario.Text), txtEmail.Text, txtSenha.Text, cmbPeriodo.Text, Cargo.ObterPorId(Convert.ToInt32(cmbCargo.SelectedValue)));
+            func.Inserir();
+            MessageBox.Show("Funcionario Cadastrado com Sucesso!");
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
         }
     }
 }

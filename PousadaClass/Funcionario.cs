@@ -70,6 +70,19 @@ namespace PousadaClass
             Cargo = cargo;
         }
 
+        public Funcionario(string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string senha, string periodo, Cargo cargo)
+        {
+            Nome = nome;
+            Data_nasc = data_nasc;
+            Cpf = cpf;
+            Rg = rg;
+            Salario = salario;
+            Email = email;
+            Senha = senha;
+            Periodo1 = periodo;
+            Cargo = cargo;
+        }
+
         // Construtor
 
         /// <summary>
