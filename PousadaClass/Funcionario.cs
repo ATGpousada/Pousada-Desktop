@@ -1,9 +1,11 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace PousadaClass
 {
@@ -55,7 +57,7 @@ namespace PousadaClass
             Cargo = cargo;
         }
 
-        public Funcionario(int id, string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string senha, string periodo, DateTime admissao, Cargo cargo)
+        public Funcionario(int id, string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string periodo, DateTime admissao, DateTime demissao, Cargo cargo)
         {
             Id = id;
             Nome = nome;
@@ -64,11 +66,25 @@ namespace PousadaClass
             Rg = rg;
             Salario = salario;
             Email = email;
-            Senha = senha;
             Periodo1 = periodo;
             Admissao = admissao;
+            Demissao = demissao;
             Cargo = cargo;
         }
+
+        public Funcionario(int id, string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string periodo, Cargo cargo)
+        {
+            Id = id;
+            Nome = nome;
+            Data_nasc = data_nasc;
+            Cpf = cpf;
+            Rg = rg;
+            Salario = salario;
+            Email = email;
+            Periodo1 = periodo;
+            Cargo = cargo;
+        }
+
 
         public Funcionario(string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string senha, string periodo, Cargo cargo)
         {
@@ -106,6 +122,31 @@ namespace PousadaClass
             cmd.CommandText = "select @@identity";
             Id = Convert.ToInt32(cmd.ExecuteNonQuery());
             Banco.Fechar(cmd);
+        }
+
+        public static List<Funcionario> Listar()
+        {
+            List<Funcionario> lista = null;
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select * from funcionarios";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new Funcionario(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetDateTime(2),
+                    dr.GetString(3),
+                    dr.GetString(4),
+                    dr.GetDouble(5),
+                    dr.GetString(6),
+                    dr.GetString(7),
+                    dr.GetDateTime(8),
+                    dr.GetDateTime(9),
+                    Cargo.ObterPorId(dr.GetInt32(8))
+                    ));
+            }
+            return lista;
         }
     }
 }

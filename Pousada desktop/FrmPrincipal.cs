@@ -46,5 +46,17 @@ namespace PousadaDesk
             CadastrarFuncionario func = new CadastrarFuncionario();
             func.Show();
         }
+
+        private void alterarConsultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFuncionarioAlterar alterar = new FrmFuncionarioAlterar();
+            alterar.Show(); 
+        }
+
+        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFuncionarioListar listar = new FrmFuncionarioListar();
+            listar.Show();
+        }
     }
 }

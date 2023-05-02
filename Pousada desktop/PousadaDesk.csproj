@@ -93,6 +93,18 @@
     <Compile Include="FrmFunc.Designer.cs">
       <DependentUpon>FrmFunc.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmFuncionarioAlterar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFuncionarioAlterar.Designer.cs">
+      <DependentUpon>FrmFuncionarioAlterar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFuncionarioListar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFuncionarioListar.Designer.cs">
+      <DependentUpon>FrmFuncionarioListar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +115,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmFunc.resx">
       <DependentUpon>FrmFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFuncionarioAlterar.resx">
+      <DependentUpon>FrmFuncionarioAlterar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFuncionarioListar.resx">
+      <DependentUpon>FrmFuncionarioListar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

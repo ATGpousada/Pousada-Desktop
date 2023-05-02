@@ -317,7 +317,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(96, 334);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(763, 194);
+            this.groupBox1.Size = new System.Drawing.Size(763, 187);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Endereço";
@@ -325,14 +325,14 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(313, 161);
+            this.textBox7.Location = new System.Drawing.Point(313, 138);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(119, 24);
             this.textBox7.TabIndex = 23;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(55, 160);
+            this.textBox5.Location = new System.Drawing.Point(55, 137);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(153, 24);
             this.textBox5.TabIndex = 21;
@@ -363,7 +363,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label16.Location = new System.Drawing.Point(312, 138);
+            this.label16.Location = new System.Drawing.Point(312, 115);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(44, 20);
             this.label16.TabIndex = 17;
@@ -385,7 +385,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(51, 137);
+            this.label14.Location = new System.Drawing.Point(51, 114);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(77, 20);
             this.label14.TabIndex = 15;
@@ -396,7 +396,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label13.Location = new System.Drawing.Point(505, 144);
+            this.label13.Location = new System.Drawing.Point(505, 121);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(33, 20);
             this.label13.TabIndex = 14;
@@ -456,7 +456,7 @@
             "MT",
             "GO",
             "DF"});
-            this.comboBox1.Location = new System.Drawing.Point(507, 160);
+            this.comboBox1.Location = new System.Drawing.Point(507, 137);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(48, 26);
             this.comboBox1.TabIndex = 24;
