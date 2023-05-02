@@ -13,7 +13,7 @@ namespace PousadaClass
         private static string strConn;
         public static MySqlCommand Abrir()
         {
-            strConn = @"server=127.0.0.1;database=pousada;port=3306;user id=root; password=''; datetime=true;";
+            strConn = @"server=127.0.0.1;database=pousada;port=3306;user id=root; password=";
             MySqlCommand cmd = new MySqlCommand();
             try // TENTAR ABRIR // Fluxos alternativos (Especificação de Caso de Uso)
             {
