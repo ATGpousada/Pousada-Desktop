@@ -85,6 +85,8 @@
     <Compile Include="Banco.cs" />
     <Compile Include="Cargo.cs" />
     <Compile Include="Funcionario.cs" />
+    <Compile Include="FuncionarioEndereco.cs" />
+    <Compile Include="FuncionarioTelefone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
