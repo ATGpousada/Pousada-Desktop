@@ -19,7 +19,6 @@ namespace PousadaDesk
         public FrmPrincipal()
         {
             InitializeComponent();
-            this.IsMdiContainer = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -45,9 +44,7 @@ namespace PousadaDesk
         private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CadastrarFuncionario func = new CadastrarFuncionario();
-            func.MdiParent = this;
             func.Show();
-            
         }
     }
 }

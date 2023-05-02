@@ -16,6 +16,7 @@ namespace Pousada_desktop
         public CadastrarFuncionario()
         {
             InitializeComponent();
+
         }
 
         private void PgsFun_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,6 +63,11 @@ namespace Pousada_desktop
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
