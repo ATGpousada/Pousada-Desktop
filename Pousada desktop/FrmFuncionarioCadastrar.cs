@@ -73,6 +73,9 @@ namespace Pousada_desktop
                     txtNome.Text, dtpDataNasc.Value, txtCpf.Text, txtRg.Text, Convert.ToDouble(txtSalario.Text), txtEmail.Text, txtSenha.Text, cmbPeriodo.Text, Cargo.ObterPorId(Convert.ToInt32(cmbCargo.SelectedValue)), Enderecos, Telefones);
 
                 func.Inserir();
+                txtNome.Clear(); txtCpf.Clear(); txtRg.Clear(); txtSalario.Clear(); txtSenha.Clear();
+                txtLogradouroEnd.Clear(); txtNumeroEnd.Clear(); txtCepEnd.Clear(); txtBairroEnd.Clear(); txtCidadeEnd.Clear();
+                txtNumeroTel.Clear();
                 MessageBox.Show("Funcionario Cadastrado com Sucesso!");
             }
             else
