@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -38,12 +38,12 @@
             this.txtNumeroTel = new System.Windows.Forms.TextBox();
             this.cmbTipoTel = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.cmbUfEnd = new System.Windows.Forms.ComboBox();
+            this.txtCepEnd = new System.Windows.Forms.TextBox();
+            this.txtCidadeEnd = new System.Windows.Forms.TextBox();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNumeroEnd = new System.Windows.Forms.TextBox();
+            this.txtBairroEnd = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -52,8 +52,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.gbDados = new System.Windows.Forms.GroupBox();
             this.dtpDataNasc = new System.Windows.Forms.DateTimePicker();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.cmbPeriodo = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -69,19 +67,19 @@
             this.label25 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.btnInserir = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbDados.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtId
             // 
-            this.textBox1.Location = new System.Drawing.Point(151, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(55, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtId.Location = new System.Drawing.Point(151, 23);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(55, 20);
+            this.txtId.TabIndex = 0;
             // 
             // label1
             // 
@@ -173,12 +171,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.cmbUfEnd);
+            this.groupBox1.Controls.Add(this.txtCepEnd);
+            this.groupBox1.Controls.Add(this.txtCidadeEnd);
             this.groupBox1.Controls.Add(this.txtLogradouro);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtNumeroEnd);
+            this.groupBox1.Controls.Add(this.txtBairroEnd);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
@@ -194,11 +192,11 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Endereço";
             // 
-            // comboBox1
+            // cmbUfEnd
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbUfEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUfEnd.FormattingEnabled = true;
+            this.cmbUfEnd.Items.AddRange(new object[] {
             "AC",
             "AL",
             "AM",
@@ -226,24 +224,24 @@
             "SE",
             "SP",
             "TO"});
-            this.comboBox1.Location = new System.Drawing.Point(302, 205);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(48, 26);
-            this.comboBox1.TabIndex = 24;
+            this.cmbUfEnd.Location = new System.Drawing.Point(302, 205);
+            this.cmbUfEnd.Name = "cmbUfEnd";
+            this.cmbUfEnd.Size = new System.Drawing.Size(48, 26);
+            this.cmbUfEnd.TabIndex = 24;
             // 
-            // textBox7
+            // txtCepEnd
             // 
-            this.textBox7.Location = new System.Drawing.Point(299, 135);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(119, 24);
-            this.textBox7.TabIndex = 23;
+            this.txtCepEnd.Location = new System.Drawing.Point(299, 135);
+            this.txtCepEnd.Name = "txtCepEnd";
+            this.txtCepEnd.Size = new System.Drawing.Size(119, 24);
+            this.txtCepEnd.TabIndex = 23;
             // 
-            // textBox5
+            // txtCidadeEnd
             // 
-            this.textBox5.Location = new System.Drawing.Point(55, 135);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(153, 24);
-            this.textBox5.TabIndex = 21;
+            this.txtCidadeEnd.Location = new System.Drawing.Point(55, 135);
+            this.txtCidadeEnd.Name = "txtCidadeEnd";
+            this.txtCidadeEnd.Size = new System.Drawing.Size(153, 24);
+            this.txtCidadeEnd.TabIndex = 21;
             // 
             // txtLogradouro
             // 
@@ -252,19 +250,19 @@
             this.txtLogradouro.Size = new System.Drawing.Size(179, 24);
             this.txtLogradouro.TabIndex = 20;
             // 
-            // textBox3
+            // txtNumeroEnd
             // 
-            this.textBox3.Location = new System.Drawing.Point(300, 58);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(118, 24);
-            this.textBox3.TabIndex = 19;
+            this.txtNumeroEnd.Location = new System.Drawing.Point(300, 58);
+            this.txtNumeroEnd.Name = "txtNumeroEnd";
+            this.txtNumeroEnd.Size = new System.Drawing.Size(118, 24);
+            this.txtNumeroEnd.TabIndex = 19;
             // 
-            // textBox4
+            // txtBairroEnd
             // 
-            this.textBox4.Location = new System.Drawing.Point(54, 205);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(153, 24);
-            this.textBox4.TabIndex = 18;
+            this.txtBairroEnd.Location = new System.Drawing.Point(54, 205);
+            this.txtBairroEnd.Name = "txtBairroEnd";
+            this.txtBairroEnd.Size = new System.Drawing.Size(153, 24);
+            this.txtBairroEnd.TabIndex = 18;
             // 
             // label16
             // 
@@ -335,8 +333,6 @@
             // gbDados
             // 
             this.gbDados.Controls.Add(this.dtpDataNasc);
-            this.gbDados.Controls.Add(this.txtSenha);
-            this.gbDados.Controls.Add(this.label17);
             this.gbDados.Controls.Add(this.cmbPeriodo);
             this.gbDados.Controls.Add(this.label19);
             this.gbDados.Controls.Add(this.label20);
@@ -374,25 +370,6 @@
             this.dtpDataNasc.TabIndex = 46;
             this.dtpDataNasc.Value = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(52, 195);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(166, 24);
-            this.txtSenha.TabIndex = 45;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label17.Location = new System.Drawing.Point(50, 172);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(70, 20);
-            this.label17.TabIndex = 44;
-            this.label17.Text = "SENHA";
-            // 
             // cmbPeriodo
             // 
             this.cmbPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -424,7 +401,7 @@
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label20.Location = new System.Drawing.Point(562, 172);
+            this.label20.Location = new System.Drawing.Point(309, 172);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(43, 20);
             this.label20.TabIndex = 37;
@@ -432,7 +409,7 @@
             // 
             // txtCpf
             // 
-            this.txtCpf.Location = new System.Drawing.Point(566, 195);
+            this.txtCpf.Location = new System.Drawing.Point(313, 195);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(152, 24);
             this.txtCpf.TabIndex = 36;
@@ -476,10 +453,11 @@
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(152, 26);
             this.cmbCargo.TabIndex = 32;
+            this.cmbCargo.SelectedIndexChanged += new System.EventHandler(this.cmbCargo_SelectedIndexChanged);
             // 
             // txtSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(313, 195);
+            this.txtSalario.Location = new System.Drawing.Point(54, 195);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(150, 24);
             this.txtSalario.TabIndex = 31;
@@ -490,7 +468,7 @@
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label23.Location = new System.Drawing.Point(309, 174);
+            this.label23.Location = new System.Drawing.Point(50, 174);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(87, 20);
             this.label23.TabIndex = 30;
@@ -546,27 +524,29 @@
             this.label26.TabIndex = 24;
             this.label26.Text = "NOME";
             // 
-            // btnInserir
+            // btnAlterar
             // 
-            this.btnInserir.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnInserir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnInserir.Location = new System.Drawing.Point(740, 22);
-            this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(91, 47);
-            this.btnInserir.TabIndex = 49;
-            this.btnInserir.Text = "ALTERAR";
-            this.btnInserir.UseVisualStyleBackColor = false;
+            this.btnAlterar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAlterar.Enabled = false;
+            this.btnAlterar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAlterar.Location = new System.Drawing.Point(740, 22);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(91, 47);
+            this.btnAlterar.TabIndex = 49;
+            this.btnAlterar.Text = "ALTERAR";
+            this.btnAlterar.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnConsultar
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(364, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 42);
-            this.button1.TabIndex = 51;
-            this.button1.Text = "CONSULTAR";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnConsultar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnConsultar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnConsultar.Location = new System.Drawing.Point(364, 27);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(86, 42);
+            this.btnConsultar.TabIndex = 51;
+            this.btnConsultar.Text = "CONSULTAR";
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmFuncionarioAlterar
             // 
@@ -574,17 +554,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(916, 674);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnInserir);
+            this.Controls.Add(this.btnConsultar);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbDados);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtId);
             this.Name = "FrmFuncionarioAlterar";
             this.Text = "FrmFuncionarioAlterar";
+            this.Load += new System.EventHandler(this.FrmFuncionarioAlterar_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -598,7 +579,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
@@ -608,12 +589,12 @@
         private System.Windows.Forms.TextBox txtNumeroTel;
         private System.Windows.Forms.ComboBox cmbTipoTel;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ComboBox cmbUfEnd;
+        private System.Windows.Forms.TextBox txtCepEnd;
+        private System.Windows.Forms.TextBox txtCidadeEnd;
         private System.Windows.Forms.TextBox txtLogradouro;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNumeroEnd;
+        private System.Windows.Forms.TextBox txtBairroEnd;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -622,8 +603,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox gbDados;
         private System.Windows.Forms.DateTimePicker dtpDataNasc;
-        private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cmbPeriodo;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
@@ -639,7 +618,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button btnInserir;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnConsultar;
     }
 }

@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Mozilla;
 
 namespace PousadaClass
 {
@@ -150,6 +151,28 @@ namespace PousadaClass
             }
             Banco.Fechar(cmd);
             return lista;
+        }
+
+        public static FuncionarioEndereco ObterPorIdForeign(int id)
+        {
+            var cmd = Banco.Abrir();
+            FuncionarioEndereco endereco = null;
+            cmd.CommandText = "select id, logradouro, numero, cep, bairro, cidade, uf from enderecos_func where funcionario_id = " + id;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                endereco = new FuncionarioEndereco(
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2),
+                        dr.GetString(3),
+                        dr.GetString(4),
+                        dr.GetString(5),
+                        dr.GetString(6)
+                    );
+            }
+            Banco.Fechar(cmd);
+            return endereco;
         }
     }
 }
