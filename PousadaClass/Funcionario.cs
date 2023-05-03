@@ -41,22 +41,6 @@ namespace PousadaClass
 
 
         public Funcionario() { }
-        public Funcionario(int id, string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string senha, string periodo, DateTime admissao, DateTime demissao, Cargo cargo)
-        {
-            Id = id;
-            Nome = nome;
-            Data_nasc = data_nasc;
-            Cpf = cpf;
-            Rg = rg;
-            Salario = salario;
-            Email = email;
-            Senha = senha;
-            Periodo1 = periodo;
-            Admissao = admissao;
-            Demissao = demissao;
-            Cargo = cargo;
-        }
-
         public Funcionario(int id, string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string periodo, DateTime admissao, DateTime demissao, Cargo cargo)
         {
             Id = id;
@@ -72,7 +56,22 @@ namespace PousadaClass
             Cargo = cargo;
         }
 
-        public Funcionario(int id, string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string periodo, Cargo cargo)
+        public Funcionario(int id, string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string senha, string periodo, DateTime admissao, Cargo cargo)
+        {
+            Id = id;
+            Nome = nome;
+            Data_nasc = data_nasc;
+            Cpf = cpf;
+            Rg = rg;
+            Salario = salario;
+            Email = email;
+            Senha = senha;
+            Periodo1 = periodo;
+            Admissao = admissao;
+            Cargo = cargo;
+        }
+
+        public Funcionario(int id, string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string periodo, DateTime admissao, Cargo cargo)
         {
             Id = id;
             Nome = nome;
@@ -82,6 +81,7 @@ namespace PousadaClass
             Salario = salario;
             Email = email;
             Periodo1 = periodo;
+            Admissao = admissao;
             Cargo = cargo;
         }
 
@@ -127,26 +127,24 @@ namespace PousadaClass
         public static List<Funcionario> Listar()
         {
             List<Funcionario> lista = new List<Funcionario>();
-            Funcionario func = null;
             var cmd = Banco.Abrir();
-            cmd.CommandText = "select * from funcionarios";
+            cmd.CommandText = "select id, nome, data_nasc, cpf, rg, salario, email, senha, periodo, admissao, cargos_id from funcionarios";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                func = new Funcionario();
-                func.Id = dr.GetInt32(0);
-                func.Nome = dr.GetString(1);
-                func.Data_nasc = dr.GetDateTime(2);
-                func.Cpf = dr.GetString(3);
-                func.Rg = dr.GetString(4);
-                func.Salario = dr.GetDouble(5);
-                func.Email = dr.GetString(6);
-                func.Senha = dr.GetString(7);
-                func.Periodo1 = dr.GetString(8);
-                func.Admissao = dr.GetDateTime(9);
-                func.Demissao = dr.GetDateTime(10);
-                Cargo.ObterPorId(dr.GetInt32(11));
-                lista.Add(func);
+                lista.Add(new Funcionario(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetDateTime(2),
+                    dr.GetString(3),
+                    dr.GetString(4),
+                    dr.GetDouble(5),
+                    dr.GetString(6),
+                    dr.GetString(7),
+                    dr.GetString(8),
+                    dr.GetDateTime(9),
+                    Cargo.ObterPorId(dr.GetInt32(10))
+                    ));
             }
             return lista;
         }

@@ -90,7 +90,7 @@ namespace PousadaClass
         /// <param name="id"></param>
         /// <returns></returns>
         public static Cargo ObterPorId(int id)
-        {
+       {
             var cmd = Banco.Abrir();
             cmd.CommandText = "select id, nome, descricao from cargos where id = " + id;
             var dr = cmd.ExecuteReader();

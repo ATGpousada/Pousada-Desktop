@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pousada_desktop;
 
 
 namespace Pousada_desktop
@@ -34,14 +35,14 @@ namespace Pousada_desktop
                 dgvFuncionarioPrincipal.Rows.Add();
                 dgvFuncionarioPrincipal.Rows[contador].Cells[0].Value = func.Id;
                 dgvFuncionarioPrincipal.Rows[contador].Cells[1].Value = func.Nome;
-
+                dgvFuncionarioPrincipal.Rows[contador].Cells[2].Value = func.Data_nasc.ToString("dd/MM/yyyy");
                 dgvFuncionarioPrincipal.Rows[contador].Cells[3].Value = func.Cpf;
                 dgvFuncionarioPrincipal.Rows[contador].Cells[4].Value = func.Rg;
-                dgvFuncionarioPrincipal.Rows[contador].Cells[5].Value = func.Salario.ToString();
+                dgvFuncionarioPrincipal.Rows[contador].Cells[5].Value = func.Salario.ToString("R$ ##,###");
                 dgvFuncionarioPrincipal.Rows[contador].Cells[6].Value = func.Email;
                 dgvFuncionarioPrincipal.Rows[contador].Cells[7].Value = func.Periodo1;
-
-                dgvFuncionarioPrincipal.Rows[contador].Cells[9].Value = func.Cargo.Nome.ToString();
+                dgvFuncionarioPrincipal.Rows[contador].Cells[8].Value = func.Admissao;
+                dgvFuncionarioPrincipal.Rows[contador].Cells[9].Value = func.Cargo.Nome;
                 contador++;
             }
         }
