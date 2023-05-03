@@ -55,10 +55,28 @@ namespace Pousada_desktop
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Funcionario func = new Funcionario(
-                txtNome.Text, dtpDataNasc.Value, txtCpf.Text, txtRg.Text, Convert.ToDouble(txtSalario.Text), txtEmail.Text, txtSenha.Text, cmbPeriodo.Text, Cargo.ObterPorId(Convert.ToInt32(cmbCargo.SelectedValue)));
-            func.Inserir();
-            MessageBox.Show("Funcionario Cadastrado com Sucesso!");
+            if (txtNome.Text.Length > 0 && txtSenha.Text.Length > 0)
+            {
+                List<FuncionarioEndereco> Enderecos = new List<FuncionarioEndereco>();
+                List<FuncionarioTelefone> Telefones = new List<FuncionarioTelefone>();
+
+                if (txtLogradouroEnd.Text.Length > 0 && cmbUfEnd.Text.Length > 0 && txtNumeroTel.Text.Length > 0)
+                {
+                    Enderecos = new List<FuncionarioEndereco>();
+                    Enderecos.Add(new FuncionarioEndereco(txtLogradouroEnd.Text, txtNumeroEnd.Text, txtCepEnd.Text, txtBairroEnd.Text, txtCidadeEnd.Text, cmbUfEnd.Text));
+
+                    Telefones = new List<FuncionarioTelefone>();
+                    Telefones.Add(new FuncionarioTelefone(cmbTipoTel.Text, txtNumeroTel.Text));
+                }
+
+                Funcionario func = new Funcionario(
+                    txtNome.Text, dtpDataNasc.Value, txtCpf.Text, txtRg.Text, Convert.ToDouble(txtSalario.Text), txtEmail.Text, txtSenha.Text, cmbPeriodo.Text, Cargo.ObterPorId(Convert.ToInt32(cmbCargo.SelectedValue)), Enderecos, Telefones);
+
+                func.Inserir();
+                MessageBox.Show("Funcionario Cadastrado com Sucesso!");
+            }
+            else
+                MessageBox.Show("Funcionario não cadastrado por falta de informações.");
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -68,6 +86,11 @@ namespace Pousada_desktop
         private void label24_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnOlhoSenha_Click(object sender, EventArgs e)
+        {
+            txtSenha.UseSystemPasswordChar = !txtSenha.UseSystemPasswordChar;
         }
     }
 }

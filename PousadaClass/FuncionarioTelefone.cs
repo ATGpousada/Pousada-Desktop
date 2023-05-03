@@ -20,6 +20,7 @@ namespace PousadaClass
         public string Tipo { get => tipo; set => tipo = value; }
         public string Telefone { get => telefone; set => telefone = value; }
         public Funcionario Funcionario { get => funcionario; set => funcionario = value; }
+        public List<FuncionarioTelefone> Telefones {get; set;}
 
         // Construtores
         public FuncionarioTelefone() { }
@@ -30,17 +31,31 @@ namespace PousadaClass
             Telefone = telefone;
             Funcionario = funcionario;
         }
+        public FuncionarioTelefone(int id, string tipo, string telefone)
+        {
+            Id = id;
+            Tipo = tipo;
+            Telefone = telefone;
+        }
 
-        public void Inserir()
+        public FuncionarioTelefone(string tipo, string telefone)
+        {
+            Tipo = tipo;
+            Telefone = telefone;
+        }
+
+        public FuncionarioTelefone(List<FuncionarioTelefone> telefones)
+        {
+            Telefones = telefones;
+        }
+
+        public void Inserir(int _id)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "insert telefones_func (tipo, tel, funcionario_ID) values (@tipo, @tel, @funcionario)";
+            cmd.CommandText = "insert telefones_func (tipo, tel, funcionario_ID) values (@tipo, @tel, " + _id +")";
             cmd.Parameters.Add("@tipo", MySqlDbType.VarChar).Value = Tipo;
             cmd.Parameters.Add("@tel", MySqlDbType.VarChar).Value = Telefone;
-            cmd.Parameters.Add("@funcionario", MySqlDbType.VarChar).Value = Funcionario;
             cmd.ExecuteNonQuery();
-            cmd.CommandText = "select @@identity";
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
             Banco.Fechar(cmd);
         }
 
@@ -73,6 +88,24 @@ namespace PousadaClass
                         dr.GetString(1),
                         dr.GetString(2),   
                         Funcionario.ObterPorId(dr.GetInt32(3))
+                    ));
+            }
+            Banco.Fechar(cmd);
+            return lista;
+        }
+
+        public static List<FuncionarioTelefone> ListarPorFuncionario(int id)
+        {
+            List<FuncionarioTelefone> lista = new List<FuncionarioTelefone>();
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select id, tipo, tel from telefones_func where funcionario_id = " + id;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new FuncionarioTelefone(
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2)
                     ));
             }
             Banco.Fechar(cmd);

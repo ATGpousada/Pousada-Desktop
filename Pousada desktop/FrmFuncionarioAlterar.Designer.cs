@@ -52,6 +52,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.gbDados = new System.Windows.Forms.GroupBox();
             this.dtpDataNasc = new System.Windows.Forms.DateTimePicker();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.cmbPeriodo = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -67,8 +69,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnInserir = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
@@ -90,7 +90,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(121, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 16);
+            this.label1.Size = new System.Drawing.Size(22, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "ID";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -102,7 +102,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(89, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.Size = new System.Drawing.Size(51, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "EMAIL";
             // 
@@ -199,33 +199,33 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "RO\t",
             "AC",
-            "AM",
-            "RR",
-            "PA",
-            "AP",
-            "TO",
-            "MA",
-            "PI",
-            "CE",
-            "RN",
-            "PB",
-            "PE",
             "AL",
-            "SE",
+            "AM",
+            "AP",
             "BA",
-            "MG",
+            "CE",
+            "DF",
             "ES",
-            "RJ",
-            "SP",
-            "PR",
-            "SC",
-            "RS",
+            "GO",
+            "MA",
+            "MG",
             "MS",
             "MT",
-            "GO",
-            "DF"});
+            "PA",
+            "PB",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "PR",
+            "RO",
+            "RR",
+            "RS",
+            "SC",
+            "SE",
+            "SP",
+            "TO"});
             this.comboBox1.Location = new System.Drawing.Point(302, 205);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(48, 26);
@@ -373,6 +373,25 @@
             this.dtpDataNasc.Size = new System.Drawing.Size(146, 24);
             this.dtpDataNasc.TabIndex = 46;
             this.dtpDataNasc.Value = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(52, 195);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(166, 24);
+            this.txtSenha.TabIndex = 45;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label17.Location = new System.Drawing.Point(50, 172);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 20);
+            this.label17.TabIndex = 44;
+            this.label17.Text = "SENHA";
             // 
             // cmbPeriodo
             // 
@@ -526,25 +545,6 @@
             this.label26.Size = new System.Drawing.Size(60, 20);
             this.label26.TabIndex = 24;
             this.label26.Text = "NOME";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label17.Location = new System.Drawing.Point(50, 172);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(70, 20);
-            this.label17.TabIndex = 44;
-            this.label17.Text = "SENHA";
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(52, 195);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(166, 24);
-            this.txtSenha.TabIndex = 45;
             // 
             // btnInserir
             // 

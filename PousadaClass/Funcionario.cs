@@ -38,6 +38,8 @@ namespace PousadaClass
         public DateTime Admissao { get => admissao; set => admissao = value; }
         public DateTime Demissao { get => demissao; set => demissao = value; }
         public Cargo Cargo { get => cargo; set => cargo = value; }
+        public List<FuncionarioEndereco> Enderecos { get; set; }
+        public List<FuncionarioTelefone> Telefones { get; set; }
 
 
         public Funcionario() { }
@@ -71,22 +73,7 @@ namespace PousadaClass
             Cargo = cargo;
         }
 
-        public Funcionario(int id, string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string periodo, DateTime admissao, Cargo cargo)
-        {
-            Id = id;
-            Nome = nome;
-            Data_nasc = data_nasc;
-            Cpf = cpf;
-            Rg = rg;
-            Salario = salario;
-            Email = email;
-            Periodo1 = periodo;
-            Admissao = admissao;
-            Cargo = cargo;
-        }
-
-
-        public Funcionario(string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string senha, string periodo, Cargo cargo)
+        public Funcionario(string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string senha, string periodo, Cargo cargo, List<FuncionarioEndereco> endereco, List<FuncionarioTelefone> telefone)
         {
             Nome = nome;
             Data_nasc = data_nasc;
@@ -97,6 +84,14 @@ namespace PousadaClass
             Senha = senha;
             Periodo1 = periodo;
             Cargo = cargo;
+            Enderecos = endereco;
+            Telefones = telefone;
+        }
+
+        public Funcionario(int _id)
+        {
+            Telefones = FuncionarioTelefone.ListarPorFuncionario(_id);
+            Enderecos = FuncionarioEndereco.ListarPorFuncionario(_id);
         }
 
         // Construtor
@@ -120,7 +115,15 @@ namespace PousadaClass
             cmd.Parameters.Add("@cargo", MySqlDbType.VarChar).Value = Cargo.Id;
             cmd.ExecuteNonQuery();
             cmd.CommandText = "select @@identity";
-            Id = Convert.ToInt32(cmd.ExecuteNonQuery());
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+            foreach (var telefone in Telefones)
+            {
+                telefone.Inserir(Id);
+            }
+            foreach (var endereco in Enderecos)
+            {
+                endereco.Inserir(Id);
+            }
             Banco.Fechar(cmd);
         }
 

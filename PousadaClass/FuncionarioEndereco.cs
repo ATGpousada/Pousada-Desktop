@@ -29,6 +29,7 @@ namespace PousadaClass
         public string Cidade { get => cidade; set => cidade = value; }
         public string Uf { get => uf; set => uf = value; }
         public Funcionario Funcionario { get => funcionario; set => funcionario = value; }
+        public List<FuncionarioEndereco> Enderecos { get; set; }
 
         // Construtores
         public FuncionarioEndereco() { }
@@ -44,7 +45,18 @@ namespace PousadaClass
             Funcionario = funcionario;
         }
 
-        public FuncionarioEndereco(string logradouro, string numero, string cep, string bairro, string cidade, string uf, Funcionario funcionario)
+        public FuncionarioEndereco(int id, string logradouro, string numero, string cep, string bairro, string cidade, string uf)
+        {
+            Id = id;
+            Logradouro = logradouro;
+            Numero = numero;
+            Cep = cep;
+            Bairro = bairro;
+            Cidade = cidade;
+            Uf = uf;
+        }
+
+        public FuncionarioEndereco(string logradouro, string numero, string cep, string bairro, string cidade, string uf)
         {
             Logradouro = logradouro;
             Numero = numero;
@@ -52,22 +64,25 @@ namespace PousadaClass
             Bairro = bairro;
             Cidade = cidade;
             Uf = uf;
-            Funcionario = funcionario;
         }
 
-        public void Inserir()
+        public FuncionarioEndereco(List<FuncionarioEndereco> endereco)
+        {
+            Enderecos = endereco;
+        }
+
+        public void Inserir(int id)
         {
             var cmd = Banco.Abrir();
             cmd.CommandText = "insert enderecos_func (logradouro, numero, cep, bairro, cidade, uf, funcionario_ID)" +
-                " values (@logradouro, @numero, @cep, @bairro, @cidade, @uf, @funcionario)";
+                " values (@logradouro, @numero, @cep, @bairro, @cidade, @uf, "+ id +")";
             cmd.Parameters.Add("@logradouro", MySqlDbType.VarChar).Value = Logradouro;
             cmd.Parameters.Add("@numero", MySqlDbType.VarChar).Value = Numero;
-            cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = Cidade;
+            cmd.Parameters.Add("@cep", MySqlDbType.VarChar).Value = Cep;
+            cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = Bairro;
+            cmd.Parameters.Add("@cidade", MySqlDbType.VarChar).Value = Cidade;
             cmd.Parameters.Add("@uf", MySqlDbType.VarChar).Value = Uf;
-            cmd.Parameters.Add("@funcionario", MySqlDbType.Int32).Value = Funcionario.Id;
             cmd.ExecuteNonQuery();
-            cmd.CommandText = "select @@identity";
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
             Banco.Fechar(cmd);
         }
 
@@ -78,7 +93,9 @@ namespace PousadaClass
                 " uf = @uf where id = @id)";
             cmd.Parameters.Add("@logradouro", MySqlDbType.VarChar).Value = Logradouro;
             cmd.Parameters.Add("@numero", MySqlDbType.VarChar).Value = Numero;
-            cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = Cidade;
+            cmd.Parameters.Add("@cep", MySqlDbType.VarChar).Value = Cep;
+            cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = Bairro;
+            cmd.Parameters.Add("@cidade", MySqlDbType.VarChar).Value = Cidade;
             cmd.Parameters.Add("@uf", MySqlDbType.VarChar).Value = Uf;
             cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = Id;
             cmd.ExecuteNonQuery();
@@ -107,6 +124,28 @@ namespace PousadaClass
                         dr.GetString(5),
                         dr.GetString(6),
                         Funcionario.ObterPorId(dr.GetInt32(7))
+                    ));
+            }
+            Banco.Fechar(cmd);
+            return lista;
+        }
+
+        public static List<FuncionarioEndereco> ListarPorFuncionario(int id)
+        {
+            List<FuncionarioEndereco> lista = new List<FuncionarioEndereco>();
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select id, logradouro, numero, cep, bairro, cidade, uf from enderecos_func where funcionario_id = " + id;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new FuncionarioEndereco(
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2),
+                        dr.GetString(3),
+                        dr.GetString(4),
+                        dr.GetString(5),
+                        dr.GetString(6)
                     ));
             }
             Banco.Fechar(cmd);
