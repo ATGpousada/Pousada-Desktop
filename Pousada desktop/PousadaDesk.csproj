@@ -87,11 +87,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmFunc.cs">
+    <Compile Include="FrmFuncionarioCadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmFunc.Designer.cs">
-      <DependentUpon>FrmFunc.cs</DependentUpon>
+    <Compile Include="FrmFuncionarioCadastrar.Designer.cs">
+      <DependentUpon>FrmFuncionarioCadastrar.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmFuncionarioAlterar.cs">
       <SubType>Form</SubType>
@@ -113,8 +113,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmFunc.resx">
-      <DependentUpon>FrmFunc.cs</DependentUpon>
+    <EmbeddedResource Include="FrmFuncionarioCadastrar.resx">
+      <DependentUpon>FrmFuncionarioCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFuncionarioAlterar.resx">
       <DependentUpon>FrmFuncionarioAlterar.cs</DependentUpon>
@@ -157,6 +157,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mais.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginwall.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
