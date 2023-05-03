@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFuncionarioListar));
             this.dgvFuncionarioPrincipal = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvEndereco = new System.Windows.Forms.DataGridView();
             this.clnIdEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnLogradouroEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnNumeroEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,8 +49,15 @@
             this.clnPeriodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnAdmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.dgvTelefone = new System.Windows.Forms.DataGridView();
+            this.clnIdTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnTipoTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnNumeroTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnFuncionarioTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarioPrincipal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEndereco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvFuncionarioPrincipal
@@ -77,11 +84,14 @@
             this.dgvFuncionarioPrincipal.RowHeadersWidth = 51;
             this.dgvFuncionarioPrincipal.Size = new System.Drawing.Size(1316, 287);
             this.dgvFuncionarioPrincipal.TabIndex = 0;
+            this.dgvFuncionarioPrincipal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionarioPrincipal_CellContentClick);
             // 
-            // dataGridView1
+            // dgvEndereco
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvEndereco.AllowUserToAddRows = false;
+            this.dgvEndereco.AllowUserToDeleteRows = false;
+            this.dgvEndereco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEndereco.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clnIdEndereco,
             this.clnLogradouroEndereco,
             this.clnNumeroEndereco,
@@ -90,13 +100,14 @@
             this.clnCidadeEndereco,
             this.clnUfEndereco,
             this.clnFuncionarioEndereco});
-            this.dataGridView1.Location = new System.Drawing.Point(48, 444);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1316, 185);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvEndereco.Location = new System.Drawing.Point(48, 444);
+            this.dgvEndereco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvEndereco.Name = "dgvEndereco";
+            this.dgvEndereco.ReadOnly = true;
+            this.dgvEndereco.RowHeadersVisible = false;
+            this.dgvEndereco.RowHeadersWidth = 51;
+            this.dgvEndereco.Size = new System.Drawing.Size(1316, 185);
+            this.dgvEndereco.TabIndex = 1;
             // 
             // clnIdEndereco
             // 
@@ -256,13 +267,78 @@
             this.clnCargo.ReadOnly = true;
             this.clnCargo.Width = 125;
             // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.Location = new System.Drawing.Point(75, 71);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(464, 22);
+            this.txtPesquisar.TabIndex = 2;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
+            // 
+            // dgvTelefone
+            // 
+            this.dgvTelefone.AllowUserToAddRows = false;
+            this.dgvTelefone.AllowUserToDeleteRows = false;
+            this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTelefone.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clnIdTelefone,
+            this.clnTipoTelefone,
+            this.clnNumeroTelefone,
+            this.clnFuncionarioTelefone});
+            this.dgvTelefone.Location = new System.Drawing.Point(48, 654);
+            this.dgvTelefone.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvTelefone.Name = "dgvTelefone";
+            this.dgvTelefone.ReadOnly = true;
+            this.dgvTelefone.RowHeadersVisible = false;
+            this.dgvTelefone.RowHeadersWidth = 51;
+            this.dgvTelefone.Size = new System.Drawing.Size(1316, 185);
+            this.dgvTelefone.TabIndex = 3;
+            // 
+            // clnIdTelefone
+            // 
+            this.clnIdTelefone.Frozen = true;
+            this.clnIdTelefone.HeaderText = "ID";
+            this.clnIdTelefone.MinimumWidth = 6;
+            this.clnIdTelefone.Name = "clnIdTelefone";
+            this.clnIdTelefone.ReadOnly = true;
+            this.clnIdTelefone.Width = 125;
+            // 
+            // clnTipoTelefone
+            // 
+            this.clnTipoTelefone.Frozen = true;
+            this.clnTipoTelefone.HeaderText = "Tipo";
+            this.clnTipoTelefone.MinimumWidth = 6;
+            this.clnTipoTelefone.Name = "clnTipoTelefone";
+            this.clnTipoTelefone.ReadOnly = true;
+            this.clnTipoTelefone.Width = 125;
+            // 
+            // clnNumeroTelefone
+            // 
+            this.clnNumeroTelefone.Frozen = true;
+            this.clnNumeroTelefone.HeaderText = "Número";
+            this.clnNumeroTelefone.MinimumWidth = 6;
+            this.clnNumeroTelefone.Name = "clnNumeroTelefone";
+            this.clnNumeroTelefone.ReadOnly = true;
+            this.clnNumeroTelefone.Width = 125;
+            // 
+            // clnFuncionarioTelefone
+            // 
+            this.clnFuncionarioTelefone.Frozen = true;
+            this.clnFuncionarioTelefone.HeaderText = "Funcionario";
+            this.clnFuncionarioTelefone.MinimumWidth = 6;
+            this.clnFuncionarioTelefone.Name = "clnFuncionarioTelefone";
+            this.clnFuncionarioTelefone.ReadOnly = true;
+            this.clnFuncionarioTelefone.Width = 125;
+            // 
             // FrmFuncionarioListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1535, 807);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1424, 903);
+            this.Controls.Add(this.dgvTelefone);
+            this.Controls.Add(this.txtPesquisar);
+            this.Controls.Add(this.dgvEndereco);
             this.Controls.Add(this.dgvFuncionarioPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -270,15 +346,17 @@
             this.Text = "FrmFuncionarioListar";
             this.Load += new System.EventHandler(this.FrmFuncionarioListar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarioPrincipal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEndereco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvFuncionarioPrincipal;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEndereco;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnIdEndereco;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnLogradouroEndereco;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnNumeroEndereco;
@@ -297,5 +375,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clnPeriodo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnAdmissao;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnCargo;
+        private System.Windows.Forms.TextBox txtPesquisar;
+        private System.Windows.Forms.DataGridView dgvTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnIdTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnTipoTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnNumeroTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnFuncionarioTelefone;
     }
 }

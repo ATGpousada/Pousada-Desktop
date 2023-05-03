@@ -124,11 +124,14 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
-        public static List<Funcionario> Listar()
+        public static List<Funcionario> Listar(string nome = "")
         {
             List<Funcionario> lista = new List<Funcionario>();
             var cmd = Banco.Abrir();
-            cmd.CommandText = "select id, nome, data_nasc, cpf, rg, salario, email, senha, periodo, admissao, cargos_id from funcionarios";
+            if (nome.Length > 0)
+                cmd.CommandText = "select id, nome, data_nasc, cpf, rg, salario, email, senha, periodo, admissao, cargos_id from funcionarios where nome like '%" + nome + "%'";
+            else
+                cmd.CommandText = "select id, nome, data_nasc, cpf, rg, salario, email, senha, periodo, admissao, cargos_id from funcionarios";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -147,6 +150,32 @@ namespace PousadaClass
                     ));
             }
             return lista;
+        }
+
+        public static Funcionario ObterPorId(int id)
+        {
+            var cmd = Banco.Abrir();
+            Funcionario funcionario = null;
+            cmd.CommandText = "select id, nome, data_nasc, cpf, rg, salario, email, senha, periodo, admissao, cargos_id from funcionarios where id = " + id;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                funcionario = new Funcionario(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetDateTime(2),
+                    dr.GetString(3),
+                    dr.GetString(4),
+                    dr.GetDouble(5),
+                    dr.GetString(6),
+                    dr.GetString(7),
+                    dr.GetString(8),
+                    dr.GetDateTime(9),
+                    Cargo.ObterPorId(dr.GetInt32(10))
+                    );
+            }
+            Banco.Fechar(cmd);
+            return funcionario;
         }
     }
 }

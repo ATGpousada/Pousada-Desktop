@@ -54,5 +54,29 @@ namespace PousadaClass
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }
+
+        public static List<FuncionarioTelefone> Listar(string nome = "")
+        {
+            List<FuncionarioTelefone> lista = new List<FuncionarioTelefone>();
+            var cmd = Banco.Abrir();
+            if (nome.Length > 0)
+                cmd.CommandText = "SELECT telefones_func.*, funcionarios.nome FROM funcionarios " +
+                    "INNER JOIN telefones_func ON funcionarios.id = telefones_func.funcionario_id " +
+                    "where funcionarios.NOME like '%" + nome + "%'";
+            else
+                cmd.CommandText = "select * from telefones_func";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new FuncionarioTelefone(
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2),   
+                        Funcionario.ObterPorId(dr.GetInt32(3))
+                    ));
+            }
+            Banco.Fechar(cmd);
+            return lista;
+        }
     }
 }

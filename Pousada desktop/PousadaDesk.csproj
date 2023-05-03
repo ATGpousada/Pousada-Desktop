@@ -156,10 +156,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mais.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\loginwall.png" />
+    <None Include="Resources\mais.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

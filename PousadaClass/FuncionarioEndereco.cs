@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
@@ -43,6 +44,17 @@ namespace PousadaClass
             Funcionario = funcionario;
         }
 
+        public FuncionarioEndereco(string logradouro, string numero, string cep, string bairro, string cidade, string uf, Funcionario funcionario)
+        {
+            Logradouro = logradouro;
+            Numero = numero;
+            Cep = cep;
+            Bairro = bairro;
+            Cidade = cidade;
+            Uf = uf;
+            Funcionario = funcionario;
+        }
+
         public void Inserir()
         {
             var cmd = Banco.Abrir();
@@ -71,6 +83,34 @@ namespace PousadaClass
             cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = Id;
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
+        }
+
+        public static List<FuncionarioEndereco> Listar(string nome = "")
+        {
+            List<FuncionarioEndereco> lista = new List<FuncionarioEndereco>();
+            var cmd = Banco.Abrir();
+            if (nome.Length > 0)
+                cmd.CommandText = "select enderecos_func.*, funcionarios.nome FROM funcionarios" +
+                    " INNER JOIN enderecos_func ON funcionarios.id = enderecos_func.funcionario_id" +
+                    " where funcionarios.NOME like '%" + nome + "%'";
+            else
+                cmd.CommandText = "select * from enderecos_func";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new FuncionarioEndereco(
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2),
+                        dr.GetString(3),
+                        dr.GetString(4),
+                        dr.GetString(5),
+                        dr.GetString(6),
+                        Funcionario.ObterPorId(dr.GetInt32(7))
+                    ));
+            }
+            Banco.Fechar(cmd);
+            return lista;
         }
     }
 }
