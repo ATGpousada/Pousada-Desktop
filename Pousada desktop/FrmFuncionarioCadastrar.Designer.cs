@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbDados = new System.Windows.Forms.GroupBox();
+            this.btnOlhoSenha = new System.Windows.Forms.Button();
             this.dtpDataNasc = new System.Windows.Forms.DateTimePicker();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -49,23 +50,23 @@
             this.label26 = new System.Windows.Forms.Label();
             this.btnInserir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.txtLogradouro = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cmbUfEnd = new System.Windows.Forms.ComboBox();
+            this.txtCepEnd = new System.Windows.Forms.TextBox();
+            this.txtCidadeEnd = new System.Windows.Forms.TextBox();
+            this.txtLogradouroEnd = new System.Windows.Forms.TextBox();
+            this.txtNumeroEnd = new System.Windows.Forms.TextBox();
+            this.txtBairroEnd = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmbTipoTel = new System.Windows.Forms.ComboBox();
-            this.txtNumeroTel = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNumeroTel = new System.Windows.Forms.TextBox();
+            this.cmbTipoTel = new System.Windows.Forms.ComboBox();
             this.gbDados.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             // gbDados
             // 
+            this.gbDados.Controls.Add(this.btnOlhoSenha);
             this.gbDados.Controls.Add(this.dtpDataNasc);
             this.gbDados.Controls.Add(this.txtSenha);
             this.gbDados.Controls.Add(this.label17);
@@ -100,12 +102,23 @@
             this.gbDados.TabStop = false;
             this.gbDados.Text = "Dados Pessoais";
             // 
+            // btnOlhoSenha
+            // 
+            this.btnOlhoSenha.BackgroundImage = global::Pousada_desktop.Properties.Resources.olho;
+            this.btnOlhoSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnOlhoSenha.Location = new System.Drawing.Point(224, 195);
+            this.btnOlhoSenha.Name = "btnOlhoSenha";
+            this.btnOlhoSenha.Size = new System.Drawing.Size(37, 24);
+            this.btnOlhoSenha.TabIndex = 47;
+            this.btnOlhoSenha.UseVisualStyleBackColor = true;
+            this.btnOlhoSenha.Click += new System.EventHandler(this.btnOlhoSenha_Click);
+            // 
             // dtpDataNasc
             // 
             this.dtpDataNasc.CustomFormat = "dd/MM/yyyy";
             this.dtpDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDataNasc.Location = new System.Drawing.Point(54, 131);
-            this.dtpDataNasc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDataNasc.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDataNasc.MaxDate = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
             this.dtpDataNasc.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dtpDataNasc.Name = "dtpDataNasc";
@@ -120,6 +133,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(166, 24);
             this.txtSenha.TabIndex = 45;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // label17
             // 
@@ -301,12 +315,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.txtLogradouro);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.cmbUfEnd);
+            this.groupBox1.Controls.Add(this.txtCepEnd);
+            this.groupBox1.Controls.Add(this.txtCidadeEnd);
+            this.groupBox1.Controls.Add(this.txtLogradouroEnd);
+            this.groupBox1.Controls.Add(this.txtNumeroEnd);
+            this.groupBox1.Controls.Add(this.txtBairroEnd);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
@@ -323,40 +337,77 @@
             this.groupBox1.Text = "Endereço";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // textBox7
+            // cmbUfEnd
             // 
-            this.textBox7.Location = new System.Drawing.Point(313, 138);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(119, 24);
-            this.textBox7.TabIndex = 23;
+            this.cmbUfEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUfEnd.FormattingEnabled = true;
+            this.cmbUfEnd.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AM",
+            "AP",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MG",
+            "MS",
+            "MT",
+            "PA",
+            "PB",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "PR",
+            "RO",
+            "RR",
+            "RS",
+            "SC",
+            "SE",
+            "SP",
+            "TO"});
+            this.cmbUfEnd.Location = new System.Drawing.Point(507, 137);
+            this.cmbUfEnd.Name = "cmbUfEnd";
+            this.cmbUfEnd.Size = new System.Drawing.Size(48, 26);
+            this.cmbUfEnd.TabIndex = 24;
             // 
-            // textBox5
+            // txtCepEnd
             // 
-            this.textBox5.Location = new System.Drawing.Point(55, 137);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(153, 24);
-            this.textBox5.TabIndex = 21;
+            this.txtCepEnd.Location = new System.Drawing.Point(313, 138);
+            this.txtCepEnd.Name = "txtCepEnd";
+            this.txtCepEnd.Size = new System.Drawing.Size(119, 24);
+            this.txtCepEnd.TabIndex = 23;
             // 
-            // txtLogradouro
+            // txtCidadeEnd
             // 
-            this.txtLogradouro.Location = new System.Drawing.Point(57, 59);
-            this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(179, 24);
-            this.txtLogradouro.TabIndex = 20;
+            this.txtCidadeEnd.Location = new System.Drawing.Point(55, 137);
+            this.txtCidadeEnd.Name = "txtCidadeEnd";
+            this.txtCidadeEnd.Size = new System.Drawing.Size(153, 24);
+            this.txtCidadeEnd.TabIndex = 21;
             // 
-            // textBox3
+            // txtLogradouroEnd
             // 
-            this.textBox3.Location = new System.Drawing.Point(314, 59);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(118, 24);
-            this.textBox3.TabIndex = 19;
+            this.txtLogradouroEnd.Location = new System.Drawing.Point(57, 59);
+            this.txtLogradouroEnd.Name = "txtLogradouroEnd";
+            this.txtLogradouroEnd.Size = new System.Drawing.Size(179, 24);
+            this.txtLogradouroEnd.TabIndex = 20;
             // 
-            // textBox2
+            // txtNumeroEnd
             // 
-            this.textBox2.Location = new System.Drawing.Point(507, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(153, 24);
-            this.textBox2.TabIndex = 18;
+            this.txtNumeroEnd.Location = new System.Drawing.Point(314, 59);
+            this.txtNumeroEnd.Name = "txtNumeroEnd";
+            this.txtNumeroEnd.Size = new System.Drawing.Size(118, 24);
+            this.txtNumeroEnd.TabIndex = 19;
+            // 
+            // txtBairroEnd
+            // 
+            this.txtBairroEnd.Location = new System.Drawing.Point(507, 59);
+            this.txtBairroEnd.Name = "txtBairroEnd";
+            this.txtBairroEnd.Size = new System.Drawing.Size(153, 24);
+            this.txtBairroEnd.TabIndex = 18;
             // 
             // label16
             // 
@@ -424,43 +475,6 @@
             this.label11.TabIndex = 12;
             this.label11.Text = "LOGRADOURO";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "RO\t",
-            "AC",
-            "AM",
-            "RR",
-            "PA",
-            "AP",
-            "TO",
-            "MA",
-            "PI",
-            "CE",
-            "RN",
-            "PB",
-            "PE",
-            "AL",
-            "SE",
-            "BA",
-            "MG",
-            "ES",
-            "RJ",
-            "SP",
-            "PR",
-            "SC",
-            "RS",
-            "MS",
-            "MT",
-            "GO",
-            "DF"});
-            this.comboBox1.Location = new System.Drawing.Point(507, 137);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(48, 26);
-            this.comboBox1.TabIndex = 24;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label2);
@@ -476,26 +490,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Telefone";
             // 
-            // cmbTipoTel
+            // label2
             // 
-            this.cmbTipoTel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoTel.FormattingEnabled = true;
-            this.cmbTipoTel.Items.AddRange(new object[] {
-            "TELEFONE",
-            "CELULAR",
-            "COMERCIAL",
-            "PESSOAL"});
-            this.cmbTipoTel.Location = new System.Drawing.Point(293, 65);
-            this.cmbTipoTel.Name = "cmbTipoTel";
-            this.cmbTipoTel.Size = new System.Drawing.Size(139, 26);
-            this.cmbTipoTel.TabIndex = 25;
-            // 
-            // txtNumeroTel
-            // 
-            this.txtNumeroTel.Location = new System.Drawing.Point(71, 65);
-            this.txtNumeroTel.Name = "txtNumeroTel";
-            this.txtNumeroTel.Size = new System.Drawing.Size(137, 24);
-            this.txtNumeroTel.TabIndex = 26;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(289, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 20);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "TIPO";
             // 
             // label1
             // 
@@ -508,16 +512,26 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "NÚMERO";
             // 
-            // label2
+            // txtNumeroTel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(289, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 20);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "TIPO";
+            this.txtNumeroTel.Location = new System.Drawing.Point(71, 65);
+            this.txtNumeroTel.Name = "txtNumeroTel";
+            this.txtNumeroTel.Size = new System.Drawing.Size(137, 24);
+            this.txtNumeroTel.TabIndex = 26;
+            // 
+            // cmbTipoTel
+            // 
+            this.cmbTipoTel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoTel.FormattingEnabled = true;
+            this.cmbTipoTel.Items.AddRange(new object[] {
+            "Pessoal",
+            "Comercial",
+            "Residencial",
+            ""});
+            this.cmbTipoTel.Location = new System.Drawing.Point(293, 65);
+            this.cmbTipoTel.Name = "cmbTipoTel";
+            this.cmbTipoTel.Size = new System.Drawing.Size(139, 26);
+            this.cmbTipoTel.TabIndex = 25;
             // 
             // CadastrarFuncionario
             // 
@@ -565,11 +579,11 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox txtLogradouro;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCepEnd;
+        private System.Windows.Forms.TextBox txtCidadeEnd;
+        private System.Windows.Forms.TextBox txtLogradouroEnd;
+        private System.Windows.Forms.TextBox txtNumeroEnd;
+        private System.Windows.Forms.TextBox txtBairroEnd;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -577,11 +591,12 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dtpDataNasc;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbUfEnd;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNumeroTel;
         private System.Windows.Forms.ComboBox cmbTipoTel;
+        private System.Windows.Forms.Button btnOlhoSenha;
     }
 }
