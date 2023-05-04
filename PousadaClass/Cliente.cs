@@ -75,6 +75,35 @@ namespace PousadaClass
 
         }
 
+        // ---------------------------------- INSERIR --------------------------------------
+        public void Inserir()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "insert clientes (nome,cpf, rg, senha, email)" +
+              "values (@nome, @cpf, @rg,@senha,@email) ";
+            cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
+            cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = Cpf;
+            cmd.Parameters.Add("@rg", MySqlDbType.VarChar).Value = Rg;
+            cmd.Parameters.Add("@senha", MySqlDbType.VarChar).Value = Senha;
+            cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = Email;
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "select @@identity";
+            // recupera o id na Propriedade
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+/*            foreach (var telefone in Telefones)
+            {
+                telefone.Inserir(Id);
+            }
+            foreach (var endereco in Enderecos)
+            {
+                endereco.Inserir(Id);
+            }*/
+            // fecha  a conexão
+            Banco.Fechar(cmd);
+
+        }
+
 
 
         // ----------------------------------- ATUALIZAR -------------------------------------
@@ -92,22 +121,12 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
-        // ---------------------------------- EXCLUIR ---------------------------------------
+        // ---------------------------------- OBTER POR ID ---------------------------------------
 
-<<<<<<< HEAD
+
         public static Cliente ObterPorId(int id)
-=======
-        /// <summary>
-        /// Excluindo usuarios
-        /// </summary>
-        /// <param name="_id"></param>
-        /// <returns></returns>
-        public bool Excluir(int _id)
->>>>>>> 8a8e50be876de8094442ae6380bfc4b1dd228ced
         {
-            bool confirma = false;
             var cmd = Banco.Abrir();
-<<<<<<< HEAD
             Cliente cliente = null;
             cmd.CommandText = "select * from clientes where id = @id";
             cmd.Parameters.AddWithValue("@id", id);
@@ -123,15 +142,6 @@ namespace PousadaClass
                     );
             }
             return cliente;
-=======
-            cmd.CommandText = "delete from cliente where id = " + _id;
-            if (cmd.ExecuteNonQuery() > 0)
-            {
-                confirma = true;
-            }
-            Banco.Fechar(cmd);
-            return confirma;
->>>>>>> 8a8e50be876de8094442ae6380bfc4b1dd228ced
         }
         // --------------------------------- Listar Clientes ---------------------------------
       
@@ -153,20 +163,6 @@ namespace PousadaClass
             }
             Banco.Fechar(cmd);
             return lista;
-        }
-        // ----------------------------------- ATUALIZAR -------------------------------------
-        /// <summary>
-        /// Atualizando usuarios
-        /// </summary>
-        public void Atualizar()
-        {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "update cliente set nome = @nome where id = @id";
-            cmd.Parameters.AddWithValue("@id", Id);
-            cmd.Parameters.AddWithValue("@nome", Nome);
-            cmd.ExecuteNonQuery();
-            Banco.Fechar(cmd);
         }
 
         // ---------------------------------- ARQUIVAR ---------------------------------------
