@@ -125,6 +125,65 @@ namespace PousadaClass
                     );
             }
         }
+        // --------------------------------- LISTAR USUARIOS ---------------------------------
+        /// <summary>
+        /// Listando os usuarios
+        /// </summary>
+        /// <returns></returns>
+        public static List<Cliente> Listar()
+        {
+            List<Cliente> lista = new List<Cliente>();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from clientes";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new Cliente(
+                dr.GetInt32(0),
+                dr.GetString(1),
+                dr.GetString(2),
+                dr.GetString(3),
+                dr.GetDateTime(4),
+                dr.GetBoolean(5)));
+            }
+            Banco.Fechar(cmd);
+            return lista;
+        }
+        // ----------------------------------- ATUALIZAR -------------------------------------
+        /// <summary>
+        /// Atualizando usuarios
+        /// </summary>
+        public void Atualizar()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "update cliente set nome = @nome where id = @id";
+            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.Parameters.AddWithValue("@nome", Nome);
+            cmd.ExecuteNonQuery();
+            Banco.Fechar(cmd);
+        }
+
+        // ---------------------------------- EXCLUIR ---------------------------------------
+
+        /// <summary>
+        /// Excluindo usuarios
+        /// </summary>
+        /// <param name="_id"></param>
+        /// <returns></returns>
+        public bool Excluir(int _id)
+        {
+            bool confirma = false;
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "delete from cliente where id = " + _id;
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                confirma = true;
+            }
+            Banco.Fechar(cmd);
+            return confirma;
+        }
     }
 }
 

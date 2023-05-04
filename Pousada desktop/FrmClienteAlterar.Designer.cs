@@ -1,6 +1,6 @@
 ﻿namespace Pousada_desktop
 {
-    partial class FrmCliente
+    partial class FrmClienteAlterar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // FrmCliente
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1207, 834);
-            this.Name = "FrmCliente";
-            this.Text = "FrmCliente";
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "FrmClienteAlterar";
         }
 
         #endregion
