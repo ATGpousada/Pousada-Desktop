@@ -46,6 +46,9 @@ namespace Pousada_desktop
             dtpDataNasc.CustomFormat = "dd/MM/yyyy";
         }
 
+        /// <summary>
+        /// Carrega do Banco de Dados todos os cargos cadastrados.
+        /// </summary>
         private void CarregaCargo()
         {
             cmbCargo.DataSource = Cargo.Listar();
@@ -55,7 +58,7 @@ namespace Pousada_desktop
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (txtNome.Text.Length > 0 && txtSenha.Text.Length > 0)
+            if (txtNome.Text.Length > 0 && txtSenha.Text.Length > 0 && txtRg.Text.Length > 0 && txtCpf.Text.Length > 0)
             {
                 List<FuncionarioEndereco> Enderecos = new List<FuncionarioEndereco>();
                 List<FuncionarioTelefone> Telefones = new List<FuncionarioTelefone>();
@@ -67,15 +70,27 @@ namespace Pousada_desktop
 
                     Telefones = new List<FuncionarioTelefone>();
                     Telefones.Add(new FuncionarioTelefone(cmbTipoTel.Text, txtNumeroTel.Text));
+
+                    if (txtNumeroTel2.Text.Length > 0 && cmbTipoTel2.Text.Length > 0)
+                    {
+                        Telefones.Add(new FuncionarioTelefone(cmbTipoTel2.Text, txtNumeroTel2.Text));
+                        txtNumeroTel2.Clear(); cmbTipoTel2.Text = "";
+                    }
                 }
 
                 Funcionario func = new Funcionario(
                     txtNome.Text, dtpDataNasc.Value, txtCpf.Text, txtRg.Text, Convert.ToDouble(txtSalario.Text), txtEmail.Text, txtSenha.Text, cmbPeriodo.Text, Cargo.ObterPorId(Convert.ToInt32(cmbCargo.SelectedValue)), Enderecos, Telefones);
 
                 func.Inserir();
-                txtNome.Clear(); txtCpf.Clear(); txtRg.Clear(); txtSalario.Clear(); txtSenha.Clear();
+                txtNome.Clear(); txtCpf.Clear(); txtRg.Clear(); txtSalario.Clear(); txtSenha.Clear(); txtEmail.Clear();
                 txtLogradouroEnd.Clear(); txtNumeroEnd.Clear(); txtCepEnd.Clear(); txtBairroEnd.Clear(); txtCidadeEnd.Clear();
                 txtNumeroTel.Clear();
+
+                labelNumero.Visible = false;
+                labelTipo.Visible = false;
+                txtNumeroTel2.Visible = false;
+                cmbTipoTel2.Visible = false;
+                btnAdicionarNumero.Enabled = false;
                 MessageBox.Show("Funcionario Cadastrado com Sucesso!");
             }
             else
@@ -94,6 +109,30 @@ namespace Pousada_desktop
         private void btnOlhoSenha_Click(object sender, EventArgs e)
         {
             txtSenha.UseSystemPasswordChar = !txtSenha.UseSystemPasswordChar;
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAdicionarNumero_Click(object sender, EventArgs e)
+        {
+            labelNumero.Visible = true;
+            labelTipo.Visible = true;
+            txtNumeroTel2.Visible = true;
+            cmbTipoTel2.Visible = true;
+        }
+
+        private void txtNumeroTel_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNumeroTel.Text.Length > 0)
+            {
+                btnAdicionarNumero.Enabled = true;
+            }
+        }
+
+        private void cmbTipoTel_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;  // versão --> 8.0.33
 
 namespace PousadaClass
 {
-   public class Cliente
+    public class Cliente
     {
 
         // ----------- Atributos -----------------
@@ -34,12 +34,12 @@ namespace PousadaClass
         public List<ClienteEndereco> Enderecos { get; set; }
 
         // --------- Metodos Construtores -----------------
-        public Cliente (){ }
+        public Cliente() { }
 
         public Cliente(int id, string nome, string cpf, string rg, string senha, string email, string recupera, DateTime arquivar)
         {
 
-         // ----------  Metodo Construtor com ID ---------------------
+            // ----------  Metodo Construtor com ID ---------------------
 
             Id = id;
             Nome = nome;
@@ -123,7 +123,8 @@ namespace PousadaClass
                 dr.GetString(4),
                 dr.GetString(5)
                     );
-                }
             }
         }
     }
+}
+

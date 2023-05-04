@@ -37,8 +37,12 @@ namespace Pousada_desktop
                 btnConsultar.Text = "Consultar";
                 var funcionario = Funcionario.ObterPorId(int.Parse(txtId.Text));
                 var endereco = FuncionarioEndereco.ObterPorIdForeign(int.Parse(txtId.Text));
-                if (funcionario.Id > 0)
+
+                if (funcionario == null)
+                    MessageBox.Show("Não há um ID cadastrado com este numero");
+                else
                 {
+                    // Retorna dados pessoais do funcionario
                     txtNome.Text = funcionario.Nome;
                     txtEmail.Text = funcionario.Email;
                     cmbPeriodo.Text = funcionario.Periodo1;
@@ -47,6 +51,8 @@ namespace Pousada_desktop
                     txtRg.Text = funcionario.Rg;
                     txtSalario.Text = funcionario.Salario.ToString();
                     txtCpf.Text = funcionario.Cpf;
+
+                    // Retorna endereço do funcionario
                     txtLogradouro.Text = endereco.Logradouro;
                     txtNumeroEnd.Text = endereco.Numero;
                     txtCidadeEnd.Text = endereco.Cidade;
@@ -73,6 +79,19 @@ namespace Pousada_desktop
             cmbCargo.DataSource = Cargo.Listar();
             cmbCargo.ValueMember = "Id";
             cmbCargo.DisplayMember = "NOME";
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
