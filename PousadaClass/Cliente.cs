@@ -71,7 +71,7 @@ namespace PousadaClass
         /// </summary>
         /// 
 
-        public void Inserir()
+/*        public void Inserir()
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
@@ -124,7 +124,7 @@ namespace PousadaClass
                 dr.GetString(5)
                     );
             }
-        }
+        }*/
     }
 }
 

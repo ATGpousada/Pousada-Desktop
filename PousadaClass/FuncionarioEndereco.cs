@@ -87,18 +87,17 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
-        public void Alterar()
+        public void Alterar(int id)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "update enderecos_func set logradouro = @logradouro, numero = @numero, cep = @cep, bairro = @bairro, cidade = @cidade" +
-                " uf = @uf where id = @id)";
+            cmd.CommandText = "update enderecos_func set logradouro = @logradouro, numero = @numero, cep = @cep, bairro = @bairro, cidade = @cidade," +
+                " uf = @uf where funcionario_id = " + id;
             cmd.Parameters.Add("@logradouro", MySqlDbType.VarChar).Value = Logradouro;
             cmd.Parameters.Add("@numero", MySqlDbType.VarChar).Value = Numero;
             cmd.Parameters.Add("@cep", MySqlDbType.VarChar).Value = Cep;
             cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = Bairro;
             cmd.Parameters.Add("@cidade", MySqlDbType.VarChar).Value = Cidade;
             cmd.Parameters.Add("@uf", MySqlDbType.VarChar).Value = Uf;
-            cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = Id;
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }
