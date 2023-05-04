@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Pousada_desktop
 {
-    public partial class FrmCliente : Form
+    public partial class FrmClienteListar : Form
     {
-        public FrmCliente()
+        public FrmClienteListar()
         {
             InitializeComponent();
         }
