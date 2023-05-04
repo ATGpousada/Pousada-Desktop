@@ -59,13 +59,12 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
-        public void Alterar()
+        public void Alterar(int id)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "update telefones_func set tipo = @tipo, tel = @tel where id = @id";
+            cmd.CommandText = "update telefones_func set tipo = @tipo, tel = @tel where funcionario_id = " + id;
             cmd.Parameters.Add("@tipo", MySqlDbType.VarChar).Value = Tipo;
             cmd.Parameters.Add("@tel", MySqlDbType.VarChar).Value = Telefone;
-            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = Id;
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }
@@ -110,6 +109,24 @@ namespace PousadaClass
             }
             Banco.Fechar(cmd);
             return lista;
+        }
+
+        public static FuncionarioTelefone ObterPorIdForeign(int id)
+        {
+            var cmd = Banco.Abrir();
+            FuncionarioTelefone endereco = null;
+            cmd.CommandText = "select id, tipo, tel from telefones_func where funcionario_id = " + id;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                endereco = new FuncionarioTelefone(
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2)
+                        );
+            }
+            Banco.Fechar(cmd);
+            return endereco;
         }
     }
 }

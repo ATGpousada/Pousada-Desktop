@@ -25,18 +25,19 @@ namespace Pousada_desktop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (btnConsultar.Text == "Consultar")
+            if (btnConsultar.Text == "CONSULTAR")
             {
-                txtId.ReadOnly = false;
+                txtId.Enabled = true;
                 txtId.Focus();
-                btnConsultar.Text = "Obter";
+                btnConsultar.Text = "OBTER";
             }
             else if (txtId.Text != String.Empty)
                 {
-                txtId.ReadOnly = true;
-                btnConsultar.Text = "Consultar";
+                txtId.Enabled = false;
+                btnConsultar.Text = "CONSULTAR";
                 var funcionario = Funcionario.ObterPorId(int.Parse(txtId.Text));
                 var endereco = FuncionarioEndereco.ObterPorIdForeign(int.Parse(txtId.Text));
+                var telefone = FuncionarioTelefone.ObterPorIdForeign(int.Parse(txtId.Text));
 
                 if (funcionario == null)
                     MessageBox.Show("Não há um ID cadastrado com este numero");
@@ -53,12 +54,29 @@ namespace Pousada_desktop
                     txtCpf.Text = funcionario.Cpf;
 
                     // Retorna endereço do funcionario
-                    txtLogradouro.Text = endereco.Logradouro;
+                    txtLogradouroEnd.Text = endereco.Logradouro;
                     txtNumeroEnd.Text = endereco.Numero;
                     txtCidadeEnd.Text = endereco.Cidade;
                     txtCepEnd.Text = endereco.Cep;
                     txtBairroEnd.Text = endereco.Bairro;
                     cmbUfEnd.Text = endereco.Uf;
+
+                    // Retorna telefone do funcionario
+                    txtNumeroTel.Text = telefone.Telefone;
+                    cmbTipoTel.Text = telefone.Tipo;
+
+
+/*                      Pesquisa de segundo telefone
+ *                      
+                        txtNumeroTel2.Text = telefone.Telefone;
+                        cmbTipoTel2.Text = telefone.Tipo;
+                        labelNumero.Visible = true;
+                        labelTipo.Visible = true;
+                        txtNumeroTel2.Visible = true;
+                        cmbTipoTel2.Visible = true;
+                        txtNumeroTel2.Visible = true;
+                        cmbTipoTel2.Visible = true;*/
+      
                     btnAlterar.Enabled = !btnAlterar.Enabled;
                 }
             }
@@ -93,5 +111,28 @@ namespace Pousada_desktop
                 e.Handled = true;
             }
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+            List<FuncionarioEndereco> Enderecos = new List<FuncionarioEndereco>();
+            List<FuncionarioTelefone> Telefones = new List<FuncionarioTelefone>();
+
+            Enderecos = new List<FuncionarioEndereco>();
+            Enderecos.Add(new FuncionarioEndereco(txtLogradouroEnd.Text, txtNumeroEnd.Text, txtCepEnd.Text, txtBairroEnd.Text, txtCidadeEnd.Text, cmbUfEnd.Text));
+
+            Telefones = new List<FuncionarioTelefone>();
+            Telefones.Add(new FuncionarioTelefone(cmbTipoTel.Text, txtNumeroTel.Text));
+
+            if(txtNumeroTel2.Text.Length > 0)
+            {
+                Telefones.Add(new FuncionarioTelefone(cmbTipoTel2.Text, txtNumeroTel2.Text));
+            }
+
+            Funcionario func = new Funcionario(
+            txtNome.Text, dtpDataNasc.Value, txtCpf.Text, txtRg.Text, Convert.ToDouble(txtSalario.Text), txtEmail.Text, cmbPeriodo.Text, Cargo.ObterPorId(Convert.ToInt32(cmbCargo.SelectedValue)), Enderecos, Telefones);
+
+            func.Alterar(Convert.ToInt32(txtId.Text));
+            }
     }
 }

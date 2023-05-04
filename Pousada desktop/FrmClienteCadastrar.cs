@@ -36,5 +36,10 @@ namespace Pousada_desktop
         {
 
         }
+
+        private void FrmClienteCadastrar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

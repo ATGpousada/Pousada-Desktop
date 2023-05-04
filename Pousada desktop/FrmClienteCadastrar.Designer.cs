@@ -399,7 +399,7 @@
             this.cmbTipoTelcli.Size = new System.Drawing.Size(139, 26);
             this.cmbTipoTelcli.TabIndex = 25;
             // 
-            // FrmCliente
+            // FrmClienteCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -408,8 +408,9 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FrmCliente";
+            this.Name = "FrmClienteCadastrar";
             this.Text = "FrmCliente";
+            this.Load += new System.EventHandler(this.FrmClienteCadastrar_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

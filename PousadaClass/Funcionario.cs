@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
@@ -88,6 +89,20 @@ namespace PousadaClass
             Telefones = telefone;
         }
 
+        public Funcionario(string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string periodo, Cargo cargo, List<FuncionarioEndereco> endereco, List<FuncionarioTelefone> telefone)
+        {
+            Nome = nome;
+            Data_nasc = data_nasc;
+            Cpf = cpf;
+            Rg = rg;
+            Salario = salario;
+            Email = email;
+            Periodo1 = periodo;
+            Cargo = cargo;
+            Enderecos = endereco;
+            Telefones = telefone;
+        }
+
         public Funcionario(int _id)
         {
             Telefones = FuncionarioTelefone.ListarPorFuncionario(_id);
@@ -123,6 +138,32 @@ namespace PousadaClass
             foreach (var endereco in Enderecos)
             {
                 endereco.Inserir(Id);
+            }
+            Banco.Fechar(cmd);
+        }
+
+        public void Alterar(int id)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update funcionarios set nome = @nome, data_nasc = @data, cpf = @cpf, rg = @rg, salario = @salario, email = @email, " +
+                "periodo = @periodo, cargos_id = @cargo where id = " + id;
+            cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
+            cmd.Parameters.Add("@data", MySqlDbType.DateTime).Value = Data_nasc;
+            cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = Cpf;
+            cmd.Parameters.Add("@rg", MySqlDbType.VarChar).Value = Rg;
+            cmd.Parameters.Add("@salario", MySqlDbType.VarChar).Value = Salario;
+            cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = Email;
+            cmd.Parameters.Add("@periodo", MySqlDbType.VarChar).Value = Periodo1;
+            cmd.Parameters.Add("@cargo", MySqlDbType.Int32).Value = Cargo.Id;
+            cmd.ExecuteNonQuery();
+
+            foreach (FuncionarioTelefone telefone in Telefones)
+            {
+                telefone.Alterar(id);
+            }
+            foreach (FuncionarioEndereco endereco in Enderecos)
+            {
+                endereco.Alterar(id);
             }
             Banco.Fechar(cmd);
         }
