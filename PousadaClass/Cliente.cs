@@ -29,7 +29,7 @@ namespace PousadaClass
         public string Senha { get => senha; set => senha = value; }
         public string Email { get => email; set => email = value; }
         public string Recupera { get => recupera; set => recupera = value; }
-        public DateTime Arquivar { get => arquivar; set => arquivar = value; }
+        public DateTime Arquivar_EM { get => arquivar; set => arquivar = value; }
         public List<ClienteTelefone> Telefones { get; set; }
         public List<ClienteEndereco> Enderecos { get; set; }
 
@@ -48,7 +48,7 @@ namespace PousadaClass
             Senha = senha;
             Email = email;
             Recupera = recupera;
-            Arquivar = arquivar;
+            Arquivar_EM = arquivar;
         }
 
         public Cliente(string nome, string cpf, string rg, string senha, string email, string recupera, DateTime arquivar)
@@ -62,8 +62,19 @@ namespace PousadaClass
             Senha = senha;
             Email = email;
             Recupera = recupera;
-            Arquivar = arquivar;
+            Arquivar_EM = arquivar;
         }
+        public Cliente(string nome, string cpf, string rg, string senha, string email)
+        {
+            Nome = nome;
+            Cpf = cpf;
+            Rg = rg;
+            Senha = senha;
+            Email = email;
+   
+
+        }
+
 
         // --------------------------- INSERINDO --------------------------------
         /// <summary>
@@ -100,23 +111,16 @@ namespace PousadaClass
         }
         // ------------------------------- OBTENDO POR ID ------------------------ 
 
-        /// <summary>
-        ///  Obtendo o id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         public static Cliente ObterPorId(int id)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
+            Cliente cliente = null;
             cmd.CommandText = "select * from clientes where id = @id";
             cmd.Parameters.AddWithValue("@id", id);
             var dr = cmd.ExecuteReader();
-            Cliente cliente = null;
             while (dr.Read())
             {
                 cliente = new Cliente(
-                dr.GetInt32(0),
                 dr.GetString(1),
                 dr.GetString(2),
                 dr.GetString(3),
@@ -124,12 +128,10 @@ namespace PousadaClass
                 dr.GetString(5)
                     );
             }
+            return cliente;
         }
-        // --------------------------------- LISTAR USUARIOS ---------------------------------
-        /// <summary>
-        /// Listando os usuarios
-        /// </summary>
-        /// <returns></returns>
+        // --------------------------------- Listar Clientes ---------------------------------
+      
         public static List<Cliente> Listar()
         {
             List<Cliente> lista = new List<Cliente>();
@@ -140,12 +142,11 @@ namespace PousadaClass
             while (dr.Read())
             {
                 lista.Add(new Cliente(
-                dr.GetInt32(0),
                 dr.GetString(1),
                 dr.GetString(2),
                 dr.GetString(3),
-                dr.GetDateTime(4),
-                dr.GetBoolean(5)));
+                dr.GetString(4),
+                dr.GetString(5)));
             }
             Banco.Fechar(cmd);
             return lista;
@@ -165,24 +166,17 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
-        // ---------------------------------- EXCLUIR ---------------------------------------
+        // ---------------------------------- ARQUIVAR ---------------------------------------
 
-        /// <summary>
-        /// Excluindo usuarios
-        /// </summary>
-        /// <param name="_id"></param>
-        /// <returns></returns>
-        public bool Excluir(int _id)
+        public void Arquivar()
         {
-            bool confirma = false;
             var cmd = Banco.Abrir();
-            cmd.CommandText = "delete from cliente where id = " + _id;
-            if (cmd.ExecuteNonQuery() > 0)
-            {
-                confirma = true;
-            }
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "update clientes set arquivar = default where id = @id";
+            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
-            return confirma;
+
         }
     }
 }

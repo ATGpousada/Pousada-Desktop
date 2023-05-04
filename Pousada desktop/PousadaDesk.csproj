@@ -131,6 +131,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmClienteAlterar.resx">
+      <DependentUpon>FrmClienteAlterar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmClienteCadastrar.resx">
       <DependentUpon>FrmClienteCadastrar.cs</DependentUpon>
     </EmbeddedResource>

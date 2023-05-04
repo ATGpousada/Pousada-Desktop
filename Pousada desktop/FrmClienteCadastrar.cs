@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Pousada_desktop
 {
-    public partial class FrmCliente : Form
+    public partial class FrmClienteCadastrar : Form
     {
-        public FrmCliente()
+        public FrmClienteCadastrar()
         {
             InitializeComponent();
         }
@@ -23,6 +23,16 @@ namespace Pousada_desktop
         }
 
         private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCepEnd_TextChanged(object sender, EventArgs e)
         {
 
         }
