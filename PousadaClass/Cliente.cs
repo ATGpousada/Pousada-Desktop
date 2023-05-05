@@ -91,14 +91,14 @@ namespace PousadaClass
             cmd.CommandText = "select @@identity";
             // recupera o id na Propriedade
             Id = Convert.ToInt32(cmd.ExecuteScalar());
-/*            foreach (var telefone in Telefones)
+            foreach (var telefone in Telefones)
             {
                 telefone.Inserir(Id);
             }
             foreach (var endereco in Enderecos)
             {
                 endereco.Inserir(Id);
-            }*/
+            }
             // fecha  a conexão
             Banco.Fechar(cmd);
 
