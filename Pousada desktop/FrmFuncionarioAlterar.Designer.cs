@@ -73,6 +73,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnAdicionarNumero = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbDados.SuspendLayout();
@@ -126,6 +127,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnAdicionarNumero);
             this.groupBox2.Controls.Add(this.labelTipo);
             this.groupBox2.Controls.Add(this.labelNumero);
             this.groupBox2.Controls.Add(this.cmbTipoTel2);
@@ -654,6 +656,20 @@
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnAdicionarNumero
+            // 
+            this.btnAdicionarNumero.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAdicionarNumero.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAdicionarNumero.Location = new System.Drawing.Point(302, 25);
+            this.btnAdicionarNumero.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdicionarNumero.Name = "btnAdicionarNumero";
+            this.btnAdicionarNumero.Size = new System.Drawing.Size(65, 58);
+            this.btnAdicionarNumero.TabIndex = 52;
+            this.btnAdicionarNumero.Text = "+";
+            this.btnAdicionarNumero.UseVisualStyleBackColor = false;
+            this.btnAdicionarNumero.Visible = false;
+            this.btnAdicionarNumero.Click += new System.EventHandler(this.btnAdicionarNumero_Click);
+            // 
             // FrmFuncionarioAlterar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -731,5 +747,6 @@
         private System.Windows.Forms.Label labelNumero;
         private System.Windows.Forms.ComboBox cmbTipoTel2;
         private System.Windows.Forms.TextBox txtNumeroTel2;
+        private System.Windows.Forms.Button btnAdicionarNumero;
     }
 }

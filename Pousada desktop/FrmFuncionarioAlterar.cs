@@ -21,6 +21,9 @@ namespace Pousada_desktop
         private string TipoAntigo;
         private string NumeroAntigo2;
         private string TipoAntigo2;
+
+        // Varivel para saber se o telefone vai ser alterado ou inserido
+        private int add;
         public FrmFuncionarioAlterar()
         {
             InitializeComponent();
@@ -122,6 +125,9 @@ namespace Pousada_desktop
                         cmbTipoTel2.Visible = true;
                         txtNumeroTel2.Visible = true;
                         cmbTipoTel2.Visible = true;
+
+                        // Confirmação que telefone irá alterar
+                        add = 2;
                     }
                     else
                     {
@@ -131,6 +137,12 @@ namespace Pousada_desktop
                         cmbTipoTel2.Visible = false;
                         txtNumeroTel2.Visible = false;
                         cmbTipoTel2.Visible = false;
+                    }
+
+                    // Caso não possua nenhum valor no Segundo TextBox de telefone, aparece 1 botão para adicionar
+                    if (txtNumeroTel2.Text.Length == 0 && cmbTipoTel2.Text.Length == 0)
+                    {
+                        btnAdicionarNumero.Visible = true;
                     }
 
                     btnAlterar.Enabled = true;
@@ -146,6 +158,7 @@ namespace Pousada_desktop
         private void FrmFuncionarioAlterar_Load(object sender, EventArgs e)
         {
             CarregaCargo();
+            add = 0;
         }
 
         /// <summary>
@@ -216,10 +229,16 @@ namespace Pousada_desktop
                     tel.Alterar(cmbTipoTel.Text, txtNumeroTel.Text, Convert.ToInt32(txtId.Text), NumeroAntigo, TipoAntigo);
 
                     // Como citado acima, caso possua 2 telefones alterará o segundo nesse IF 
-                    if (txtNumeroTel2.Text.Length > 0)
+                    if (txtNumeroTel2.Text.Length > 0 && add == 2) // Se passar pelo IF de telefone existente, apenas altera se não ele irá inserir
                     {
                         tel.Alterar(cmbTipoTel2.Text, txtNumeroTel2.Text, Convert.ToInt32(txtId.Text), NumeroAntigo2, TipoAntigo2);
                         txtNumeroTel2.Clear();  cmbTipoTel2.Items.Add(""); cmbTipoTel2.SelectedIndex = -1;
+                    }
+                    else if(add == 1)
+                    {
+                        tel.InserirTelExistente(Convert.ToInt32(txtId.Text), txtNumeroTel2.Text, cmbTipoTel2.Text);
+                        txtNumeroTel2.Clear(); cmbTipoTel2.Items.Add(""); cmbTipoTel2.SelectedIndex = -1;
+                        break;
                     }
                 }
                 MessageBox.Show("Funcionario alterado com sucesso!");
@@ -245,6 +264,17 @@ namespace Pousada_desktop
                 txtId.Clear();
             }else
                 txtId.Enabled = false;
+        }
+
+        private void btnAdicionarNumero_Click(object sender, EventArgs e)
+        {
+            labelNumero.Visible = true;
+            labelTipo.Visible = true;
+            txtNumeroTel2.Visible = true;
+            cmbTipoTel2.Visible = true;
+            txtNumeroTel2.Visible = true;
+            cmbTipoTel2.Visible = true;
+            add = 1;
         }
     }
 }

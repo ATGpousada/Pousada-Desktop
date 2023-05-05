@@ -59,6 +59,14 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
+        public void InserirTelExistente(int _id, string tel, string tipo)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "insert telefones_func (tipo, tel, funcionario_ID) values ('" + tipo + "', '" + tel + "', " + _id + ")";
+            cmd.ExecuteNonQuery();
+            Banco.Fechar(cmd);
+        }
+
         public void Alterar(string tipo, string tel, int id, string nAntigo, string tAntigo)
         {
             var cmd = Banco.Abrir();
