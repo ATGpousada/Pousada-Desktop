@@ -81,16 +81,6 @@ namespace Pousada_desktop
                     }
                 }
 
-
-                var campos = new Funcionario();
-                campos.BuscarCampoUnico(txtEmail.Text, txtCpf.Text, txtRg.Text);
-
-                if (campos != null)
-                {
-                    MessageBox.Show("A");
-                }
-
-
                 Funcionario func = new Funcionario(
                     txtNome.Text, dtpDataNasc.Value, txtCpf.Text, txtRg.Text, Convert.ToDouble(txtSalario.Text), txtEmail.Text, txtSenha.Text, cmbPeriodo.Text, Cargo.ObterPorId(Convert.ToInt32(cmbCargo.SelectedValue)), Enderecos, Telefones);
 
