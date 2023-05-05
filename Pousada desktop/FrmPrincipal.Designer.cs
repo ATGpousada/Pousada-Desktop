@@ -38,6 +38,8 @@
             this.quartoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdastarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserirCargoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +50,8 @@
             this.cadastroFuncionarioToolStripMenuItem,
             this.reservaToolStripMenuItem,
             this.quartoToolStripMenuItem,
-            this.clienteToolStripMenuItem});
+            this.clienteToolStripMenuItem,
+            this.configuraçõesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -112,9 +115,24 @@
             // cdastarToolStripMenuItem
             // 
             this.cdastarToolStripMenuItem.Name = "cdastarToolStripMenuItem";
-            this.cdastarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cdastarToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.cdastarToolStripMenuItem.Text = "C&adastrar";
             this.cdastarToolStripMenuItem.Click += new System.EventHandler(this.cdastarToolStripMenuItem_Click);
+            // 
+            // configuraçõesToolStripMenuItem
+            // 
+            this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inserirCargoToolStripMenuItem});
+            this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
+            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.configuraçõesToolStripMenuItem.Text = "C&onfigurações";
+            // 
+            // inserirCargoToolStripMenuItem
+            // 
+            this.inserirCargoToolStripMenuItem.Name = "inserirCargoToolStripMenuItem";
+            this.inserirCargoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inserirCargoToolStripMenuItem.Text = "&Cargo";
+            this.inserirCargoToolStripMenuItem.Click += new System.EventHandler(this.inserirCargoToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -145,6 +163,8 @@
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cdastarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inserirCargoToolStripMenuItem;
     }
 }
 

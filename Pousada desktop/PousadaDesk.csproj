@@ -123,6 +123,12 @@
     <Compile Include="FrmFuncionarioListar.Designer.cs">
       <DependentUpon>FrmFuncionarioListar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCargo.Designer.cs">
+      <DependentUpon>FrmCargo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFuncionarioListar.resx">
       <DependentUpon>FrmFuncionarioListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCargo.resx">
+      <DependentUpon>FrmCargo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

@@ -109,13 +109,12 @@ namespace PousadaClass
         /// <summary>
         /// Atualizando o Cargo do Funcionario no Banco de dados
         /// </summary>
-        public void Atualizar()
+        public void Atualizar(int id)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "update cargos set nome = @nome, descricao = @desc where id = @id";
+            cmd.CommandText = "update cargos set nome = @nome, descricao = @desc where id = " + id;
             cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
             cmd.Parameters.Add("@desc", MySqlDbType.VarChar).Value = Descricao;
-            cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = Id;
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }

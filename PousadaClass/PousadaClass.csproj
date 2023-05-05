@@ -92,6 +92,7 @@
     <Compile Include="FuncionarioTelefone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reserva.cs" />
+    <Compile Include="Status.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
