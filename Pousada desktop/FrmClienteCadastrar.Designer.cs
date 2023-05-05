@@ -196,7 +196,7 @@
             // 
             this.cmbUfEndcli.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cmbUfEndcli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUfEndcli.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmbUfEndcli.ForeColor = System.Drawing.SystemColors.InfoText;
             this.cmbUfEndcli.FormattingEnabled = true;
             this.cmbUfEndcli.Items.AddRange(new object[] {
             "AC",
@@ -311,6 +311,7 @@
             this.btnAdicionarNumerocli.TabIndex = 46;
             this.btnAdicionarNumerocli.Text = "+";
             this.btnAdicionarNumerocli.UseVisualStyleBackColor = false;
+            this.btnAdicionarNumerocli.Click += new System.EventHandler(this.btnAdicionarNumerocli_Click);
             // 
             // labelTipo
             // 
@@ -386,6 +387,7 @@
             this.txtNumeroTelcli.Name = "txtNumeroTelcli";
             this.txtNumeroTelcli.Size = new System.Drawing.Size(137, 24);
             this.txtNumeroTelcli.TabIndex = 26;
+            this.txtNumeroTelcli.TextChanged += new System.EventHandler(this.txtNumeroTelcli_TextChanged);
             // 
             // cmbTipoTelcli
             // 

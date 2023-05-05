@@ -38,6 +38,8 @@
             this.quartoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdastarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterarConsultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,7 +106,9 @@
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cdastarToolStripMenuItem});
+            this.cdastarToolStripMenuItem,
+            this.alterarConsultarToolStripMenuItem1,
+            this.listarToolStripMenuItem1});
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.clienteToolStripMenuItem.Text = "&Cliente";
@@ -115,6 +119,18 @@
             this.cdastarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cdastarToolStripMenuItem.Text = "C&adastrar";
             this.cdastarToolStripMenuItem.Click += new System.EventHandler(this.cdastarToolStripMenuItem_Click);
+            // 
+            // alterarConsultarToolStripMenuItem1
+            // 
+            this.alterarConsultarToolStripMenuItem1.Name = "alterarConsultarToolStripMenuItem1";
+            this.alterarConsultarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.alterarConsultarToolStripMenuItem1.Text = "Alterar/Consultar";
+            // 
+            // listarToolStripMenuItem1
+            // 
+            this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
+            this.listarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.listarToolStripMenuItem1.Text = "Listar";
             // 
             // FrmPrincipal
             // 
@@ -145,6 +161,8 @@
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cdastarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alterarConsultarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem1;
     }
 }
 

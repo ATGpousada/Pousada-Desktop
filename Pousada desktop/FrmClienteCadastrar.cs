@@ -87,7 +87,23 @@ namespace Pousada_desktop
                 MessageBox.Show("Cliente Cadastrado com Sucesso!");
             }
             else
-                MessageBox.Show("Cliente não cadastrado por falta de informações.(Por favor preencha todos os campos)");
+                MessageBox.Show("Cliente não cadastrado por falta de informações.(Por favor preencha todos os campos.)");
+        }
+
+        private void btnAdicionarNumerocli_Click(object sender, EventArgs e)
+        {
+            labelNumero.Visible = true;
+            labelTipo.Visible = true;
+            txtNumeroTel2cli.Visible = true;
+            cmbTipoTel2cli.Visible = true;
+        }
+
+        private void txtNumeroTelcli_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNumeroTelcli.Text.Length >0)
+            {
+                btnAdicionarNumerocli.Enabled = true;
+            }
         }
     }
 }
