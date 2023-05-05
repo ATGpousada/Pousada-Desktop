@@ -103,6 +103,19 @@ namespace PousadaClass
             Telefones = telefone;
         }
 
+        public Funcionario(string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string periodo, Cargo cargo, List<FuncionarioEndereco> endereco)
+        {
+            Nome = nome;
+            Data_nasc = data_nasc;
+            Cpf = cpf;
+            Rg = rg;
+            Salario = salario;
+            Email = email;
+            Periodo1 = periodo;
+            Cargo = cargo;
+            Enderecos = endereco;
+        }
+
         public Funcionario(int _id)
         {
             Telefones = FuncionarioTelefone.ListarPorFuncionario(_id);
@@ -157,10 +170,6 @@ namespace PousadaClass
             cmd.Parameters.Add("@cargo", MySqlDbType.Int32).Value = Cargo.Id;
             cmd.ExecuteNonQuery();
 
-            foreach (FuncionarioTelefone telefone in Telefones)
-            {
-                telefone.Alterar(id);
-            }
             foreach (FuncionarioEndereco endereco in Enderecos)
             {
                 endereco.Alterar(id);

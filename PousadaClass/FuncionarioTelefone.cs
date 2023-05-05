@@ -59,12 +59,10 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
-        public void Alterar(int id)
+        public void Alterar(string tipo, string tel, int id, string nAntigo, string tAntigo)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "update telefones_func set tipo = @tipo, tel = @tel where funcionario_id = " + id;
-            cmd.Parameters.Add("@tipo", MySqlDbType.VarChar).Value = Tipo;
-            cmd.Parameters.Add("@tel", MySqlDbType.VarChar).Value = Telefone;
+            cmd.CommandText = "update telefones_func set tipo = '" + tipo + "', tel = '" + tel + "' where funcionario_id = " + id + " and tipo = '" + tAntigo + "' and tel = '" + nAntigo + "'";
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }
