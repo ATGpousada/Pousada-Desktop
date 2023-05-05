@@ -116,6 +116,13 @@ namespace PousadaClass
             Enderecos = endereco;
         }
 
+        public Funcionario(string email, string cpf, string rg)
+        {
+            Email = email;
+            Cpf = cpf;
+            Rg = rg;
+        }
+
         public Funcionario(int _id)
         {
             Telefones = FuncionarioTelefone.ListarPorFuncionario(_id);

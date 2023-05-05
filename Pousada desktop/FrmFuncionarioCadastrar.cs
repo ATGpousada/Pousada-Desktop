@@ -58,7 +58,10 @@ namespace Pousada_desktop
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (txtNome.Text.Length > 0 && txtSenha.Text.Length > 0 && txtRg.Text.Length > 0 && txtCpf.Text.Length > 0)
+            if (txtLogradouroEnd.Text.Length > 0 && txtNumeroEnd.Text.Length > 0 && txtCepEnd.Text.Length > 0 && txtBairroEnd.Text.Length > 0 &&
+                txtCidadeEnd.Text.Length > 0 && cmbUfEnd.Text.Length > 0 && cmbTipoTel.Text.Length > 0 && txtNumeroTel.Text.Length > 0 && txtSenha.Text.Length > 0 &&
+                txtNome.Text.Length > 0 && dtpDataNasc.Text.Length > 0 && txtCpf.Text.Length > 0 && txtRg.Text.Length > 0 && txtSalario.Text.Length > 0 &&
+                txtEmail.Text.Length > 0 && cmbPeriodo.Text.Length > 0)
             {
                 List<FuncionarioEndereco> Enderecos = new List<FuncionarioEndereco>();
                 List<FuncionarioTelefone> Telefones = new List<FuncionarioTelefone>();
