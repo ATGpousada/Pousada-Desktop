@@ -39,9 +39,6 @@ namespace PousadaClass
 
         public Cliente(int id, string nome, string cpf, string rg, string senha, string email, string recupera, DateTime arquivar)
         {
-
-            // ----------  Metodo Construtor com ID ---------------------
-
             Id = id;
             Nome = nome;
             Cpf = cpf;
@@ -51,6 +48,20 @@ namespace PousadaClass
             Recupera = recupera;
             Arquivar_EM = arquivar;
         }
+
+        public Cliente(int id, string nome, string cpf, string rg, string senha, string email)
+        {
+
+            // ----------  Metodo Construtor com ID ---------------------
+
+            Id = id;
+            Nome = nome;
+            Cpf = cpf;
+            Rg = rg;
+            Senha = senha;
+            Email = email;
+        }
+
 
         public Cliente(string nome, string cpf, string rg, string senha, string email, string recupera, DateTime arquivar)
         {
@@ -183,6 +194,27 @@ namespace PousadaClass
             }
             Banco.Fechar(cmd);
             return lista;
+        }
+
+
+        public static Cliente ObterPorEmail(string email)
+        {
+            var cmd = Banco.Abrir();
+            Cliente cliente = null;
+            cmd.CommandText = "select id, nome, cpf, rg, senha, email from clientes where email = '" + email + "'";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cliente = new Cliente(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2),
+                    dr.GetString(3),
+                    dr.GetString(4),
+                    dr.GetString(5));
+            }
+            Banco.Fechar(cmd);
+            return cliente;
         }
 
         // ---------------------------------- ARQUIVAR ---------------------------------------

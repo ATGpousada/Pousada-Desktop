@@ -196,7 +196,7 @@
             // 
             this.cmbUfEndcli.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cmbUfEndcli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUfEndcli.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmbUfEndcli.ForeColor = System.Drawing.SystemColors.InfoText;
             this.cmbUfEndcli.FormattingEnabled = true;
             this.cmbUfEndcli.Items.AddRange(new object[] {
             "AC",
@@ -233,17 +233,17 @@
             // 
             // txtCepEndcli
             // 
-            this.txtCepEndcli.Location = new System.Drawing.Point(348, 80);
+            this.txtCepEndcli.Location = new System.Drawing.Point(59, 82);
             this.txtCepEndcli.Name = "txtCepEndcli";
-            this.txtCepEndcli.Size = new System.Drawing.Size(119, 24);
+            this.txtCepEndcli.Size = new System.Drawing.Size(150, 24);
             this.txtCepEndcli.TabIndex = 23;
             this.txtCepEndcli.TextChanged += new System.EventHandler(this.txtCepEnd_TextChanged);
             // 
             // txtCidadeEndcli
             // 
-            this.txtCidadeEndcli.Location = new System.Drawing.Point(59, 80);
+            this.txtCidadeEndcli.Location = new System.Drawing.Point(347, 80);
             this.txtCidadeEndcli.Name = "txtCidadeEndcli";
-            this.txtCidadeEndcli.Size = new System.Drawing.Size(163, 24);
+            this.txtCidadeEndcli.Size = new System.Drawing.Size(114, 24);
             this.txtCidadeEndcli.TabIndex = 21;
             // 
             // label16
@@ -311,6 +311,7 @@
             this.btnAdicionarNumerocli.TabIndex = 46;
             this.btnAdicionarNumerocli.Text = "+";
             this.btnAdicionarNumerocli.UseVisualStyleBackColor = false;
+            this.btnAdicionarNumerocli.Click += new System.EventHandler(this.btnAdicionarNumerocli_Click);
             // 
             // labelTipo
             // 
@@ -386,6 +387,7 @@
             this.txtNumeroTelcli.Name = "txtNumeroTelcli";
             this.txtNumeroTelcli.Size = new System.Drawing.Size(137, 24);
             this.txtNumeroTelcli.TabIndex = 26;
+            this.txtNumeroTelcli.TextChanged += new System.EventHandler(this.txtNumeroTelcli_TextChanged);
             // 
             // cmbTipoTelcli
             // 

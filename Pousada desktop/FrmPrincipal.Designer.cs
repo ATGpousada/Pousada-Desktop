@@ -38,8 +38,13 @@
             this.quartoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdastarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirCargoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
+            this.alterarConsultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> 6b22a533e3ca4d8f96d3761776e00002259e688c
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,7 +112,9 @@
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cdastarToolStripMenuItem});
+            this.cdastarToolStripMenuItem,
+            this.alterarConsultarToolStripMenuItem1,
+            this.listarToolStripMenuItem1});
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.clienteToolStripMenuItem.Text = "&Cliente";
@@ -119,6 +126,7 @@
             this.cdastarToolStripMenuItem.Text = "C&adastrar";
             this.cdastarToolStripMenuItem.Click += new System.EventHandler(this.cdastarToolStripMenuItem_Click);
             // 
+<<<<<<< HEAD
             // configuraçõesToolStripMenuItem
             // 
             this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -133,6 +141,20 @@
             this.inserirCargoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.inserirCargoToolStripMenuItem.Text = "&Cargo";
             this.inserirCargoToolStripMenuItem.Click += new System.EventHandler(this.inserirCargoToolStripMenuItem_Click);
+=======
+            // alterarConsultarToolStripMenuItem1
+            // 
+            this.alterarConsultarToolStripMenuItem1.Name = "alterarConsultarToolStripMenuItem1";
+            this.alterarConsultarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.alterarConsultarToolStripMenuItem1.Text = "Alterar/Consultar";
+            this.alterarConsultarToolStripMenuItem1.Click += new System.EventHandler(this.alterarConsultarToolStripMenuItem1_Click);
+            // 
+            // listarToolStripMenuItem1
+            // 
+            this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
+            this.listarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.listarToolStripMenuItem1.Text = "Listar";
+>>>>>>> 6b22a533e3ca4d8f96d3761776e00002259e688c
             // 
             // FrmPrincipal
             // 
@@ -163,8 +185,13 @@
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cdastarToolStripMenuItem;
+<<<<<<< HEAD
         private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inserirCargoToolStripMenuItem;
+=======
+        private System.Windows.Forms.ToolStripMenuItem alterarConsultarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem1;
+>>>>>>> 6b22a533e3ca4d8f96d3761776e00002259e688c
     }
 }
 

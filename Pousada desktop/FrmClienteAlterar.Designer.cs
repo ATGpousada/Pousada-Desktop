@@ -46,11 +46,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.TxtSenhacli = new System.Windows.Forms.TextBox();
             this.Label3 = new System.Windows.Forms.Label();
             this.TxtRgcli = new System.Windows.Forms.TextBox();
             this.TxtEmailcli = new System.Windows.Forms.TextBox();
-            this.Label4 = new System.Windows.Forms.Label();
             this.TxtNomecli = new System.Windows.Forms.TextBox();
             this.Label222 = new System.Windows.Forms.Label();
             this.TxtCpfcli = new System.Windows.Forms.TextBox();
@@ -59,7 +57,7 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtclienteEmail = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
@@ -245,16 +243,16 @@
             // 
             // txtCepEndcli
             // 
-            this.txtCepEndcli.Location = new System.Drawing.Point(348, 80);
+            this.txtCepEndcli.Location = new System.Drawing.Point(344, 82);
             this.txtCepEndcli.Name = "txtCepEndcli";
-            this.txtCepEndcli.Size = new System.Drawing.Size(119, 24);
+            this.txtCepEndcli.Size = new System.Drawing.Size(138, 24);
             this.txtCepEndcli.TabIndex = 23;
             // 
             // txtCidadeEndcli
             // 
-            this.txtCidadeEndcli.Location = new System.Drawing.Point(59, 80);
+            this.txtCidadeEndcli.Location = new System.Drawing.Point(55, 80);
             this.txtCidadeEndcli.Name = "txtCidadeEndcli";
-            this.txtCidadeEndcli.Size = new System.Drawing.Size(163, 24);
+            this.txtCidadeEndcli.Size = new System.Drawing.Size(145, 24);
             this.txtCidadeEndcli.TabIndex = 21;
             // 
             // label16
@@ -262,7 +260,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label16.Location = new System.Drawing.Point(344, 57);
+            this.label16.Location = new System.Drawing.Point(341, 59);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(44, 20);
             this.label16.TabIndex = 17;
@@ -292,11 +290,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.TxtSenhacli);
             this.groupBox1.Controls.Add(this.Label3);
             this.groupBox1.Controls.Add(this.TxtRgcli);
             this.groupBox1.Controls.Add(this.TxtEmailcli);
-            this.groupBox1.Controls.Add(this.Label4);
             this.groupBox1.Controls.Add(this.TxtNomecli);
             this.groupBox1.Controls.Add(this.Label222);
             this.groupBox1.Controls.Add(this.TxtCpfcli);
@@ -310,13 +306,6 @@
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Pessoais";
-            // 
-            // TxtSenhacli
-            // 
-            this.TxtSenhacli.Location = new System.Drawing.Point(27, 129);
-            this.TxtSenhacli.Name = "TxtSenhacli";
-            this.TxtSenhacli.Size = new System.Drawing.Size(131, 26);
-            this.TxtSenhacli.TabIndex = 8;
             // 
             // Label3
             // 
@@ -338,21 +327,10 @@
             // 
             // TxtEmailcli
             // 
-            this.TxtEmailcli.Location = new System.Drawing.Point(205, 129);
+            this.TxtEmailcli.Location = new System.Drawing.Point(27, 134);
             this.TxtEmailcli.Name = "TxtEmailcli";
             this.TxtEmailcli.Size = new System.Drawing.Size(137, 26);
             this.TxtEmailcli.TabIndex = 9;
-            // 
-            // Label4
-            // 
-            this.Label4.AutoSize = true;
-            this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Label4.Location = new System.Drawing.Point(55, 106);
-            this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(65, 20);
-            this.Label4.TabIndex = 2;
-            this.Label4.Text = "SENHA";
             // 
             // TxtNomecli
             // 
@@ -366,7 +344,7 @@
             this.Label222.AutoSize = true;
             this.Label222.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label222.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Label222.Location = new System.Drawing.Point(224, 101);
+            this.Label222.Location = new System.Drawing.Point(46, 106);
             this.Label222.Name = "Label222";
             this.Label222.Size = new System.Drawing.Size(75, 25);
             this.Label222.TabIndex = 4;
@@ -411,6 +389,7 @@
             this.btnConsultar.TabIndex = 57;
             this.btnConsultar.Text = "CONSULTAR";
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnAlterar
             // 
@@ -436,12 +415,12 @@
             this.label7.TabIndex = 55;
             this.label7.Text = "EMAIL";
             // 
-            // textBox2
+            // txtclienteEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 20);
-            this.textBox2.TabIndex = 54;
+            this.txtclienteEmail.Location = new System.Drawing.Point(98, 75);
+            this.txtclienteEmail.Name = "txtclienteEmail";
+            this.txtclienteEmail.Size = new System.Drawing.Size(188, 20);
+            this.txtclienteEmail.TabIndex = 54;
             // 
             // label8
             // 
@@ -470,7 +449,7 @@
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtclienteEmail);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.groupBox3);
@@ -478,6 +457,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmClienteAlterar";
             this.Text = "FrmClienteAlterar";
+            this.Load += new System.EventHandler(this.FrmClienteAlterar_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -509,11 +489,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox TxtSenhacli;
         private System.Windows.Forms.Label Label3;
         private System.Windows.Forms.TextBox TxtRgcli;
         private System.Windows.Forms.TextBox TxtEmailcli;
-        private System.Windows.Forms.Label Label4;
         private System.Windows.Forms.TextBox TxtNomecli;
         private System.Windows.Forms.Label Label222;
         private System.Windows.Forms.TextBox TxtCpfcli;
@@ -522,7 +500,7 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtclienteEmail;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtId;
     }
