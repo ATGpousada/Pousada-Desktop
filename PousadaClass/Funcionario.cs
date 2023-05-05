@@ -230,5 +230,31 @@ namespace PousadaClass
             Banco.Fechar(cmd);
             return funcionario;
         }
+
+        public static Funcionario ObterPorEmail(string email)
+        {
+            var cmd = Banco.Abrir();
+            Funcionario funcionario = null;
+            cmd.CommandText = "select id, nome, data_nasc, cpf, rg, salario, email, senha, periodo, admissao, cargos_id from funcionarios where email = '" + email + "'";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                funcionario = new Funcionario(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetDateTime(2),
+                    dr.GetString(3),
+                    dr.GetString(4),
+                    dr.GetDouble(5),
+                    dr.GetString(6),
+                    dr.GetString(7),
+                    dr.GetString(8),
+                    dr.GetDateTime(9),
+                    Cargo.ObterPorId(dr.GetInt32(10))
+                    );
+            }
+            Banco.Fechar(cmd);
+            return funcionario;
+        }
     }
 }

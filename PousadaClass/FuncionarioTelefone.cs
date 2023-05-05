@@ -126,5 +126,23 @@ namespace PousadaClass
             Banco.Fechar(cmd);
             return endereco;
         }
+
+        public static FuncionarioTelefone ObterPorIdForeign2(int id)
+        {
+            var cmd = Banco.Abrir();
+            FuncionarioTelefone endereco = null;
+            cmd.CommandText = "select id, tipo, tel from telefones_func where funcionario_id = " + id + " Order By id DESC";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                endereco = new FuncionarioTelefone(
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2)
+                        );
+            }
+            Banco.Fechar(cmd);
+            return endereco;
+        }
     }
 }
