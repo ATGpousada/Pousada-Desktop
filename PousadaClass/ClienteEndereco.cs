@@ -22,13 +22,13 @@ namespace PousadaClass
         public string Cidade { get => cidade; set => cidade = value; }
         public string Uf { get => uf; set => uf = value; }
         public Cliente Cliente { get => cliente; set => cliente = value; }
-
+        public List<ClienteEndereco> Enderecos { get; set; }
         // -------------- Metodos Construtores ---------------------
         public ClienteEndereco() { }
 
         public ClienteEndereco(int id, string cep, string cidade, string uf, Cliente cliente)
         {
-            // ---------------- Metodo com ID ----------------------
+            // ---------------- Metodo com ID e Chave estrangeira ----------------------
 
             Id = id;
             Cep = cep;
@@ -53,6 +53,18 @@ namespace PousadaClass
             Cidade = cidade;
             Uf = uf;
         }
+
+        // -------------------- -----------------------------------------
+
+        public ClienteEndereco(string cep, string cidade, string uf)
+        {
+            Cep = cep;
+            Cidade = cidade;
+            Uf = uf;
+        }
+
+     
+
 
         // ------------------ Inserir --------------------------------------
 

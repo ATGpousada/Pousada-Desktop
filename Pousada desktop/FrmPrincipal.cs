@@ -58,5 +58,11 @@ namespace PousadaDesk
             FrmFuncionarioListar listar = new FrmFuncionarioListar();
             listar.Show();
         }
+
+        private void cdastarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmClienteCadastrar cliente = new FrmClienteCadastrar();
+            cliente.Show();
+        }
     }
 }

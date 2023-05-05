@@ -37,6 +37,7 @@
             this.reservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quartoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cdastarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,21 +71,21 @@
             // funcionarioToolStripMenuItem
             // 
             this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
-            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.funcionarioToolStripMenuItem.Text = "&Cadastrar";
             this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionarioToolStripMenuItem_Click);
             // 
             // alterarConsultarToolStripMenuItem
             // 
             this.alterarConsultarToolStripMenuItem.Name = "alterarConsultarToolStripMenuItem";
-            this.alterarConsultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alterarConsultarToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.alterarConsultarToolStripMenuItem.Text = "&Alterar/Consultar";
             this.alterarConsultarToolStripMenuItem.Click += new System.EventHandler(this.alterarConsultarToolStripMenuItem_Click);
             // 
             // listarToolStripMenuItem
             // 
             this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            this.listarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.listarToolStripMenuItem.Text = "&Listar";
             this.listarToolStripMenuItem.Click += new System.EventHandler(this.listarToolStripMenuItem_Click);
             // 
@@ -102,9 +103,18 @@
             // 
             // clienteToolStripMenuItem
             // 
+            this.clienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cdastarToolStripMenuItem});
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.clienteToolStripMenuItem.Text = "&Cliente";
+            // 
+            // cdastarToolStripMenuItem
+            // 
+            this.cdastarToolStripMenuItem.Name = "cdastarToolStripMenuItem";
+            this.cdastarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cdastarToolStripMenuItem.Text = "C&adastrar";
+            this.cdastarToolStripMenuItem.Click += new System.EventHandler(this.cdastarToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -134,6 +144,7 @@
         private System.Windows.Forms.ToolStripMenuItem alterarConsultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cdastarToolStripMenuItem;
     }
 }
 

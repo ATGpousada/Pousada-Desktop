@@ -56,6 +56,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtNumeroTelcli = new System.Windows.Forms.TextBox();
             this.cmbTipoTelcli = new System.Windows.Forms.ComboBox();
+            this.BTNInserir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -399,12 +400,24 @@
             this.cmbTipoTelcli.Size = new System.Drawing.Size(139, 26);
             this.cmbTipoTelcli.TabIndex = 25;
             // 
+            // BTNInserir
+            // 
+            this.BTNInserir.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.BTNInserir.Location = new System.Drawing.Point(297, 738);
+            this.BTNInserir.Name = "BTNInserir";
+            this.BTNInserir.Size = new System.Drawing.Size(189, 43);
+            this.BTNInserir.TabIndex = 47;
+            this.BTNInserir.Text = "Inserir";
+            this.BTNInserir.UseVisualStyleBackColor = true;
+            this.BTNInserir.Click += new System.EventHandler(this.BTNInserir_Click);
+            // 
             // FrmClienteCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(832, 834);
+            this.Controls.Add(this.BTNInserir);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -451,5 +464,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNumeroTelcli;
         private System.Windows.Forms.ComboBox cmbTipoTelcli;
+        private System.Windows.Forms.Button BTNInserir;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PousadaClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +41,53 @@ namespace Pousada_desktop
         private void FrmClienteCadastrar_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BTNInserir_Click(object sender, EventArgs e)
+        {
+            if (TxtNomecli.Text.Length > 0 && TxtSenhacli.Text.Length > 0 && TxtRgcli.Text.Length > 0 && TxtCpfcli.Text.Length > 0 && TxtEmailcli.Text.Length > 0)
+            {
+                List<ClienteEndereco> Enderecos = new List<ClienteEndereco>();
+                List<ClienteTelefone> Telefones = new List<ClienteTelefone>();
+
+
+
+                if (txtCidadeEndcli.Text.Length > 0 && txtCepEndcli.Text.Length > 0 && cmbUfEndcli.Text.Length > 0)
+                {
+                    Enderecos = new List<ClienteEndereco>();
+                    Enderecos.Add(new ClienteEndereco(txtCidadeEndcli.Text, txtCepEndcli.Text, cmbUfEndcli.Text));
+
+
+
+                    Telefones = new List<ClienteTelefone>();
+                    Telefones.Add(new ClienteTelefone(cmbTipoTelcli.Text, txtNumeroTelcli.Text));
+
+
+
+                    if (txtNumeroTel2cli.Text.Length > 0 && cmbTipoTel2cli.Text.Length > 0)
+                    {
+                        Telefones.Add(new ClienteTelefone(cmbTipoTel2cli.Text, txtNumeroTel2cli.Text));
+                        txtNumeroTel2cli.Clear(); cmbTipoTel2cli.Text = "";
+                    }
+                }
+
+                Cliente cli = new Cliente(
+                TxtNomecli.Text, TxtCpfcli.Text, TxtRgcli.Text, TxtSenhacli.Text,  TxtEmailcli.Text, Enderecos, Telefones);
+
+                cli.Inserir();
+                TxtNomecli.Clear(); TxtCpfcli.Clear(); TxtRgcli.Clear(); TxtSenhacli.Clear(); TxtEmailcli.Clear();
+                txtCepEndcli.Clear();txtCidadeEndcli.Clear();
+                txtNumeroTelcli.Clear();
+
+                labelNumero.Visible = false;
+                labelTipo.Visible = false;
+                txtNumeroTel2cli.Visible = false;
+                cmbTipoTel2cli.Visible = false;
+                btnAdicionarNumerocli.Enabled = false;
+                MessageBox.Show("Cliente Cadastrado com Sucesso!");
+            }
+            else
+                MessageBox.Show("Cliente não cadastrado por falta de informações.(Por favor preencha todos os campos)");
         }
     }
 }

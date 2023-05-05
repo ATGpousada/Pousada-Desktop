@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;  // versão --> 8.0.33
@@ -71,8 +72,27 @@ namespace PousadaClass
             Rg = rg;
             Senha = senha;
             Email = email;
-   
+        }
 
+
+        public Cliente(string nome, string cpf, string rg, string senha, string email, List<ClienteEndereco> endereco, List<ClienteTelefone>telefones)
+        {
+            Nome = nome;
+            Cpf = cpf;
+            Rg = rg;
+            Senha = senha;
+            Email = email;
+            Enderecos = endereco;
+            Telefones = telefones;
+        }
+
+
+
+
+        public Cliente(int _id)
+        {
+            Telefones = ClienteTelefone.ListarPorClintes(_id);
+            Enderecos = ClienteEndereco.ListarPorCliente(_id);
         }
 
         // ---------------------------------- INSERIR --------------------------------------
@@ -80,8 +100,8 @@ namespace PousadaClass
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert clientes (nome,cpf, rg, senha, email)" +
-              "values (@nome, @cpf, @rg,@senha,@email) ";
+            cmd.CommandText = "insert clientes (nome,cpf, rg, senha, email) " +
+              "values (@nome, @cpf, @rg, @senha, @email)";
             cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
             cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = Cpf;
             cmd.Parameters.Add("@rg", MySqlDbType.VarChar).Value = Rg;
