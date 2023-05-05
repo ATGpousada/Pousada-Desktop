@@ -36,23 +36,25 @@
             this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TELEFONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CLIENTETEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOGRADOURO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUMERO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDados)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,10 +68,10 @@
             this.CPF,
             this.RG,
             this.EMAIL});
-            this.DgvDados.Location = new System.Drawing.Point(36, 35);
+            this.DgvDados.Location = new System.Drawing.Point(80, 34);
             this.DgvDados.Name = "DgvDados";
             this.DgvDados.RowHeadersVisible = false;
-            this.DgvDados.Size = new System.Drawing.Size(557, 181);
+            this.DgvDados.Size = new System.Drawing.Size(555, 181);
             this.DgvDados.TabIndex = 0;
             // 
             // ID
@@ -136,6 +138,27 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.LOGRADOURO,
+            this.NUMERO,
+            this.CEP,
+            this.CIDADE,
+            this.UF,
+            this.CLIENTE});
+            this.dataGridView1.Location = new System.Drawing.Point(42, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(643, 181);
+            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView2);
@@ -146,25 +169,6 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Telefone";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.CEP,
-            this.CIDADE,
-            this.UF,
-            this.CLIENTE});
-            this.dataGridView1.Location = new System.Drawing.Point(96, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(497, 181);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridView2
             // 
@@ -182,45 +186,6 @@
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.Size = new System.Drawing.Size(375, 181);
             this.dataGridView2.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.Frozen = true;
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MaxInputLength = 5;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 60;
-            // 
-            // CEP
-            // 
-            this.CEP.Frozen = true;
-            this.CEP.HeaderText = "CEP";
-            this.CEP.Name = "CEP";
-            this.CEP.ReadOnly = true;
-            this.CEP.Width = 120;
-            // 
-            // CIDADE
-            // 
-            this.CIDADE.Frozen = true;
-            this.CIDADE.HeaderText = "CIDADE";
-            this.CIDADE.Name = "CIDADE";
-            this.CIDADE.ReadOnly = true;
-            // 
-            // UF
-            // 
-            this.UF.Frozen = true;
-            this.UF.HeaderText = "UF";
-            this.UF.Name = "UF";
-            this.UF.ReadOnly = true;
-            // 
-            // CLIENTE
-            // 
-            this.CLIENTE.Frozen = true;
-            this.CLIENTE.HeaderText = "CLIENTE";
-            this.CLIENTE.Name = "CLIENTE";
-            this.CLIENTE.ReadOnly = true;
-            this.CLIENTE.Width = 130;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -252,6 +217,59 @@
             this.CLIENTETEL.Name = "CLIENTETEL";
             this.CLIENTETEL.ReadOnly = true;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.Frozen = true;
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MaxInputLength = 5;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // LOGRADOURO
+            // 
+            this.LOGRADOURO.Frozen = true;
+            this.LOGRADOURO.HeaderText = "LOGRADOURO";
+            this.LOGRADOURO.Name = "LOGRADOURO";
+            this.LOGRADOURO.ReadOnly = true;
+            // 
+            // NUMERO
+            // 
+            this.NUMERO.Frozen = true;
+            this.NUMERO.HeaderText = "NUMERO";
+            this.NUMERO.Name = "NUMERO";
+            this.NUMERO.ReadOnly = true;
+            // 
+            // CEP
+            // 
+            this.CEP.Frozen = true;
+            this.CEP.HeaderText = "CEP";
+            this.CEP.Name = "CEP";
+            this.CEP.ReadOnly = true;
+            // 
+            // CIDADE
+            // 
+            this.CIDADE.Frozen = true;
+            this.CIDADE.HeaderText = "CIDADE";
+            this.CIDADE.Name = "CIDADE";
+            this.CIDADE.ReadOnly = true;
+            // 
+            // UF
+            // 
+            this.UF.Frozen = true;
+            this.UF.HeaderText = "UF";
+            this.UF.Name = "UF";
+            this.UF.ReadOnly = true;
+            this.UF.Width = 50;
+            // 
+            // CLIENTE
+            // 
+            this.CLIENTE.Frozen = true;
+            this.CLIENTE.HeaderText = "CLIENTE";
+            this.CLIENTE.Name = "CLIENTE";
+            this.CLIENTE.ReadOnly = true;
+            this.CLIENTE.Width = 130;
+            // 
             // FrmClienteListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,8 +285,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvDados)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
@@ -287,14 +305,16 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CEP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CIDADE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CLIENTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIPO;
         private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CLIENTETEL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOGRADOURO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NUMERO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CEP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CIDADE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CLIENTE;
     }
 }

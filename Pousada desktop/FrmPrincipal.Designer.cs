@@ -125,6 +125,7 @@
             this.alterarConsultarToolStripMenuItem1.Name = "alterarConsultarToolStripMenuItem1";
             this.alterarConsultarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.alterarConsultarToolStripMenuItem1.Text = "Alterar/Consultar";
+            this.alterarConsultarToolStripMenuItem1.Click += new System.EventHandler(this.alterarConsultarToolStripMenuItem1_Click);
             // 
             // listarToolStripMenuItem1
             // 

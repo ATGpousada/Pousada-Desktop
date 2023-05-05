@@ -233,17 +233,17 @@
             // 
             // txtCepEndcli
             // 
-            this.txtCepEndcli.Location = new System.Drawing.Point(348, 80);
+            this.txtCepEndcli.Location = new System.Drawing.Point(59, 82);
             this.txtCepEndcli.Name = "txtCepEndcli";
-            this.txtCepEndcli.Size = new System.Drawing.Size(119, 24);
+            this.txtCepEndcli.Size = new System.Drawing.Size(150, 24);
             this.txtCepEndcli.TabIndex = 23;
             this.txtCepEndcli.TextChanged += new System.EventHandler(this.txtCepEnd_TextChanged);
             // 
             // txtCidadeEndcli
             // 
-            this.txtCidadeEndcli.Location = new System.Drawing.Point(59, 80);
+            this.txtCidadeEndcli.Location = new System.Drawing.Point(347, 80);
             this.txtCidadeEndcli.Name = "txtCidadeEndcli";
-            this.txtCidadeEndcli.Size = new System.Drawing.Size(163, 24);
+            this.txtCidadeEndcli.Size = new System.Drawing.Size(114, 24);
             this.txtCidadeEndcli.TabIndex = 21;
             // 
             // label16

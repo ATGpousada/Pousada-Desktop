@@ -126,5 +126,43 @@ namespace PousadaClass
             return lista;
         }
 
+        public static ClienteTelefone ObterPorIdForeign(int id)
+        {
+            var cmd = Banco.Abrir();
+            ClienteTelefone endereco = null;
+            cmd.CommandText = "select id, tipo, tel from telefones_cli where cliente_id = " + id;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                endereco = new ClienteTelefone(
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2)
+                        );
+            }
+            Banco.Fechar(cmd);
+            return endereco;
+        }
+
+
+        // Obtendo Chave estrangeira
+        public static ClienteTelefone ObterPorIdForeign2(int id)
+        {
+            var cmd = Banco.Abrir();
+            ClienteTelefone endereco = null;
+            cmd.CommandText = "select id, tipo, tel from telefones_cli where cliente_id = " + id + " Order By id DESC";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                endereco = new ClienteTelefone(
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2)
+                        );
+            }
+            Banco.Fechar(cmd);
+            return endereco;
+        }
+
     }
 }

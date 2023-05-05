@@ -64,5 +64,11 @@ namespace PousadaDesk
             FrmClienteCadastrar cliente = new FrmClienteCadastrar();
             cliente.Show();
         }
+
+        private void alterarConsultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmClienteAlterar alterar = new FrmClienteAlterar();
+            alterar.Show();
+        }
     }
 }
