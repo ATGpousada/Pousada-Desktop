@@ -50,7 +50,7 @@ namespace PousadaDesk
         private void alterarConsultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmFuncionarioAlterar alterar = new FrmFuncionarioAlterar();
-            alterar.Show(); 
+            alterar.Show();
         }
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,17 +65,16 @@ namespace PousadaDesk
             cliente.Show();
         }
 
-<<<<<<< HEAD
-        private void inserirCargoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmCargo cargo = new FrmCargo();
-            cargo.Show();
-=======
         private void alterarConsultarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmClienteAlterar alterar = new FrmClienteAlterar();
             alterar.Show();
->>>>>>> 6b22a533e3ca4d8f96d3761776e00002259e688c
+        }
+
+        private void cargosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCargo cargo = new FrmCargo();
+            cargo.Show();
         }
     }
 }

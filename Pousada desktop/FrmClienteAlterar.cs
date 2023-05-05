@@ -26,9 +26,9 @@ namespace Pousada_desktop
             InitializeComponent();
         }
 
-<<<<<<< HEAD
+
         private void btnAlterar_Click(object sender, EventArgs e)
-=======
+        { }
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             if (btnConsultar.Text == "CONSULTAR")
@@ -139,7 +139,11 @@ namespace Pousada_desktop
         }
 
         private void FrmClienteAlterar_Load(object sender, EventArgs e)
->>>>>>> 6b22a533e3ca4d8f96d3761776e00002259e688c
+        {
+
+        }
+
+        private void btnAlterar_Click_1(object sender, EventArgs e)
         {
 
         }
