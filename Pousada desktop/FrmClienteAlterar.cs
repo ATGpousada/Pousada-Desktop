@@ -16,5 +16,10 @@ namespace Pousada_desktop
         {
             InitializeComponent();
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

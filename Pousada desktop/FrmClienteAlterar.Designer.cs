@@ -423,6 +423,7 @@
             this.btnAlterar.TabIndex = 56;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // label7
             // 
