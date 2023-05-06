@@ -81,6 +81,15 @@ namespace Pousada_desktop
                     }
                 }
 
+                // Verificando se o Email, RG e CPF não já foram cadastrados.
+                bool existe = Funcionario.BuscarCampos(txtEmail.Text, txtRg.Text, txtCpf.Text);
+
+                if (existe == true)
+                {
+                    MessageBox.Show("Esse Funcionario já foi cadastrado!");
+                    return;
+                }
+
                 Funcionario func = new Funcionario(
                     txtNome.Text, dtpDataNasc.Value, txtCpf.Text, txtRg.Text, Convert.ToDouble(txtSalario.Text), txtEmail.Text, txtSenha.Text, cmbPeriodo.Text, Cargo.ObterPorId(Convert.ToInt32(cmbCargo.SelectedValue)), Enderecos, Telefones);
 

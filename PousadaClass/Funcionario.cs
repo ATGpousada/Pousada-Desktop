@@ -263,5 +263,15 @@ namespace PousadaClass
             Banco.Fechar(cmd);
             return funcionario;
         }
+
+        public static bool BuscarCampos(string email, string rg, string cpf)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select id, cpf, rg, email from funcionarios where email = '" + email  + "' or rg = '" + rg + "' or cpf = '" + cpf + "';";
+            var dr = cmd.ExecuteReader();
+            bool existe = dr.HasRows;
+            Banco.Fechar(cmd);
+            return existe;
+        }
     }
 }
