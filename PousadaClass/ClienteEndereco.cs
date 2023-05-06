@@ -84,13 +84,13 @@ namespace PousadaClass
         public void Inserir(int id)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "insert enderecos_cli (cep,cidade, uf,numero,logradouro,cliente_ID)" +
-                " values (@cep, @cidade, @uf, @numero, @logradouro " + id + ")";
+            cmd.CommandText = "insert enderecos_cli (cep,cidade, uf,logradouro,numero,cliente_ID)" +
+                " values (@cep, @cidade, @uf, @logradouro, @numero, " + id + ")";
             cmd.Parameters.Add("@cep", MySqlDbType.VarChar).Value = Cep;
             cmd.Parameters.Add("@cidade", MySqlDbType.VarChar).Value = Cidade;
             cmd.Parameters.Add("@uf", MySqlDbType.VarChar).Value = Uf;
-            cmd.Parameters.Add("@numero", MySqlDbType.VarChar).Value = Numero;
             cmd.Parameters.Add("@logradouro", MySqlDbType.VarChar).Value = Logradouro;
+            cmd.Parameters.Add("@numero", MySqlDbType.VarChar).Value = Numero;
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }

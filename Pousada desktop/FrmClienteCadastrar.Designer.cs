@@ -211,7 +211,7 @@
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(77, 366);
+            this.groupBox2.Location = new System.Drawing.Point(77, 322);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -369,7 +369,7 @@
             this.groupBox3.Controls.Add(this.cmbTipoTelcli);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox3.Location = new System.Drawing.Point(77, 631);
+            this.groupBox3.Location = new System.Drawing.Point(77, 561);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
@@ -492,7 +492,7 @@
             // BTNInserir
             // 
             this.BTNInserir.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.BTNInserir.Location = new System.Drawing.Point(396, 908);
+            this.BTNInserir.Location = new System.Drawing.Point(393, 792);
             this.BTNInserir.Margin = new System.Windows.Forms.Padding(4);
             this.BTNInserir.Name = "BTNInserir";
             this.BTNInserir.Size = new System.Drawing.Size(252, 53);

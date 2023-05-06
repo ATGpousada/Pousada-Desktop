@@ -29,9 +29,14 @@
         private void InitializeComponent()
         {
             this.DgvDados = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvEndCli = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LOGRADOURO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NUMERO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,27 +45,23 @@
             this.UF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvTelcli = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TELEFONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CLIENTETEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDados)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEndCli)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelcli)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvDados
             // 
-            this.DgvDados.AllowUserToOrderColumns = true;
+            this.DgvDados.AllowUserToAddRows = false;
+            this.DgvDados.AllowUserToDeleteRows = false;
             this.DgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -69,12 +70,60 @@
             this.RG,
             this.EMAIL});
             this.DgvDados.Location = new System.Drawing.Point(107, 42);
-            this.DgvDados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DgvDados.Margin = new System.Windows.Forms.Padding(4);
             this.DgvDados.Name = "DgvDados";
+            this.DgvDados.ReadOnly = true;
             this.DgvDados.RowHeadersVisible = false;
             this.DgvDados.RowHeadersWidth = 51;
             this.DgvDados.Size = new System.Drawing.Size(589, 223);
             this.DgvDados.TabIndex = 0;
+            this.DgvDados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDados_CellContentClick);
+            // 
+            // ID
+            // 
+            this.ID.Frozen = true;
+            this.ID.HeaderText = "ID";
+            this.ID.MaxInputLength = 5;
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 70;
+            // 
+            // NOME
+            // 
+            this.NOME.Frozen = true;
+            this.NOME.HeaderText = "NOME";
+            this.NOME.MinimumWidth = 6;
+            this.NOME.Name = "NOME";
+            this.NOME.ReadOnly = true;
+            this.NOME.Width = 130;
+            // 
+            // CPF
+            // 
+            this.CPF.Frozen = true;
+            this.CPF.HeaderText = "CPF";
+            this.CPF.MinimumWidth = 6;
+            this.CPF.Name = "CPF";
+            this.CPF.ReadOnly = true;
+            this.CPF.Width = 110;
+            // 
+            // RG
+            // 
+            this.RG.Frozen = true;
+            this.RG.HeaderText = "RG";
+            this.RG.MinimumWidth = 6;
+            this.RG.Name = "RG";
+            this.RG.ReadOnly = true;
+            this.RG.Width = 120;
+            // 
+            // EMAIL
+            // 
+            this.EMAIL.Frozen = true;
+            this.EMAIL.HeaderText = "EMAIL";
+            this.EMAIL.MinimumWidth = 6;
+            this.EMAIL.Name = "EMAIL";
+            this.EMAIL.ReadOnly = true;
+            this.EMAIL.Width = 155;
             // 
             // groupBox1
             // 
@@ -82,9 +131,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(64, 62);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(971, 300);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -92,23 +141,23 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvEndCli);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Location = new System.Drawing.Point(64, 405);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(971, 286);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
             // 
-            // dataGridView1
+            // dgvEndCli
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvEndCli.AllowUserToAddRows = false;
+            this.dgvEndCli.AllowUserToDeleteRows = false;
+            this.dgvEndCli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEndCli.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.LOGRADOURO,
             this.NUMERO,
@@ -116,15 +165,15 @@
             this.CIDADE,
             this.UF,
             this.CLIENTE});
-            this.dataGridView1.Location = new System.Drawing.Point(107, 23);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(746, 223);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvEndCli.Location = new System.Drawing.Point(107, 23);
+            this.dgvEndCli.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvEndCli.Name = "dgvEndCli";
+            this.dgvEndCli.ReadOnly = true;
+            this.dgvEndCli.RowHeadersVisible = false;
+            this.dgvEndCli.RowHeadersWidth = 51;
+            this.dgvEndCli.Size = new System.Drawing.Size(746, 223);
+            this.dgvEndCli.TabIndex = 1;
+            this.dgvEndCli.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -192,35 +241,35 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView2);
+            this.groupBox3.Controls.Add(this.dgvTelcli);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox3.Location = new System.Drawing.Point(64, 698);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(971, 276);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Telefone";
             // 
-            // dataGridView2
+            // dgvTelcli
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTelcli.AllowUserToAddRows = false;
+            this.dgvTelcli.AllowUserToDeleteRows = false;
+            this.dgvTelcli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTelcli.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
             this.TIPO,
             this.TELEFONE,
             this.CLIENTETEL});
-            this.dataGridView2.Location = new System.Drawing.Point(187, 36);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(448, 223);
-            this.dataGridView2.TabIndex = 1;
+            this.dgvTelcli.Location = new System.Drawing.Point(187, 36);
+            this.dgvTelcli.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvTelcli.Name = "dgvTelcli";
+            this.dgvTelcli.ReadOnly = true;
+            this.dgvTelcli.RowHeadersVisible = false;
+            this.dgvTelcli.RowHeadersWidth = 51;
+            this.dgvTelcli.Size = new System.Drawing.Size(448, 223);
+            this.dgvTelcli.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -259,52 +308,6 @@
             this.CLIENTETEL.ReadOnly = true;
             this.CLIENTETEL.Width = 125;
             // 
-            // ID
-            // 
-            this.ID.Frozen = true;
-            this.ID.HeaderText = "ID";
-            this.ID.MaxInputLength = 5;
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 70;
-            // 
-            // NOME
-            // 
-            this.NOME.Frozen = true;
-            this.NOME.HeaderText = "NOME";
-            this.NOME.MinimumWidth = 6;
-            this.NOME.Name = "NOME";
-            this.NOME.ReadOnly = true;
-            this.NOME.Width = 130;
-            // 
-            // CPF
-            // 
-            this.CPF.Frozen = true;
-            this.CPF.HeaderText = "CPF";
-            this.CPF.MinimumWidth = 6;
-            this.CPF.Name = "CPF";
-            this.CPF.ReadOnly = true;
-            this.CPF.Width = 110;
-            // 
-            // RG
-            // 
-            this.RG.Frozen = true;
-            this.RG.HeaderText = "RG";
-            this.RG.MinimumWidth = 6;
-            this.RG.Name = "RG";
-            this.RG.ReadOnly = true;
-            this.RG.Width = 120;
-            // 
-            // EMAIL
-            // 
-            this.EMAIL.Frozen = true;
-            this.EMAIL.HeaderText = "EMAIL";
-            this.EMAIL.MinimumWidth = 6;
-            this.EMAIL.Name = "EMAIL";
-            this.EMAIL.ReadOnly = true;
-            this.EMAIL.Width = 155;
-            // 
             // FrmClienteListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -314,16 +317,16 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmClienteListar";
             this.Text = "FrmClienteListar";
             this.Load += new System.EventHandler(this.FrmClienteListar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvDados)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEndCli)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelcli)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,9 +336,9 @@
         private System.Windows.Forms.DataGridView DgvDados;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEndCli;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvTelcli;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIPO;
         private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONE;

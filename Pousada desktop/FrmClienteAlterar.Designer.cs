@@ -82,7 +82,7 @@
             this.groupBox3.Controls.Add(this.cmbTipoTelcli);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox3.Location = new System.Drawing.Point(68, 715);
+            this.groupBox3.Location = new System.Drawing.Point(68, 634);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
@@ -109,7 +109,7 @@
             this.labelTipo.AutoSize = true;
             this.labelTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTipo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelTipo.Location = new System.Drawing.Point(455, 169);
+            this.labelTipo.Location = new System.Drawing.Point(436, 134);
             this.labelTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTipo.Name = "labelTipo";
             this.labelTipo.Size = new System.Drawing.Size(63, 25);
@@ -122,7 +122,7 @@
             this.labelNumero.AutoSize = true;
             this.labelNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNumero.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelNumero.Location = new System.Drawing.Point(455, 81);
+            this.labelNumero.Location = new System.Drawing.Point(436, 47);
             this.labelNumero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNumero.Name = "labelNumero";
             this.labelNumero.Size = new System.Drawing.Size(132, 25);
@@ -138,7 +138,7 @@
             "Pessoal",
             "Comercial",
             "Residencial"});
-            this.cmbTipoTel2cli.Location = new System.Drawing.Point(457, 197);
+            this.cmbTipoTel2cli.Location = new System.Drawing.Point(424, 169);
             this.cmbTipoTel2cli.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoTel2cli.Name = "cmbTipoTel2cli";
             this.cmbTipoTel2cli.Size = new System.Drawing.Size(184, 32);
@@ -150,7 +150,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(37, 169);
+            this.label5.Location = new System.Drawing.Point(38, 134);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 25);
@@ -159,7 +159,7 @@
             // 
             // txtNumeroTel2cli
             // 
-            this.txtNumeroTel2cli.Location = new System.Drawing.Point(460, 110);
+            this.txtNumeroTel2cli.Location = new System.Drawing.Point(427, 81);
             this.txtNumeroTel2cli.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroTel2cli.Name = "txtNumeroTel2cli";
             this.txtNumeroTel2cli.Size = new System.Drawing.Size(181, 29);
@@ -171,7 +171,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(37, 82);
+            this.label6.Location = new System.Drawing.Point(38, 47);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 25);
@@ -180,7 +180,7 @@
             // 
             // txtNumeroTelcli
             // 
-            this.txtNumeroTelcli.Location = new System.Drawing.Point(43, 110);
+            this.txtNumeroTelcli.Location = new System.Drawing.Point(36, 81);
             this.txtNumeroTelcli.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroTelcli.Name = "txtNumeroTelcli";
             this.txtNumeroTelcli.Size = new System.Drawing.Size(181, 29);
@@ -194,7 +194,7 @@
             "Pessoal",
             "Comercial",
             "Residencial"});
-            this.cmbTipoTelcli.Location = new System.Drawing.Point(43, 197);
+            this.cmbTipoTelcli.Location = new System.Drawing.Point(36, 169);
             this.cmbTipoTelcli.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoTelcli.Name = "cmbTipoTelcli";
             this.cmbTipoTelcli.Size = new System.Drawing.Size(184, 32);
@@ -214,7 +214,7 @@
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(68, 439);
+            this.groupBox2.Location = new System.Drawing.Point(68, 391);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -331,7 +331,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(951, 265);
+            this.groupBox1.Size = new System.Drawing.Size(951, 230);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Pessoais";
@@ -529,7 +529,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(1053, 981);
+            this.ClientSize = new System.Drawing.Size(1053, 897);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.label7);

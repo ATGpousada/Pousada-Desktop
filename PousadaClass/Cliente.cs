@@ -204,27 +204,28 @@ namespace PousadaClass
             return cliente;
         }
         // --------------------------------- Listar Clientes ---------------------------------
-      
-        public static List<Cliente> Listar()
+     
+        public static List<Cliente> Listar(string nome = "")
         {
             List<Cliente> lista = new List<Cliente>();
             var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from clientes";
+            if (nome.Length > 0)
+                cmd.CommandText = "select id, nome, cpf, rg,senha, email from clientes where nome like '%" + nome + "%'";
+            else
+                cmd.CommandText = "select id, nome,  cpf, rg,senha,email from clientes";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 lista.Add(new Cliente(
-                dr.GetString(1),
-                dr.GetString(2),
-                dr.GetString(3),
-                dr.GetString(4),
-                dr.GetString(5)));
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2),
+                    dr.GetString(3),
+                    dr.GetString(4),
+                    dr.GetString(5)));
             }
-            Banco.Fechar(cmd);
             return lista;
         }
-
 
         public static Cliente ObterPorEmail(string email)
         {
