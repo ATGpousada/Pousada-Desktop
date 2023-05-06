@@ -58,6 +58,7 @@ namespace Pousada_desktop
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // Verificando se todos os campos estão preenchidos
             if (txtLogradouroEnd.Text.Length > 0 && txtNumeroEnd.Text.Length > 0 && txtCepEnd.Text.Length > 0 && txtBairroEnd.Text.Length > 0 &&
                 txtCidadeEnd.Text.Length > 0 && cmbUfEnd.Text.Length > 0 && cmbTipoTel.Text.Length > 0 && txtNumeroTel.Text.Length > 0 && txtSenha.Text.Length > 0 &&
                 txtNome.Text.Length > 0 && dtpDataNasc.Text.Length > 0 && txtCpf.Text.Length > 0 && txtRg.Text.Length > 0 && txtSalario.Text.Length > 0 &&
@@ -66,24 +67,23 @@ namespace Pousada_desktop
                 List<FuncionarioEndereco> Enderecos = new List<FuncionarioEndereco>();
                 List<FuncionarioTelefone> Telefones = new List<FuncionarioTelefone>();
 
-                if (txtLogradouroEnd.Text.Length > 0 && cmbUfEnd.Text.Length > 0 && txtNumeroTel.Text.Length > 0)
+                Enderecos = new List<FuncionarioEndereco>();
+                Enderecos.Add(new FuncionarioEndereco(txtLogradouroEnd.Text, txtNumeroEnd.Text, txtCepEnd.Text, txtBairroEnd.Text, txtCidadeEnd.Text, cmbUfEnd.Text));
+
+                Telefones = new List<FuncionarioTelefone>();
+                Telefones.Add(new FuncionarioTelefone(cmbTipoTel.Text, txtNumeroTel.Text));
+
+                // Verificando se o Segundo telefone foi preenchido
+                if (txtNumeroTel2.Text.Length > 0 && cmbTipoTel2.Text.Length > 0)
                 {
-                    Enderecos = new List<FuncionarioEndereco>();
-                    Enderecos.Add(new FuncionarioEndereco(txtLogradouroEnd.Text, txtNumeroEnd.Text, txtCepEnd.Text, txtBairroEnd.Text, txtCidadeEnd.Text, cmbUfEnd.Text));
-
-                    Telefones = new List<FuncionarioTelefone>();
-                    Telefones.Add(new FuncionarioTelefone(cmbTipoTel.Text, txtNumeroTel.Text));
-
-                    if (txtNumeroTel2.Text.Length > 0 && cmbTipoTel2.Text.Length > 0)
-                    {
-                        Telefones.Add(new FuncionarioTelefone(cmbTipoTel2.Text, txtNumeroTel2.Text));
-                        txtNumeroTel2.Clear(); cmbTipoTel2.Text = "";
-                    }
+                    Telefones.Add(new FuncionarioTelefone(cmbTipoTel2.Text, txtNumeroTel2.Text));
+                    txtNumeroTel2.Clear(); cmbTipoTel2.Text = "";
                 }
 
                 // Verificando se o Email, RG e CPF não já foram cadastrados.
                 bool existe = Funcionario.BuscarCampos(txtEmail.Text, txtRg.Text, txtCpf.Text);
 
+                // Se na pesquisa retornar verdadeiro, o formulario avisará que já possui um funcionario com essas credenciais
                 if (existe == true)
                 {
                     MessageBox.Show("Esse Funcionario já foi cadastrado!");
@@ -93,16 +93,21 @@ namespace Pousada_desktop
                 Funcionario func = new Funcionario(
                     txtNome.Text, dtpDataNasc.Value, txtCpf.Text, txtRg.Text, Convert.ToDouble(txtSalario.Text), txtEmail.Text, txtSenha.Text, cmbPeriodo.Text, Cargo.ObterPorId(Convert.ToInt32(cmbCargo.SelectedValue)), Enderecos, Telefones);
 
+                // Chamando classe de inserir no banco de dados
                 func.Inserir();
+
+                // Limpando campos que foram preenchidos
                 txtNome.Clear(); txtCpf.Clear(); txtRg.Clear(); txtSalario.Clear(); txtSenha.Clear(); txtEmail.Clear();
                 txtLogradouroEnd.Clear(); txtNumeroEnd.Clear(); txtCepEnd.Clear(); txtBairroEnd.Clear(); txtCidadeEnd.Clear();
                 txtNumeroTel.Clear();
 
+                // Sumindo todos os campos do Segundo telefone
                 labelNumero.Visible = false;
                 labelTipo.Visible = false;
                 txtNumeroTel2.Visible = false;
                 cmbTipoTel2.Visible = false;
                 btnAdicionarNumero.Enabled = false;
+
                 MessageBox.Show("Funcionario Cadastrado com Sucesso!");
             }
             else
@@ -120,6 +125,7 @@ namespace Pousada_desktop
 
         private void btnOlhoSenha_Click(object sender, EventArgs e)
         {
+            // Ocultando a Senha ou Visualizar a senha clicando no botão
             txtSenha.UseSystemPasswordChar = !txtSenha.UseSystemPasswordChar;
         }
 
@@ -129,6 +135,7 @@ namespace Pousada_desktop
 
         private void btnAdicionarNumero_Click(object sender, EventArgs e)
         {
+            // Aparece os TextBox do Segundo Telefone
             labelNumero.Visible = true;
             labelTipo.Visible = true;
             txtNumeroTel2.Visible = true;
@@ -137,6 +144,7 @@ namespace Pousada_desktop
 
         private void txtNumeroTel_TextChanged(object sender, EventArgs e)
         {
+            // Se o TextBox de Telefone for preenchido poderá adicionar o Segundo Telefone
             if (txtNumeroTel.Text.Length > 0)
             {
                 btnAdicionarNumero.Enabled = true;

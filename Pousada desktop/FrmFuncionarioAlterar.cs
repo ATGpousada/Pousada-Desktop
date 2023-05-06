@@ -24,6 +24,11 @@ namespace Pousada_desktop
 
         // Varivel para saber se o telefone vai ser alterado ou inserido
         private int add;
+
+        // Varivel de Trocar Campo Unico
+        private string TrocarEmail;
+        private string TrocarCpf;
+        private string TrocarRg;
         public FrmFuncionarioAlterar()
         {
             InitializeComponent();
@@ -83,6 +88,11 @@ namespace Pousada_desktop
                     txtRg.Text = funcionario.Rg;
                     txtSalario.Text = funcionario.Salario.ToString();
                     txtCpf.Text = funcionario.Cpf;
+
+                    // Gravando varivel para possivel troca
+                    TrocarEmail = txtEmail.Text;
+                    TrocarRg = txtRg.Text;
+                    TrocarCpf = txtCpf.Text;
 
                     // Retorna endereço do funcionario
                     txtLogradouroEnd.Text = endereco.Logradouro;
@@ -218,29 +228,93 @@ namespace Pousada_desktop
                     Telefones.Add(new FuncionarioTelefone(cmbTipoTel2.Text, txtNumeroTel2.Text));
                 }
 
-                // Gravando tudo em um unico metodo construtor
-                Funcionario func = new Funcionario(
-                txtNome.Text, dtpDataNasc.Value, txtCpf.Text, txtRg.Text, Convert.ToDouble(txtSalario.Text), txtEmail.Text, cmbPeriodo.Text, Cargo.ObterPorId(Convert.ToInt32(cmbCargo.SelectedValue)), Enderecos);
+                bool existe;
+                Funcionario funcionario;
 
-                // Chamando metodo de classe Alterar
-                func.Alterar(Convert.ToInt32(txtId.Text));
+                // Verificando se houve alteração no email
+                if (TrocarEmail != txtEmail.Text)
+                {
+                    existe = Funcionario.BuscarEmail(txtEmail.Text);
+
+                    if (existe)
+                    {
+                        MessageBox.Show("Email já cadastrado em outro Funcionario!");
+                        return;
+                    }
+
+                    funcionario = new Funcionario(
+                        txtNome.Text, dtpDataNasc.Value, Convert.ToDouble(txtSalario.Text),
+                        txtEmail.Text, cmbPeriodo.Text,
+                        Cargo.ObterPorId(Convert.ToInt32(cmbCargo.SelectedValue)),
+                        Enderecos
+                    );
+                    funcionario.AlterarEmail(Convert.ToInt32(txtId.Text));
+                }
+
+                // Verificando se houve alteração no RG
+                if (TrocarRg != txtRg.Text)
+                {
+                    existe = Funcionario.BuscarRG(txtRg.Text);
+
+                    if (existe)
+                    {
+                        MessageBox.Show("RG já cadastrado em outro Funcionario!");
+                        return;
+                    }
+
+                    funcionario = new Funcionario(
+                        txtNome.Text, dtpDataNasc.Value, txtRg.Text, Convert.ToDouble(txtSalario.Text),
+                        cmbPeriodo.Text, Cargo.ObterPorId(Convert.ToInt32(cmbCargo.SelectedValue)),
+                        Enderecos
+                    );
+                    funcionario.AlterarRG(Convert.ToInt32(txtId.Text));
+                }
+
+                // Verificando se houve alteração no CPF
+                if (TrocarCpf != txtCpf.Text)
+                {
+                    existe = Funcionario.BuscarCPF(txtCpf.Text);
+
+                    if (existe)
+                    {
+                        MessageBox.Show("CPF já cadastrado em outro Funcionario!");
+                        return;
+                    }
+
+                    funcionario = new Funcionario(
+                        txtNome.Text, dtpDataNasc.Value, txtCpf.Text, Convert.ToDouble(txtSalario.Text),
+                        cmbPeriodo.Text, Cargo.ObterPorId(Convert.ToInt32(cmbCargo.SelectedValue)),
+                        Enderecos
+                    );
+                    funcionario.AlterarCPF(Convert.ToInt32(txtId.Text));
+                }
+
+                // Alterando os telefones
                 foreach (FuncionarioTelefone tel in Telefones)
                 {
                     tel.Alterar(cmbTipoTel.Text, txtNumeroTel.Text, Convert.ToInt32(txtId.Text), NumeroAntigo, TipoAntigo);
 
-                    // Como citado acima, caso possua 2 telefones alterará o segundo nesse IF 
-                    if (txtNumeroTel2.Text.Length > 0 && add == 2) // Se passar pelo IF de telefone existente, apenas altera se não ele irá inserir
+                    if (txtNumeroTel2.Text.Length > 0 && add == 2)
                     {
                         tel.Alterar(cmbTipoTel2.Text, txtNumeroTel2.Text, Convert.ToInt32(txtId.Text), NumeroAntigo2, TipoAntigo2);
-                        txtNumeroTel2.Clear();  cmbTipoTel2.Items.Add(""); cmbTipoTel2.SelectedIndex = -1;
+                        txtNumeroTel2.Clear(); cmbTipoTel2.Items.Add(""); cmbTipoTel2.SelectedIndex = -1;
+                        break;
                     }
-                    else if(add == 1)
+                    else if (add == 1)
                     {
                         tel.InserirTelExistente(Convert.ToInt32(txtId.Text), txtNumeroTel2.Text, cmbTipoTel2.Text);
                         txtNumeroTel2.Clear(); cmbTipoTel2.Items.Add(""); cmbTipoTel2.SelectedIndex = -1;
                         break;
                     }
                 }
+
+                // Gravando tudo em um unico metodo construtor
+                Funcionario func = new Funcionario(
+                txtNome.Text, dtpDataNasc.Value, txtCpf.Text, txtRg.Text, Convert.ToDouble(txtSalario.Text), txtEmail.Text, cmbPeriodo.Text, Cargo.ObterPorId(Convert.ToInt32(cmbCargo.SelectedValue)), Enderecos);
+
+                // Chamando metodo de classe Alterar
+                func.Alterar(Convert.ToInt32(txtId.Text));
+                
                 MessageBox.Show("Funcionario alterado com sucesso!");
 
                 // Botão Alterar volta a ser desabilitado
