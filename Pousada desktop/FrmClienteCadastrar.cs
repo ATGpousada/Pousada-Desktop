@@ -52,10 +52,10 @@ namespace Pousada_desktop
 
 
 
-                if (txtCidadeEndcli.Text.Length > 0 && txtCepEndcli.Text.Length > 0 && cmbUfEndcli.Text.Length > 0)
+                if (txtCidadeEndcli.Text.Length > 0 && txtCepEndcli.Text.Length > 0 && cmbUfEndcli.Text.Length > 0 && txtLogradouroend.Text.Length > 0 && txtNumeroend.Text.Length > 0)
                 {
                     Enderecos = new List<ClienteEndereco>();
-                    Enderecos.Add(new ClienteEndereco(txtCidadeEndcli.Text, txtCepEndcli.Text, cmbUfEndcli.Text));
+                    Enderecos.Add(new ClienteEndereco(txtCidadeEndcli.Text, txtCepEndcli.Text, cmbUfEndcli.Text,txtLogradouroend.Text,txtNumeroend.Text));
 
 
 
@@ -104,6 +104,16 @@ namespace Pousada_desktop
             {
                 btnAdicionarNumerocli.Enabled = true;
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

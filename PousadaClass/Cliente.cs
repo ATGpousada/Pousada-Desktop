@@ -85,6 +85,15 @@ namespace PousadaClass
             Email = email;
         }
 
+        public Cliente(string nome, string cpf, string rg, string email,List<ClienteEndereco> endereco)
+        {
+            Nome = nome;
+            Cpf = cpf;
+            Rg = rg;
+            Email = email;
+            Enderecos = endereco;
+        }
+
 
         public Cliente(string nome, string cpf, string rg, string senha, string email, List<ClienteEndereco> endereco, List<ClienteTelefone>telefones)
         {
@@ -135,6 +144,26 @@ namespace PousadaClass
 
         }
 
+
+        public void Alterar(int id)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update clientes set nome = @nome, cpf = @cpf, rg = @rg,senha = @senha, email = @email, recuperar_senha = @rs, arquivar_em = @ae " +
+                "where id = " + id;
+            cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
+            cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = Cpf;
+            cmd.Parameters.Add("@rg", MySqlDbType.VarChar).Value = Rg;
+            cmd.Parameters.Add("@senha", MySqlDbType.VarChar).Value = Senha;
+            cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = Email;
+            cmd.Parameters.Add("@rs", MySqlDbType.VarChar).Value = Recupera;
+            cmd.Parameters.Add("@ae", MySqlDbType.VarChar).Value = Arquivar_EM ;
+            cmd.ExecuteNonQuery();
+            foreach (ClienteEndereco endereco in Enderecos)
+            {
+                endereco.Alterar(id);
+            }
+            Banco.Fechar(cmd);
+        }
 
 
         // ----------------------------------- ATUALIZAR -------------------------------------

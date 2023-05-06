@@ -12,9 +12,9 @@ using System.Windows.Forms;
 namespace Pousada_desktop
 {
     public partial class FrmClienteAlterar : Form
-    {  
+    {
         // Variveis de Troca De Telefone
-        private string NumeroAntigo;
+        private string NumeroAntigo;
         private string TipoAntigo;
         private string NumeroAntigo2;
         private string TipoAntigo2;
@@ -79,6 +79,8 @@ namespace Pousada_desktop
                     txtCidadeEndcli.Text = endereco.Cidade;
                     txtCepEndcli.Text = endereco.Cep;
                     cmbUfEndcli.Text = endereco.Uf;
+                    txtLogradouroend.Text = endereco.Logradouro;
+
 
                     // Retorna telefone do cliente
                     txtNumeroTelcli.Text = telefone.Telefone;
@@ -145,7 +147,72 @@ namespace Pousada_desktop
 
         private void btnAlterar_Click_1(object sender, EventArgs e)
         {
+            // Confirmando que não faltará dados para ser gravado
+            if (txtCepEndcli.Text.Length > 0 && txtCidadeEndcli.Text.Length > 0 && cmbUfEndcli.Text.Length > 0 && cmbTipoTelcli.Text.Length > 0 && txtNumeroTelcli.Text.Length > 0 &&
+            TxtNomecli.Text.Length > 0 && TxtCpfcli.Text.Length > 0 && TxtRgcli.Text.Length > 0 && TxtEmailcli.Text.Length > 0)
+            {
+                List<ClienteEndereco> Enderecos;
+                List<ClienteTelefone> Telefones;
+
+                // Alterando Endereço do Cliente
+                Enderecos = new List<ClienteEndereco>();
+                Enderecos.Add(new ClienteEndereco(txtCepEndcli.Text, txtCidadeEndcli.Text, cmbUfEndcli.Text,txtLogradouroend.Text,txtnnumeroend.Text));
+
+                // Alterando Telefone do Cliente
+                Telefones = new List<ClienteTelefone>();
+                Telefones.Add(new ClienteTelefone(cmbTipoTelcli.Text, txtNumeroTelcli.Text));
+
+                // Caso o Cliente possuia 2 Telefones, altera o segundo telefone do Funcionario
+                if (txtNumeroTel2cli.Text.Length > 0 && cmbTipoTel2cli.Text.Length > 0)
+                {
+                    Telefones.Add(new ClienteTelefone(cmbTipoTel2cli.Text, txtNumeroTel2cli.Text));
+                }
+
+                 // Gravando tudo em um unico metodo construtor
+                Cliente cli = new Cliente(
+               TxtNomecli.Text, TxtCpfcli.Text, TxtRgcli.Text, TxtEmailcli.Text,Enderecos);
+
+                // Chamando metodo de classe Alterar
+                cli.Alterar(Convert.ToInt32(txtId.Text));
+                foreach (ClienteTelefone tel in Telefones)
+                {
+                    tel.Alterar(cmbTipoTelcli.Text, txtNumeroTelcli.Text, Convert.ToInt32(txtId.Text), NumeroAntigo, TipoAntigo); 
+
+
+                // Como citado acima, caso possua 2 telefones alterará o segundo nesse IF 
+                if (txtNumeroTel2cli.Text.Length > 0 && add == 2) // Se passar pelo IF de telefone existente, apenas altera se não ele irá inserir
+                    {
+                        tel.Alterar(cmbTipoTel2cli.Text, txtNumeroTel2cli.Text, Convert.ToInt32(txtId.Text), NumeroAntigo2, TipoAntigo2);
+                        txtNumeroTel2cli.Clear(); cmbTipoTel2cli.Items.Add(""); cmbTipoTel2cli.SelectedIndex = -1;
+                    }
+                    else if (add == 1)
+                    {
+                        tel.InserirTelExistente(Convert.ToInt32(txtId.Text), txtNumeroTel2cli.Text, cmbTipoTel2cli.Text);
+                        txtNumeroTel2cli.Clear(); cmbTipoTel2cli.Items.Add(""); cmbTipoTel2cli.SelectedIndex = -1;
+                        break;
+                    }
+                }
+                MessageBox.Show("Funcionario alterado com sucesso!");
+
+                // Botão Alterar volta a ser desabilitado
+                btnAlterar.Enabled = false;
+
+                // Limpando TextBox que foram gravados no Banco
+                TxtNomecli.Clear(); TxtCpfcli.Clear(); TxtRgcli.Clear(); TxtEmailcli.Clear();
+                cmbUfEndcli.Items.Add(""); cmbUfEndcli.SelectedIndex = -1; txtCepEndcli.Clear();
+                txtCidadeEndcli.Clear(); txtNumeroTelcli.Clear(); cmbTipoTelcli.Items.Add(""); cmbTipoTelcli.SelectedIndex = -1;
+            }
+
+            else {
+                MessageBox.Show("Cliente não foi alterado por falta de dados");
+            }
+        }
+
+        private void txtNumeroend_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
 }
+
+

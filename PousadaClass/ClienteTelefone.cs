@@ -50,6 +50,8 @@ namespace PousadaClass
             Telefones = telefone;
         }
 
+      
+
 
         // -------------------- Inserindo ------------------------------
 
@@ -162,6 +164,24 @@ namespace PousadaClass
             }
             Banco.Fechar(cmd);
             return endereco;
+        }
+
+
+        public void InserirTelExistente(int _id, string tel, string tipo)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "insert telefones_cli (tipo, tel, cliente_ID) values ('" + tipo + "', '" + tel + "', " + _id + ")";
+            cmd.ExecuteNonQuery();
+            Banco.Fechar(cmd);
+        }
+
+
+        public void Alterar(string tipo, string tel, int id, string nAntigo, string tAntigo)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update telefones_func set tipo = '" + tipo + "', tel = '" + tel + "' where funcionario_id = " + id + " and tipo = '" + tAntigo + "' and tel = '" + nAntigo + "'";
+            cmd.ExecuteNonQuery();
+            Banco.Fechar(cmd);
         }
 
     }
