@@ -89,6 +89,17 @@ namespace PousadaClass
             Telefones = telefone;
         }
 
+        public Funcionario (string nome, DateTime data_nasc, string rg, double salario, string periodo, Cargo cargo, List<FuncionarioEndereco> endereco)
+        {
+            Nome = nome;
+            Data_nasc = data_nasc;
+            Rg = rg;
+            Salario = salario;
+            Periodo1 = periodo;
+            Cargo = cargo;
+            Enderecos = endereco;
+        }
+
         public Funcionario(string nome, DateTime data_nasc, string cpf, string rg, double salario, string email, string periodo, Cargo cargo, List<FuncionarioEndereco> endereco, List<FuncionarioTelefone> telefone)
         {
             Nome = nome;
@@ -109,6 +120,17 @@ namespace PousadaClass
             Data_nasc = data_nasc;
             Cpf = cpf;
             Rg = rg;
+            Salario = salario;
+            Email = email;
+            Periodo1 = periodo;
+            Cargo = cargo;
+            Enderecos = endereco;
+        }
+
+        public Funcionario(string nome, DateTime data_nasc, double salario, string email, string periodo, Cargo cargo, List<FuncionarioEndereco> endereco)
+        {
+            Nome = nome;
+            Data_nasc = data_nasc;
             Salario = salario;
             Email = email;
             Periodo1 = periodo;
@@ -173,6 +195,66 @@ namespace PousadaClass
             cmd.Parameters.Add("@rg", MySqlDbType.VarChar).Value = Rg;
             cmd.Parameters.Add("@salario", MySqlDbType.VarChar).Value = Salario;
             cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = Email;
+            cmd.Parameters.Add("@periodo", MySqlDbType.VarChar).Value = Periodo1;
+            cmd.Parameters.Add("@cargo", MySqlDbType.Int32).Value = Cargo.Id;
+            cmd.ExecuteNonQuery();
+
+            foreach (FuncionarioEndereco endereco in Enderecos)
+            {
+                endereco.Alterar(id);
+            }
+            Banco.Fechar(cmd);
+        }
+
+        public void AlterarEmail(int id)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update funcionarios set nome = @nome, data_nasc = @data, salario = @salario, email = @email, " +
+                "periodo = @periodo, cargos_id = @cargo where id = " + id;
+            cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
+            cmd.Parameters.Add("@data", MySqlDbType.DateTime).Value = Data_nasc;
+            cmd.Parameters.Add("@salario", MySqlDbType.VarChar).Value = Salario;
+            cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = Email;
+            cmd.Parameters.Add("@periodo", MySqlDbType.VarChar).Value = Periodo1;
+            cmd.Parameters.Add("@cargo", MySqlDbType.Int32).Value = Cargo.Id;
+            cmd.ExecuteNonQuery();
+
+            foreach (FuncionarioEndereco endereco in Enderecos)
+            {
+                endereco.Alterar(id);
+            }
+            Banco.Fechar(cmd);
+        }
+
+        public void AlterarRG(int id)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update funcionarios set nome = @nome, data_nasc = @data, rg = @rg, salario = @salario, " +
+                "periodo = @periodo, cargos_id = @cargo where id = " + id;
+            cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
+            cmd.Parameters.Add("@data", MySqlDbType.DateTime).Value = Data_nasc;
+            cmd.Parameters.Add("@rg", MySqlDbType.VarChar).Value = Rg;
+            cmd.Parameters.Add("@salario", MySqlDbType.VarChar).Value = Salario;
+            cmd.Parameters.Add("@periodo", MySqlDbType.VarChar).Value = Periodo1;
+            cmd.Parameters.Add("@cargo", MySqlDbType.Int32).Value = Cargo.Id;
+            cmd.ExecuteNonQuery();
+
+            foreach (FuncionarioEndereco endereco in Enderecos)
+            {
+                endereco.Alterar(id);
+            }
+            Banco.Fechar(cmd);
+        }
+
+        public void AlterarCPF(int id)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update funcionarios set nome = @nome, data_nasc = @data, cpf = @cpf, salario = @salario, " +
+                "periodo = @periodo, cargos_id = @cargo where id = " + id;
+            cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
+            cmd.Parameters.Add("@data", MySqlDbType.DateTime).Value = Data_nasc;
+            cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = Rg;
+            cmd.Parameters.Add("@salario", MySqlDbType.VarChar).Value = Salario;
             cmd.Parameters.Add("@periodo", MySqlDbType.VarChar).Value = Periodo1;
             cmd.Parameters.Add("@cargo", MySqlDbType.Int32).Value = Cargo.Id;
             cmd.ExecuteNonQuery();
@@ -267,11 +349,41 @@ namespace PousadaClass
         public static bool BuscarCampos(string email, string rg, string cpf)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "select id, cpf, rg, email from funcionarios where email = '" + email  + "' or rg = '" + rg + "' or cpf = '" + cpf + "';";
+            cmd.CommandText = "select id, cpf, rg, email from funcionarios where email = '" + email + "' or rg = '" + rg + "' or cpf = '" + cpf + "';";
             var dr = cmd.ExecuteReader();
             bool existe = dr.HasRows;
             Banco.Fechar(cmd);
             return existe;
         }
+
+        public static bool BuscarEmail(string email)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select id, email from funcionarios where email = '" + email  + "';";
+            var dr = cmd.ExecuteReader();
+            bool existe = dr.HasRows;
+            Banco.Fechar(cmd);
+            return existe;
+        }
+
+        public static bool BuscarRG(string rg)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select id, rg from funcionarios where email = '" + rg + "';";
+            var dr = cmd.ExecuteReader();
+            bool existe = dr.HasRows;
+            Banco.Fechar(cmd);
+            return existe;
+        }
+        public static bool BuscarCPF(string cpf)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select id, cpf from funcionarios where cpf = '" + cpf + "';";
+            var dr = cmd.ExecuteReader();
+            bool existe = dr.HasRows;
+            Banco.Fechar(cmd);
+            return existe;
+        }
+
     }
 }
