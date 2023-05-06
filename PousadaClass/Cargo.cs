@@ -15,17 +15,17 @@ namespace PousadaClass
         private int id;
         private string nome;
         private string descricao;
-        private DateTime arquivar;
+        private string arquivar;
 
         // Propriedades
         public int Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Descricao { get => descricao; set => descricao = value; }
-        public DateTime Arquivar { get => arquivar; set => arquivar = value; }
+        public string Arquivar { get => arquivar; set => arquivar = value; }
 
         // Construtor
         public Cargo() { }
-        public Cargo(int id, string nome, string descricao, DateTime arquivar)
+        public Cargo(int id, string nome, string descricao, string arquivar)
         {
             Id = id;
             Nome = nome;
@@ -52,7 +52,7 @@ namespace PousadaClass
         public void Inserir()
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "insert cargos (nome, descricao) values (@nome, @descricao)";
+            cmd.CommandText = "insert cargos (nome, descricao, arquivar) values (@nome, @descricao, default)";
             cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
             cmd.Parameters.Add("@descricao", MySqlDbType.VarChar).Value = Descricao;
             cmd.ExecuteNonQuery();
@@ -70,7 +70,7 @@ namespace PousadaClass
         {
             List<Cargo> lista = new List<Cargo>();
             MySqlCommand cmd = Banco.Abrir();
-            cmd.CommandText = "select * from cargos where arquivar_em is null";
+            cmd.CommandText = "select * from cargos where arquivar = 'N'";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -78,6 +78,29 @@ namespace PousadaClass
                         dr.GetInt32(0),
                         dr.GetString(1),
                         dr.GetString(2)
+                    ));
+            }
+            Banco.Fechar(cmd);
+            return lista;
+        }
+
+        public static List<Cargo> ListarPorCargo(string nome)
+        {
+            List<Cargo> lista = new List<Cargo>();
+            MySqlCommand cmd = Banco.Abrir();
+
+            if (nome.Length > 0)
+                cmd.CommandText = "select * from cargos where nome = " + nome;
+            else
+                cmd.CommandText = "select * from cargos";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new Cargo(
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2),
+                        dr.GetString(3)
                     ));
             }
             Banco.Fechar(cmd);

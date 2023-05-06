@@ -44,7 +44,7 @@ namespace Pousada_desktop
                 btnConsultar.Text = "OBTER";
             }
             else if (txtId.Text.Length > 0 || txtPesquisaEmail.Text.Length > 0)
-                {
+            {
                 txtId.Enabled = false;
                 btnConsultar.Text = "CONSULTAR";
                 var funcionario = (Funcionario)null;
