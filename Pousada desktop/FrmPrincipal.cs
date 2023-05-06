@@ -76,5 +76,11 @@ namespace PousadaDesk
             FrmCargo cargo = new FrmCargo();
             cargo.Show();
         }
+
+        private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmClienteListar cliente = new FrmClienteListar();
+            cliente.Show();
+        }
     }
 }

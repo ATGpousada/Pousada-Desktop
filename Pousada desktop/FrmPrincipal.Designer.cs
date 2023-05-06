@@ -135,6 +135,7 @@
             this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
             this.listarToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.listarToolStripMenuItem1.Text = "Listar";
+            this.listarToolStripMenuItem1.Click += new System.EventHandler(this.listarToolStripMenuItem1_Click);
             // 
             // configuraçõesToolStripMenuItem
             // 
@@ -147,7 +148,7 @@
             // cargosToolStripMenuItem
             // 
             this.cargosToolStripMenuItem.Name = "cargosToolStripMenuItem";
-            this.cargosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cargosToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
             this.cargosToolStripMenuItem.Text = "&Cargos";
             this.cargosToolStripMenuItem.Click += new System.EventHandler(this.cargosToolStripMenuItem_Click);
             // 
@@ -159,7 +160,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPrincipal";
             this.Text = "Pousada Do Sossego";
             this.Load += new System.EventHandler(this.Form1_Load);

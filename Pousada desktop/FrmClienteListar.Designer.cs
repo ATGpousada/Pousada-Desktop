@@ -50,6 +50,8 @@
             this.TIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TELEFONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CLIENTETEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pesquisar = new System.Windows.Forms.Label();
+            this.txtPesquisarcli = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDados)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,13 +71,13 @@
             this.CPF,
             this.RG,
             this.EMAIL});
-            this.DgvDados.Location = new System.Drawing.Point(107, 42);
+            this.DgvDados.Location = new System.Drawing.Point(128, 38);
             this.DgvDados.Margin = new System.Windows.Forms.Padding(4);
             this.DgvDados.Name = "DgvDados";
             this.DgvDados.ReadOnly = true;
             this.DgvDados.RowHeadersVisible = false;
             this.DgvDados.RowHeadersWidth = 51;
-            this.DgvDados.Size = new System.Drawing.Size(589, 223);
+            this.DgvDados.Size = new System.Drawing.Size(588, 223);
             this.DgvDados.TabIndex = 0;
             this.DgvDados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDados_CellContentClick);
             // 
@@ -130,7 +132,7 @@
             this.groupBox1.Controls.Add(this.DgvDados);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(64, 62);
+            this.groupBox1.Location = new System.Drawing.Point(64, 97);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -308,12 +310,32 @@
             this.CLIENTETEL.ReadOnly = true;
             this.CLIENTETEL.Width = 125;
             // 
+            // Pesquisar
+            // 
+            this.Pesquisar.AutoSize = true;
+            this.Pesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pesquisar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Pesquisar.Location = new System.Drawing.Point(311, 39);
+            this.Pesquisar.Name = "Pesquisar";
+            this.Pesquisar.Size = new System.Drawing.Size(99, 25);
+            this.Pesquisar.TabIndex = 4;
+            this.Pesquisar.Text = "Pesquisar";
+            // 
+            // txtPesquisarcli
+            // 
+            this.txtPesquisarcli.Location = new System.Drawing.Point(433, 39);
+            this.txtPesquisarcli.Name = "txtPesquisarcli";
+            this.txtPesquisarcli.Size = new System.Drawing.Size(302, 22);
+            this.txtPesquisarcli.TabIndex = 5;
+            // 
             // FrmClienteListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(1065, 1001);
+            this.Controls.Add(this.txtPesquisarcli);
+            this.Controls.Add(this.Pesquisar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -328,6 +350,7 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelcli)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -355,5 +378,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn RG;
         private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL;
+        private System.Windows.Forms.Label Pesquisar;
+        private System.Windows.Forms.TextBox txtPesquisarcli;
     }
 }

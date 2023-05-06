@@ -52,7 +52,6 @@ namespace Pousada_desktop
                 DgvDados.Rows[contador].Cells[2].Value = cli.Cpf;
                 DgvDados.Rows[contador].Cells[3].Value = cli.Rg;
                 DgvDados.Rows[contador].Cells[4].Value = cli.Email;
-                DgvDados.Rows[contador].Cells[5].Value = cli.Enderecos;
                 contador++;
             }
         }
@@ -96,6 +95,21 @@ namespace Pousada_desktop
                 dgvTelcli.Rows[c].Cells[2].Value = cli.Telefone;
                 dgvTelcli.Rows[c].Cells[3].Value = cli.Cliente.Nome;
                 c++;
+            }
+        }
+        private void txtPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPesquisarcli.Text.Length > 1)
+            {
+                CarregaGrid(txtPesquisarcli.Text);
+                CarregaGridEndereco(txtPesquisarcli.Text);
+                CarregaGridTelefone(txtPesquisarcli.Text);
+            }
+            else
+            {
+                CarregaGrid(txtPesquisarcli.Text);
+                CarregaGridEndereco(txtPesquisarcli.Text);
+                CarregaGridTelefone(txtPesquisarcli.Text);
             }
         }
     }
