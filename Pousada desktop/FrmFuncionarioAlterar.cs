@@ -75,8 +75,10 @@ namespace Pousada_desktop
                 var endereco = FuncionarioEndereco.ObterPorIdForeign(int.Parse(txtId.Text));
                 var telefone = FuncionarioTelefone.ObterPorIdForeign(int.Parse(txtId.Text));
                 var telefone2 = FuncionarioTelefone.ObterPorIdForeign2(int.Parse(txtId.Text));
-                if (funcionario == null)
-                    MessageBox.Show("Não há um ID cadastrado com este numero");
+
+                // Verificando se funcionario foi demitido ou se possui o ID cadastrado
+                if (funcionario == null || funcionario.VerificarDemissao(Convert.ToInt32(txtId.Text)) == true)
+                    MessageBox.Show("Não há ID cadastrado ou Funcionario Demitido");
                 else
                 {
                     // Retorna dados pessoais do funcionario
@@ -155,6 +157,7 @@ namespace Pousada_desktop
                         btnAdicionarNumero.Visible = true;
                     }
 
+                    btnDemissao.Visible = true;
                     btnAlterar.Enabled = true;
                 }
             }
@@ -349,6 +352,21 @@ namespace Pousada_desktop
             txtNumeroTel2.Visible = true;
             cmbTipoTel2.Visible = true;
             add = 1;
+        }
+
+        private void btnDemissao_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Você deseja demitir o " + txtNome.Text +"?", "Demissão", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                var demitir = new Funcionario();
+                demitir.Demitir(Convert.ToInt32(txtId.Text));
+                MessageBox.Show("Funcionario Demitido!");
+            }
+            else
+            {
+                MessageBox.Show("Você optou por não demitir.");
+            }
         }
     }
 }

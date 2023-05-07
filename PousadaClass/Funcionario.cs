@@ -206,6 +206,29 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
+        public void Demitir(int id)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update funcionarios set demissao = now() where id = " + id;
+            cmd.ExecuteNonQuery();
+            Banco.Fechar(cmd);
+        }
+
+        public bool VerificarDemissao(int id)
+        {
+            bool demitido = false;
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select * from funcionarios where id = '"+ id +"' and demissao is not null";
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                demitido = true;
+            }
+            reader.Close();
+            Banco.Fechar(cmd);
+            return demitido;
+        }
+
         public void AlterarEmail(int id)
         {
             var cmd = Banco.Abrir();
@@ -271,9 +294,9 @@ namespace PousadaClass
             List<Funcionario> lista = new List<Funcionario>();
             var cmd = Banco.Abrir();
             if (nome.Length > 0)
-                cmd.CommandText = "select id, nome, data_nasc, cpf, rg, salario, email, senha, periodo, admissao, cargos_id from funcionarios where nome like '%" + nome + "%'";
+                cmd.CommandText = "select id, nome, data_nasc, cpf, rg, salario, email, senha, periodo, admissao, cargos_id from funcionarios where nome like '%" + nome + "%' and demissao is null";
             else
-                cmd.CommandText = "select id, nome, data_nasc, cpf, rg, salario, email, senha, periodo, admissao, cargos_id from funcionarios";
+                cmd.CommandText = "select id, nome, data_nasc, cpf, rg, salario, email, senha, periodo, admissao, cargos_id from funcionarios where demissao is null";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {

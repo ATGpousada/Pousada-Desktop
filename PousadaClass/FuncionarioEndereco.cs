@@ -109,9 +109,11 @@ namespace PousadaClass
             if (nome.Length > 0)
                 cmd.CommandText = "select enderecos_func.*, funcionarios.nome FROM funcionarios" +
                     " INNER JOIN enderecos_func ON funcionarios.id = enderecos_func.funcionario_id" +
-                    " where funcionarios.NOME like '%" + nome + "%'";
+                    " where funcionarios.NOME like '%" + nome + "%' and demissao is null";
             else
-                cmd.CommandText = "select * from enderecos_func";
+                cmd.CommandText = "select enderecos_func.*, funcionarios.nome FROM funcionarios" +
+                    " INNER JOIN enderecos_func ON funcionarios.id = enderecos_func.funcionario_id" +
+                    " where demissao is null";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {

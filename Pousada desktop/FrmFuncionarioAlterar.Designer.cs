@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPesquisaEmail = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnAdicionarNumero = new System.Windows.Forms.Button();
             this.labelTipo = new System.Windows.Forms.Label();
             this.labelNumero = new System.Windows.Forms.Label();
             this.cmbTipoTel2 = new System.Windows.Forms.ComboBox();
@@ -73,7 +74,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.btnAdicionarNumero = new System.Windows.Forms.Button();
+            this.btnDemissao = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbDados.SuspendLayout();
@@ -138,7 +139,7 @@
             this.groupBox2.Controls.Add(this.cmbTipoTel);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(749, 450);
+            this.groupBox2.Location = new System.Drawing.Point(749, 426);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -146,6 +147,20 @@
             this.groupBox2.TabIndex = 48;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Telefone";
+            // 
+            // btnAdicionarNumero
+            // 
+            this.btnAdicionarNumero.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAdicionarNumero.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAdicionarNumero.Location = new System.Drawing.Point(302, 25);
+            this.btnAdicionarNumero.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdicionarNumero.Name = "btnAdicionarNumero";
+            this.btnAdicionarNumero.Size = new System.Drawing.Size(65, 58);
+            this.btnAdicionarNumero.TabIndex = 52;
+            this.btnAdicionarNumero.Text = "+";
+            this.btnAdicionarNumero.UseVisualStyleBackColor = false;
+            this.btnAdicionarNumero.Visible = false;
+            this.btnAdicionarNumero.Click += new System.EventHandler(this.btnAdicionarNumero_Click);
             // 
             // labelTipo
             // 
@@ -259,7 +274,7 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(107, 450);
+            this.groupBox1.Location = new System.Drawing.Point(107, 426);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -656,26 +671,28 @@
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnAdicionarNumero
+            // btnDemissao
             // 
-            this.btnAdicionarNumero.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAdicionarNumero.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAdicionarNumero.Location = new System.Drawing.Point(302, 25);
-            this.btnAdicionarNumero.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdicionarNumero.Name = "btnAdicionarNumero";
-            this.btnAdicionarNumero.Size = new System.Drawing.Size(65, 58);
-            this.btnAdicionarNumero.TabIndex = 52;
-            this.btnAdicionarNumero.Text = "+";
-            this.btnAdicionarNumero.UseVisualStyleBackColor = false;
-            this.btnAdicionarNumero.Visible = false;
-            this.btnAdicionarNumero.Click += new System.EventHandler(this.btnAdicionarNumero_Click);
+            this.btnDemissao.BackColor = System.Drawing.Color.Red;
+            this.btnDemissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDemissao.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDemissao.Location = new System.Drawing.Point(107, 798);
+            this.btnDemissao.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDemissao.Name = "btnDemissao";
+            this.btnDemissao.Size = new System.Drawing.Size(101, 40);
+            this.btnDemissao.TabIndex = 52;
+            this.btnDemissao.Text = "Demitir";
+            this.btnDemissao.UseVisualStyleBackColor = false;
+            this.btnDemissao.Visible = false;
+            this.btnDemissao.Click += new System.EventHandler(this.btnDemissao_Click);
             // 
             // FrmFuncionarioAlterar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1221, 830);
+            this.ClientSize = new System.Drawing.Size(1221, 842);
+            this.Controls.Add(this.btnDemissao);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.groupBox2);
@@ -748,5 +765,6 @@
         private System.Windows.Forms.ComboBox cmbTipoTel2;
         private System.Windows.Forms.TextBox txtNumeroTel2;
         private System.Windows.Forms.Button btnAdicionarNumero;
+        private System.Windows.Forms.Button btnDemissao;
     }
 }
