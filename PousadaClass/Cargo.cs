@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,6 @@ namespace PousadaClass
             Nome = nome;
             Descricao = descricao;
         }
-
         public Cargo(string nome, string descricao)
         {
             Nome = nome;
@@ -47,12 +47,12 @@ namespace PousadaClass
         }
 
         /// <summary>
-        /// Inserir Cargo no Banco de dados
+        /// O método tem a intenção de inserir um novo cargo no banco de dados
         /// </summary>
         public void Inserir()
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "insert cargos (nome, descricao, arquivar) values (@nome, @descricao, default)";
+            cmd.CommandText = "insert cargos (nome, descricao, arquivar_em) values (@nome, @descricao, default)";
             cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
             cmd.Parameters.Add("@descricao", MySqlDbType.VarChar).Value = Descricao;
             cmd.ExecuteNonQuery();
@@ -62,7 +62,7 @@ namespace PousadaClass
         }
 
         /// <summary>
-        /// Listando o nome dos cargos pelo banco de dados (Lista todos ou algo especifico)
+        /// O método tem a intenção de listar todos os cargos que não estão arquivados
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>
@@ -70,7 +70,7 @@ namespace PousadaClass
         {
             List<Cargo> lista = new List<Cargo>();
             MySqlCommand cmd = Banco.Abrir();
-            cmd.CommandText = "select * from cargos where arquivar = 'N'";
+            cmd.CommandText = "select * from cargos where arquivar_em = 'N'";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -84,6 +84,11 @@ namespace PousadaClass
             return lista;
         }
 
+        /// <summary>
+        /// O método tem a intenção de listar todos os cargos e também pode ser uma pesquisa filtrada pelo nome
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
         public static List<Cargo> ListarPorCargo(string nome)
         {
             List<Cargo> lista = new List<Cargo>();
@@ -108,7 +113,7 @@ namespace PousadaClass
         }
 
         /// <summary>
-        /// Retornando do banco de dados o ID do nivel pedido
+        /// O método tem a intenção de retornar do banco de dados o ID do nivel pedido
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -130,23 +135,58 @@ namespace PousadaClass
         }
 
         /// <summary>
-        /// Atualizando o Cargo do Funcionario no Banco de dados
+        /// O método tem a intenção de atualizar o Cargo do Funcionario no Banco de dados
         /// </summary>
         public void Atualizar(int id)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "update cargos set nome = @nome, descricao = @desc where id = " + id;
+            cmd.CommandText = "update cargos set nome = @nome, descricao = @desc, arquivar_em = @arquivar where id = " + id;
             cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
             cmd.Parameters.Add("@desc", MySqlDbType.VarChar).Value = Descricao;
+            cmd.Parameters.Add("@arquivar", MySqlDbType.VarChar).Value = Arquivar;
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }
 
-        public void ArquivarCargo()
+        /// <summary>
+        /// O método tem a intenção de buscar do banco de dados pelo o nome do cargo se o cargo está arquivado ou não; Retorna em booleano
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
+        public bool BuscaArquivado(string nome)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "update cargos set arquivar_em = default where id = @id";
-            cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = Id;
+            cmd.CommandText = "select * from cargos where arquivar_em = 'N' and nome = '" + nome + "'";
+            var reader = cmd.ExecuteReader();
+
+            bool resultado = reader.Read();
+
+            reader.Close();
+            Banco.Fechar(cmd);
+
+            return resultado;
+        }
+
+        /// <summary>
+        /// O método tem a intenção de arquivar o cargo
+        /// </summary>
+        /// <param name="id"></param>
+        public static void ArquivarCargo(int id)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update cargos set arquivar_em = 'S' where id = " + id;
+            cmd.ExecuteNonQuery();
+            Banco.Fechar(cmd);
+        }
+
+        /// <summary>
+        /// O método tem a intenção de restaurar o cargo
+        /// </summary>
+        /// <param name="id"></param>
+        public static void RestaurarCargo(int id)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update cargos set arquivar_em = 'N' where id = " + id;
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }

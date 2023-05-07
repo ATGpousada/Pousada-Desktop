@@ -47,6 +47,8 @@
             this.clnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnArquivar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnArquivar = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.gpbInserir.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargos)).BeginInit();
             this.SuspendLayout();
@@ -56,8 +58,8 @@
             this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Location = new System.Drawing.Point(92, 211);
-            this.cmbCargo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCargo.Location = new System.Drawing.Point(92, 239);
+            this.cmbCargo.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(171, 38);
             this.cmbCargo.TabIndex = 0;
@@ -67,7 +69,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(88, 185);
+            this.label1.Location = new System.Drawing.Point(88, 213);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(164, 24);
@@ -78,9 +80,9 @@
             // 
             this.txtNomeCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeCargo.Location = new System.Drawing.Point(29, 96);
-            this.txtNomeCargo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNomeCargo.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeCargo.Name = "txtNomeCargo";
-            this.txtNomeCargo.Size = new System.Drawing.Size(317, 29);
+            this.txtNomeCargo.Size = new System.Drawing.Size(350, 29);
             this.txtNomeCargo.TabIndex = 2;
             // 
             // label2
@@ -111,9 +113,9 @@
             // 
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricao.Location = new System.Drawing.Point(29, 177);
-            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(317, 94);
+            this.txtDescricao.Size = new System.Drawing.Size(350, 94);
             this.txtDescricao.TabIndex = 6;
             this.txtDescricao.Text = "";
             // 
@@ -121,8 +123,8 @@
             // 
             this.btnInserir.BackColor = System.Drawing.Color.DarkGreen;
             this.btnInserir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnInserir.Location = new System.Drawing.Point(735, 386);
-            this.btnInserir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInserir.Location = new System.Drawing.Point(739, 386);
+            this.btnInserir.Margin = new System.Windows.Forms.Padding(4);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(120, 43);
             this.btnInserir.TabIndex = 41;
@@ -133,6 +135,7 @@
             // 
             // gpbInserir
             // 
+            this.gpbInserir.Controls.Add(this.btnArquivar);
             this.gpbInserir.Controls.Add(this.btnObterID);
             this.gpbInserir.Controls.Add(this.label_ID);
             this.gpbInserir.Controls.Add(this.txtId);
@@ -143,9 +146,9 @@
             this.gpbInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbInserir.ForeColor = System.Drawing.SystemColors.Control;
             this.gpbInserir.Location = new System.Drawing.Point(588, 62);
-            this.gpbInserir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbInserir.Margin = new System.Windows.Forms.Padding(4);
             this.gpbInserir.Name = "gpbInserir";
-            this.gpbInserir.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbInserir.Padding = new System.Windows.Forms.Padding(4);
             this.gpbInserir.Size = new System.Drawing.Size(404, 296);
             this.gpbInserir.TabIndex = 42;
             this.gpbInserir.TabStop = false;
@@ -157,8 +160,8 @@
             this.btnObterID.BackColor = System.Drawing.Color.SteelBlue;
             this.btnObterID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnObterID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnObterID.Location = new System.Drawing.Point(293, 31);
-            this.btnObterID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnObterID.Location = new System.Drawing.Point(135, 31);
+            this.btnObterID.Margin = new System.Windows.Forms.Padding(4);
             this.btnObterID.Name = "btnObterID";
             this.btnObterID.Size = new System.Drawing.Size(55, 33);
             this.btnObterID.TabIndex = 46;
@@ -172,7 +175,7 @@
             this.label_ID.AutoSize = true;
             this.label_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_ID.ForeColor = System.Drawing.SystemColors.Control;
-            this.label_ID.Location = new System.Drawing.Point(184, 34);
+            this.label_ID.Location = new System.Drawing.Point(26, 34);
             this.label_ID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_ID.Name = "label_ID";
             this.label_ID.Size = new System.Drawing.Size(31, 25);
@@ -184,8 +187,8 @@
             // 
             this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(223, 32);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId.Location = new System.Drawing.Point(65, 32);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(61, 29);
             this.txtId.TabIndex = 7;
@@ -195,8 +198,8 @@
             // 
             this.btnAlterar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnAlterar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAlterar.Location = new System.Drawing.Point(800, 386);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAlterar.Location = new System.Drawing.Point(739, 386);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(120, 43);
             this.btnAlterar.TabIndex = 43;
@@ -209,8 +212,8 @@
             // 
             this.btnAparecerInserir.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAparecerInserir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAparecerInserir.Location = new System.Drawing.Point(92, 78);
-            this.btnAparecerInserir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAparecerInserir.Location = new System.Drawing.Point(132, 78);
+            this.btnAparecerInserir.Margin = new System.Windows.Forms.Padding(4);
             this.btnAparecerInserir.Name = "btnAparecerInserir";
             this.btnAparecerInserir.Size = new System.Drawing.Size(148, 48);
             this.btnAparecerInserir.TabIndex = 44;
@@ -222,8 +225,8 @@
             // 
             this.button1.BackColor = System.Drawing.Color.SteelBlue;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(278, 78);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(318, 78);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 48);
             this.button1.TabIndex = 45;
@@ -259,7 +262,7 @@
             this.clnId.MinimumWidth = 6;
             this.clnId.Name = "clnId";
             this.clnId.ReadOnly = true;
-            this.clnId.Width = 125;
+            this.clnId.Width = 40;
             // 
             // clnNome
             // 
@@ -268,7 +271,6 @@
             this.clnNome.MinimumWidth = 6;
             this.clnNome.Name = "clnNome";
             this.clnNome.ReadOnly = true;
-            this.clnNome.Width = 125;
             // 
             // clnDescricao
             // 
@@ -277,7 +279,7 @@
             this.clnDescricao.MinimumWidth = 6;
             this.clnDescricao.Name = "clnDescricao";
             this.clnDescricao.ReadOnly = true;
-            this.clnDescricao.Width = 125;
+            this.clnDescricao.Width = 480;
             // 
             // clnArquivar
             // 
@@ -286,7 +288,31 @@
             this.clnArquivar.MinimumWidth = 6;
             this.clnArquivar.Name = "clnArquivar";
             this.clnArquivar.ReadOnly = true;
-            this.clnArquivar.Width = 125;
+            this.clnArquivar.Width = 80;
+            // 
+            // btnArquivar
+            // 
+            this.btnArquivar.AutoSize = true;
+            this.btnArquivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArquivar.Location = new System.Drawing.Point(253, 33);
+            this.btnArquivar.Name = "btnArquivar";
+            this.btnArquivar.Size = new System.Drawing.Size(115, 29);
+            this.btnArquivar.TabIndex = 47;
+            this.btnArquivar.Text = "Arquivar";
+            this.btnArquivar.UseVisualStyleBackColor = true;
+            this.btnArquivar.CheckedChanged += new System.EventHandler(this.btnArquivar_CheckedChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(76, 459);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 24);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Cargos";
             // 
             // FrmCargo
             // 
@@ -294,6 +320,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(1095, 726);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvCargos);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAparecerInserir);
@@ -302,7 +329,7 @@
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbCargo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCargo";
             this.Text = "FrmCargo";
             this.Load += new System.EventHandler(this.FrmInserirCargo_Load);
@@ -335,5 +362,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clnNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnDescricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnArquivar;
+        private System.Windows.Forms.CheckBox btnArquivar;
+        private System.Windows.Forms.Label label4;
     }
 }

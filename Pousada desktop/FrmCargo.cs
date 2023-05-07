@@ -14,6 +14,8 @@ namespace Pousada_desktop
 {
     public partial class FrmCargo : Form
     {
+        // Variavel para confirmar se o checkbox está ativado ou não
+        private string CheckBox;
         public FrmCargo()
         {
             InitializeComponent();
@@ -24,8 +26,12 @@ namespace Pousada_desktop
             CarregaCargo();
             CarregaGrid();
             dgvCargos.CellFormatting += dgvCargos_CellFormatting;
+            CheckBox = "N";
         }
 
+        /// <summary>
+        /// Carrega o cargo para listar em um ComboBox
+        /// </summary>
         private void CarregaCargo()
         {
             cmbCargo.DataSource = Cargo.Listar();
@@ -35,6 +41,7 @@ namespace Pousada_desktop
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
+            // Conferindo se os TextBox estão preenchidos
             if (txtNomeCargo.Text.Length > 0 && txtDescricao.Text.Length > 0)
             {
                 Cargo cargo = new Cargo(txtNomeCargo.Text, txtDescricao.Text);
@@ -49,9 +56,17 @@ namespace Pousada_desktop
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+            // Conferindo se os TextBox estão preenchidos
             if (txtNomeCargo.Text.Length > 0 && txtDescricao.Text.Length > 0)
             {
-                Cargo alterar = new Cargo(txtNomeCargo.Text, txtDescricao.Text);
+                // Caso o Usuario arquivar o cargo, a string ganhará um valor diferente
+                if (btnArquivar.Text == "Sim")
+                {
+                    CheckBox = "S";
+                }
+
+                // Pegando todos os TextBox e atualizando
+                Cargo alterar = new Cargo(Convert.ToInt32(txtId.Text), txtNomeCargo.Text, txtDescricao.Text, CheckBox);
                 alterar.Atualizar(Convert.ToInt32(txtId.Text));
                 CarregaGrid();
                 CarregaCargo();
@@ -64,23 +79,27 @@ namespace Pousada_desktop
 
         private void btnAparecerInserir_Click(object sender, EventArgs e)
         {
+            // Aparecendo label, botão e textbox para inserção
             gpbInserir.Visible = true;
             btnInserir.Visible = true;
             btnAlterar.Visible = false;
             txtId.Visible = false;
             label_ID.Visible = false;
             btnObterID.Visible = false;
+            btnArquivar.Visible = false;
             
             txtId.Clear(); txtNomeCargo.Clear(); txtDescricao.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Aparecendo label, botão e textbox para alteração
             gpbInserir.Visible = true;
             btnAlterar.Visible = true;
             txtId.Visible = true;
             label_ID.Visible = true;
             btnObterID.Visible = true;
+            btnArquivar.Visible = true;
             btnInserir.Visible = false;
 
             txtId.Clear(); txtNomeCargo.Clear(); txtDescricao.Clear();
@@ -88,7 +107,7 @@ namespace Pousada_desktop
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            // Botão para inserir ID para consulta de Cargo especifico
             if (btnObterID.Text == "...")
             {
                 txtId.Enabled = true;
@@ -113,8 +132,20 @@ namespace Pousada_desktop
                     }
                     else
                     {
+                        // Adicionando cargos que foram consultados no TextBox
                         txtNomeCargo.Text = cargo.Nome;
                         txtDescricao.Text = cargo.Descricao;
+                        btnArquivar.Checked = cargo.BuscaArquivado(txtNomeCargo.Text);
+
+                        // Condição para saber se o cargo está arquivado ou não
+                        if (btnArquivar.Checked)
+                        {
+                            btnArquivar.Checked = false;
+                        }
+                        else
+                        {
+                            btnArquivar.Checked = true;
+                        }
                     }
                 }
                 else // Caso não houver, Avisará que não há Cargo cadastrado
@@ -126,6 +157,10 @@ namespace Pousada_desktop
             }
         }
 
+        /// <summary>
+        /// Carrega no DataGridView todos o cargos cadastrados no banco de dados
+        /// </summary>
+        /// <param name="nome"></param>
         private void CarregaGrid(string nome = "")
         {
             List<Cargo> lista = null;
@@ -152,6 +187,7 @@ namespace Pousada_desktop
 
         private void dgvCargos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            // Colocando uma mascara no DataGridView em arquivar para ficar melhor visualmente
             if (dgvCargos.Columns[e.ColumnIndex].Name == "clnArquivar")
             {
                 object value = e.Value;
@@ -167,6 +203,15 @@ namespace Pousada_desktop
                     e.FormattingApplied = true;
                 }
             }
+        }
+
+        private void btnArquivar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btnArquivar.Checked)
+                Cargo.ArquivarCargo(int.Parse(txtId.Text));
+            else
+                Cargo.RestaurarCargo(int.Parse(txtId.Text));
+            CarregaGrid();
         }
     }
 }
