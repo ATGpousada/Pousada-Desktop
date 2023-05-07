@@ -41,7 +41,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtNumeroend = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtLogradouroend = new System.Windows.Forms.TextBox();
             this.cmbUfEndcli = new System.Windows.Forms.ComboBox();
@@ -61,9 +63,6 @@
             this.txtNumeroTelcli = new System.Windows.Forms.TextBox();
             this.cmbTipoTelcli = new System.Windows.Forms.ComboBox();
             this.BTNInserir = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtNumeroendcli = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -196,7 +195,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtNumeroendcli);
             this.groupBox2.Controls.Add(this.txtNumeroend);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label8);
@@ -229,6 +227,18 @@
             this.txtNumeroend.Size = new System.Drawing.Size(109, 29);
             this.txtNumeroend.TabIndex = 27;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label10.Location = new System.Drawing.Point(433, 135);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(135, 31);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "NUMERO";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -240,6 +250,19 @@
             this.label8.Size = new System.Drawing.Size(135, 31);
             this.label8.TabIndex = 26;
             this.label8.Text = "NUMERO";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Location = new System.Drawing.Point(78, 135);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(211, 31);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "LOGRADOURO";
+            this.label9.Click += new System.EventHandler(this.label7_Click);
             // 
             // label7
             // 
@@ -304,19 +327,19 @@
             // 
             // txtCepEndcli
             // 
-            this.txtCepEndcli.Location = new System.Drawing.Point(75, 76);
+            this.txtCepEndcli.Location = new System.Drawing.Point(434, 76);
             this.txtCepEndcli.Margin = new System.Windows.Forms.Padding(4);
             this.txtCepEndcli.Name = "txtCepEndcli";
-            this.txtCepEndcli.Size = new System.Drawing.Size(199, 29);
+            this.txtCepEndcli.Size = new System.Drawing.Size(134, 29);
             this.txtCepEndcli.TabIndex = 23;
             this.txtCepEndcli.TextChanged += new System.EventHandler(this.txtCepEnd_TextChanged);
             // 
             // txtCidadeEndcli
             // 
-            this.txtCidadeEndcli.Location = new System.Drawing.Point(420, 76);
+            this.txtCidadeEndcli.Location = new System.Drawing.Point(78, 76);
             this.txtCidadeEndcli.Margin = new System.Windows.Forms.Padding(4);
             this.txtCidadeEndcli.Name = "txtCidadeEndcli";
-            this.txtCidadeEndcli.Size = new System.Drawing.Size(151, 29);
+            this.txtCidadeEndcli.Size = new System.Drawing.Size(211, 29);
             this.txtCidadeEndcli.TabIndex = 21;
             // 
             // label16
@@ -501,39 +524,6 @@
             this.BTNInserir.UseVisualStyleBackColor = true;
             this.BTNInserir.Click += new System.EventHandler(this.BTNInserir_Click);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(78, 135);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(211, 31);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "LOGRADOURO";
-            this.label9.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(433, 135);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(135, 31);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "NUMERO";
-            // 
-            // txtNumeroendcli
-            // 
-            this.txtNumeroendcli.Location = new System.Drawing.Point(439, 170);
-            this.txtNumeroendcli.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNumeroendcli.Name = "txtNumeroendcli";
-            this.txtNumeroendcli.Size = new System.Drawing.Size(109, 29);
-            this.txtNumeroendcli.TabIndex = 27;
-            // 
             // FrmClienteCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -593,7 +583,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtLogradouroend;
-        private System.Windows.Forms.TextBox txtNumeroendcli;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
     }
