@@ -160,7 +160,7 @@ namespace PousadaClass
         {
             var cmd = Banco.Abrir();
             cmd.CommandText = "insert funcionarios (nome, data_nasc, cpf, rg, salario, email, senha, periodo, admissao, cargos_ID) " +
-                "values (@nome, @data_nasc, @cpf, @rg, @salario, @email, @senha, @periodo, default, @cargo)";
+                "values (@nome, @data_nasc, @cpf, @rg, @salario, @email, MD5(@senha), @periodo, default, @cargo)";
             cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
             cmd.Parameters.Add("@data_nasc", MySqlDbType.DateTime).Value = Data_nasc;
             cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = Cpf;

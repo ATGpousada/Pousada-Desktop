@@ -142,17 +142,17 @@ namespace Pousada_desktop
             cmbTipoTel2.Visible = true;
         }
 
-        private void txtNumeroTel_TextChanged(object sender, EventArgs e)
+        private void cmbTipoTel_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtNumeroTel_TextChanged_1(object sender, EventArgs e)
         {
             // Se o TextBox de Telefone for preenchido poderá adicionar o Segundo Telefone
             if (txtNumeroTel.Text.Length > 0)
             {
                 btnAdicionarNumero.Enabled = true;
             }
-        }
-
-        private void cmbTipoTel_TextChanged(object sender, EventArgs e)
-        {
         }
     }
 }

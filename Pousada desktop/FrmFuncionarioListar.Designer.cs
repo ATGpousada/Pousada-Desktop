@@ -236,7 +236,7 @@
             this.dgvEndereco.ReadOnly = true;
             this.dgvEndereco.RowHeadersVisible = false;
             this.dgvEndereco.RowHeadersWidth = 51;
-            this.dgvEndereco.Size = new System.Drawing.Size(961, 185);
+            this.dgvEndereco.Size = new System.Drawing.Size(807, 185);
             this.dgvEndereco.TabIndex = 1;
             // 
             // clnIdEndereco
@@ -322,13 +322,13 @@
             this.clnTipoTelefone,
             this.clnNumeroTelefone,
             this.clnFuncionarioTelefone});
-            this.dgvTelefone.Location = new System.Drawing.Point(1054, 404);
+            this.dgvTelefone.Location = new System.Drawing.Point(957, 404);
             this.dgvTelefone.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTelefone.Name = "dgvTelefone";
             this.dgvTelefone.ReadOnly = true;
             this.dgvTelefone.RowHeadersVisible = false;
             this.dgvTelefone.RowHeadersWidth = 51;
-            this.dgvTelefone.Size = new System.Drawing.Size(334, 185);
+            this.dgvTelefone.Size = new System.Drawing.Size(431, 185);
             this.dgvTelefone.TabIndex = 3;
             // 
             // clnIdTelefone
@@ -412,7 +412,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1050, 380);
+            this.label7.Location = new System.Drawing.Point(938, 380);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 20);
             this.label7.TabIndex = 7;
@@ -446,7 +446,7 @@
             this.gpListaDemitidos.Controls.Add(this.dgvDadosDemitidos);
             this.gpListaDemitidos.Controls.Add(this.dgvEnderecoDemitidos);
             this.gpListaDemitidos.Controls.Add(this.dgvTelefoneDemitidos);
-            this.gpListaDemitidos.Location = new System.Drawing.Point(38, 156);
+            this.gpListaDemitidos.Location = new System.Drawing.Point(38, 146);
             this.gpListaDemitidos.Name = "gpListaDemitidos";
             this.gpListaDemitidos.Size = new System.Drawing.Size(1471, 611);
             this.gpListaDemitidos.TabIndex = 55;
@@ -458,7 +458,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1054, 375);
+            this.label4.Location = new System.Drawing.Point(987, 375);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 20);
             this.label4.TabIndex = 6;
@@ -621,7 +621,7 @@
             this.dgvEnderecoDemitidos.ReadOnly = true;
             this.dgvEnderecoDemitidos.RowHeadersVisible = false;
             this.dgvEnderecoDemitidos.RowHeadersWidth = 51;
-            this.dgvEnderecoDemitidos.Size = new System.Drawing.Size(961, 185);
+            this.dgvEnderecoDemitidos.Size = new System.Drawing.Size(792, 185);
             this.dgvEnderecoDemitidos.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn11
@@ -707,13 +707,13 @@
             this.dataGridViewTextBoxColumn20,
             this.dataGridViewTextBoxColumn21,
             this.dataGridViewTextBoxColumn22});
-            this.dgvTelefoneDemitidos.Location = new System.Drawing.Point(1058, 399);
+            this.dgvTelefoneDemitidos.Location = new System.Drawing.Point(991, 399);
             this.dgvTelefoneDemitidos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTelefoneDemitidos.Name = "dgvTelefoneDemitidos";
             this.dgvTelefoneDemitidos.ReadOnly = true;
             this.dgvTelefoneDemitidos.RowHeadersVisible = false;
             this.dgvTelefoneDemitidos.RowHeadersWidth = 51;
-            this.dgvTelefoneDemitidos.Size = new System.Drawing.Size(378, 185);
+            this.dgvTelefoneDemitidos.Size = new System.Drawing.Size(445, 185);
             this.dgvTelefoneDemitidos.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn19

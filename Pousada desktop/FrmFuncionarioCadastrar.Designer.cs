@@ -36,8 +36,6 @@
             this.cmbPeriodo = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.txtCpf = new System.Windows.Forms.TextBox();
-            this.txtRg = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
@@ -51,7 +49,6 @@
             this.btnInserir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbUfEnd = new System.Windows.Forms.ComboBox();
-            this.txtCepEnd = new System.Windows.Forms.TextBox();
             this.txtCidadeEnd = new System.Windows.Forms.TextBox();
             this.txtLogradouroEnd = new System.Windows.Forms.TextBox();
             this.txtNumeroEnd = new System.Windows.Forms.TextBox();
@@ -68,10 +65,13 @@
             this.labelNumero = new System.Windows.Forms.Label();
             this.cmbTipoTel2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNumeroTel2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNumeroTel = new System.Windows.Forms.TextBox();
             this.cmbTipoTel = new System.Windows.Forms.ComboBox();
+            this.txtRg = new System.Windows.Forms.MaskedTextBox();
+            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
+            this.txtCepEnd = new System.Windows.Forms.MaskedTextBox();
+            this.txtNumeroTel = new System.Windows.Forms.MaskedTextBox();
+            this.txtNumeroTel2 = new System.Windows.Forms.MaskedTextBox();
             this.gbDados.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -79,6 +79,8 @@
             // 
             // gbDados
             // 
+            this.gbDados.Controls.Add(this.txtCpf);
+            this.gbDados.Controls.Add(this.txtRg);
             this.gbDados.Controls.Add(this.btnOlhoSenha);
             this.gbDados.Controls.Add(this.dtpDataNasc);
             this.gbDados.Controls.Add(this.txtSenha);
@@ -86,8 +88,6 @@
             this.gbDados.Controls.Add(this.cmbPeriodo);
             this.gbDados.Controls.Add(this.label19);
             this.gbDados.Controls.Add(this.label20);
-            this.gbDados.Controls.Add(this.txtCpf);
-            this.gbDados.Controls.Add(this.txtRg);
             this.gbDados.Controls.Add(this.label21);
             this.gbDados.Controls.Add(this.label22);
             this.gbDados.Controls.Add(this.cmbCargo);
@@ -196,22 +196,6 @@
             this.label20.Size = new System.Drawing.Size(55, 25);
             this.label20.TabIndex = 37;
             this.label20.Text = "CPF";
-            // 
-            // txtCpf
-            // 
-            this.txtCpf.Location = new System.Drawing.Point(755, 240);
-            this.txtCpf.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(201, 29);
-            this.txtCpf.TabIndex = 36;
-            // 
-            // txtRg
-            // 
-            this.txtRg.Location = new System.Drawing.Point(755, 160);
-            this.txtRg.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(201, 29);
-            this.txtRg.TabIndex = 35;
             // 
             // label21
             // 
@@ -341,8 +325,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cmbUfEnd);
             this.groupBox1.Controls.Add(this.txtCepEnd);
+            this.groupBox1.Controls.Add(this.cmbUfEnd);
             this.groupBox1.Controls.Add(this.txtCidadeEnd);
             this.groupBox1.Controls.Add(this.txtLogradouroEnd);
             this.groupBox1.Controls.Add(this.txtNumeroEnd);
@@ -403,20 +387,12 @@
             this.cmbUfEnd.Size = new System.Drawing.Size(63, 32);
             this.cmbUfEnd.TabIndex = 24;
             // 
-            // txtCepEnd
-            // 
-            this.txtCepEnd.Location = new System.Drawing.Point(390, 309);
-            this.txtCepEnd.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCepEnd.Name = "txtCepEnd";
-            this.txtCepEnd.Size = new System.Drawing.Size(157, 29);
-            this.txtCepEnd.TabIndex = 23;
-            // 
             // txtCidadeEnd
             // 
             this.txtCidadeEnd.Location = new System.Drawing.Point(69, 200);
             this.txtCidadeEnd.Margin = new System.Windows.Forms.Padding(4);
             this.txtCidadeEnd.Name = "txtCidadeEnd";
-            this.txtCidadeEnd.Size = new System.Drawing.Size(216, 29);
+            this.txtCidadeEnd.Size = new System.Drawing.Size(213, 29);
             this.txtCidadeEnd.TabIndex = 21;
             // 
             // txtLogradouroEnd
@@ -432,7 +408,7 @@
             this.txtNumeroEnd.Location = new System.Drawing.Point(391, 73);
             this.txtNumeroEnd.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroEnd.Name = "txtNumeroEnd";
-            this.txtNumeroEnd.Size = new System.Drawing.Size(156, 29);
+            this.txtNumeroEnd.Size = new System.Drawing.Size(111, 29);
             this.txtNumeroEnd.TabIndex = 19;
             // 
             // label16
@@ -517,14 +493,14 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtNumeroTel2);
+            this.groupBox2.Controls.Add(this.txtNumeroTel);
             this.groupBox2.Controls.Add(this.btnAdicionarNumero);
             this.groupBox2.Controls.Add(this.labelTipo);
             this.groupBox2.Controls.Add(this.labelNumero);
             this.groupBox2.Controls.Add(this.cmbTipoTel2);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtNumeroTel2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtNumeroTel);
             this.groupBox2.Controls.Add(this.cmbTipoTel);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -557,7 +533,7 @@
             this.labelTipo.AutoSize = true;
             this.labelTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTipo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelTipo.Location = new System.Drawing.Point(92, 321);
+            this.labelTipo.Location = new System.Drawing.Point(89, 313);
             this.labelTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTipo.Name = "labelTipo";
             this.labelTipo.Size = new System.Drawing.Size(63, 25);
@@ -586,10 +562,10 @@
             "Pessoal",
             "Comercial",
             "Residencial"});
-            this.cmbTipoTel2.Location = new System.Drawing.Point(94, 350);
+            this.cmbTipoTel2.Location = new System.Drawing.Point(94, 342);
             this.cmbTipoTel2.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoTel2.Name = "cmbTipoTel2";
-            this.cmbTipoTel2.Size = new System.Drawing.Size(184, 32);
+            this.cmbTipoTel2.Size = new System.Drawing.Size(205, 32);
             this.cmbTipoTel2.TabIndex = 29;
             this.cmbTipoTel2.Visible = false;
             // 
@@ -605,15 +581,6 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "TIPO";
             // 
-            // txtNumeroTel2
-            // 
-            this.txtNumeroTel2.Location = new System.Drawing.Point(94, 254);
-            this.txtNumeroTel2.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNumeroTel2.Name = "txtNumeroTel2";
-            this.txtNumeroTel2.Size = new System.Drawing.Size(181, 29);
-            this.txtNumeroTel2.TabIndex = 30;
-            this.txtNumeroTel2.Visible = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -626,15 +593,6 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "NÚMERO";
             // 
-            // txtNumeroTel
-            // 
-            this.txtNumeroTel.Location = new System.Drawing.Point(94, 73);
-            this.txtNumeroTel.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNumeroTel.Name = "txtNumeroTel";
-            this.txtNumeroTel.Size = new System.Drawing.Size(181, 29);
-            this.txtNumeroTel.TabIndex = 26;
-            this.txtNumeroTel.TextChanged += new System.EventHandler(this.txtNumeroTel_TextChanged);
-            // 
             // cmbTipoTel
             // 
             this.cmbTipoTel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -646,9 +604,51 @@
             this.cmbTipoTel.Location = new System.Drawing.Point(94, 160);
             this.cmbTipoTel.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoTel.Name = "cmbTipoTel";
-            this.cmbTipoTel.Size = new System.Drawing.Size(184, 32);
+            this.cmbTipoTel.Size = new System.Drawing.Size(205, 32);
             this.cmbTipoTel.TabIndex = 25;
             this.cmbTipoTel.TextChanged += new System.EventHandler(this.cmbTipoTel_TextChanged);
+            // 
+            // txtRg
+            // 
+            this.txtRg.Location = new System.Drawing.Point(755, 163);
+            this.txtRg.Mask = "00.000.000-0";
+            this.txtRg.Name = "txtRg";
+            this.txtRg.Size = new System.Drawing.Size(156, 29);
+            this.txtRg.TabIndex = 48;
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(755, 241);
+            this.txtCpf.Mask = "000.000.000-00";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(156, 29);
+            this.txtCpf.TabIndex = 49;
+            // 
+            // txtCepEnd
+            // 
+            this.txtCepEnd.Location = new System.Drawing.Point(393, 309);
+            this.txtCepEnd.Mask = "00000-000";
+            this.txtCepEnd.Name = "txtCepEnd";
+            this.txtCepEnd.Size = new System.Drawing.Size(109, 29);
+            this.txtCepEnd.TabIndex = 25;
+            // 
+            // txtNumeroTel
+            // 
+            this.txtNumeroTel.Location = new System.Drawing.Point(93, 80);
+            this.txtNumeroTel.Mask = "+00 (00) 00000-0000";
+            this.txtNumeroTel.Name = "txtNumeroTel";
+            this.txtNumeroTel.Size = new System.Drawing.Size(206, 29);
+            this.txtNumeroTel.TabIndex = 47;
+            this.txtNumeroTel.TextChanged += new System.EventHandler(this.txtNumeroTel_TextChanged_1);
+            // 
+            // txtNumeroTel2
+            // 
+            this.txtNumeroTel2.Location = new System.Drawing.Point(93, 253);
+            this.txtNumeroTel2.Mask = "+00 (00) 00000-0000";
+            this.txtNumeroTel2.Name = "txtNumeroTel2";
+            this.txtNumeroTel2.Size = new System.Drawing.Size(206, 29);
+            this.txtNumeroTel2.TabIndex = 48;
+            this.txtNumeroTel2.Visible = false;
             // 
             // CadastrarFuncionario
             // 
@@ -683,8 +683,6 @@
         private System.Windows.Forms.ComboBox cmbPeriodo;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtCpf;
-        private System.Windows.Forms.TextBox txtRg;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ComboBox cmbCargo;
@@ -697,7 +695,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtCepEnd;
         private System.Windows.Forms.TextBox txtCidadeEnd;
         private System.Windows.Forms.TextBox txtLogradouroEnd;
         private System.Windows.Forms.TextBox txtNumeroEnd;
@@ -713,13 +710,16 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNumeroTel;
         private System.Windows.Forms.ComboBox cmbTipoTel;
         private System.Windows.Forms.Button btnOlhoSenha;
-        private System.Windows.Forms.TextBox txtNumeroTel2;
         private System.Windows.Forms.ComboBox cmbTipoTel2;
         private System.Windows.Forms.Button btnAdicionarNumero;
         private System.Windows.Forms.Label labelTipo;
         private System.Windows.Forms.Label labelNumero;
+        private System.Windows.Forms.MaskedTextBox txtCpf;
+        private System.Windows.Forms.MaskedTextBox txtRg;
+        private System.Windows.Forms.MaskedTextBox txtCepEnd;
+        private System.Windows.Forms.MaskedTextBox txtNumeroTel2;
+        private System.Windows.Forms.MaskedTextBox txtNumeroTel;
     }
 }

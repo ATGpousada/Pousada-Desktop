@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,10 +27,38 @@ namespace PousadaClass
             Status1 = status1;
         }
 
-        public void Inserir()
+        public static List<Status> Listar()
         {
-
+            List<Status> statuss = new List<Status>();
+            MySqlCommand cmd = Banco.Abrir();
+            cmd.CommandText = "select * from status";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                statuss.Add(new Status(
+                        dr.GetInt32(0),
+                        dr.GetString(1)
+                        ));
+            }
+            Banco.Fechar(cmd);
+            return statuss;
         }
 
+        public static Status ObterPorId(int id)
+        {
+            var cmd = Banco.Abrir();
+            Status status = null;
+            cmd.CommandText = "select * from status where id = " + id;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                status = new Status(
+                    dr.GetInt32(0),
+                    dr.GetString(1)
+                    );
+            }
+            Banco.Fechar(cmd);
+            return status;
+        }
     }
 }
