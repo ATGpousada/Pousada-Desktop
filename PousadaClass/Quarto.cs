@@ -60,7 +60,7 @@ namespace PousadaClass
         {
             var cmd = Banco.Abrir();
             Quarto quarto = null;
-            cmd.CommandText = "select * from quartos where id = " + id;
+            cmd.CommandText = "select id, quarto, descricao, preco_diaria, qtde_pessoas, destaque, status_id, tipos_id from quartos where id = " + id;
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
