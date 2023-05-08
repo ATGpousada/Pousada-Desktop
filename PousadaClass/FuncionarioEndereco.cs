@@ -72,6 +72,10 @@ namespace PousadaClass
             Enderecos = endereco;
         }
 
+        /// <summary>
+        /// Inserindo no banco de dados um determinado endereço de acordo com o funcionario que está sendo cadastrado
+        /// </summary>
+        /// <param name="id"></param>
         public void Inserir(int id)
         {
             var cmd = Banco.Abrir();
@@ -87,6 +91,10 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
+        /// <summary>
+        /// Alterando endereço de um determinado funcionario pela chave estrangeira do Funcionario
+        /// </summary>
+        /// <param name="id"></param>
         public void Alterar(int id)
         {
             var cmd = Banco.Abrir();
@@ -102,6 +110,11 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
+        /// <summary>
+        /// Listando todos os endereços ou pelo logradouro desejado de um funcionario ativo
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
         public static List<FuncionarioEndereco> Listar(string nome = "")
         {
             List<FuncionarioEndereco> lista = new List<FuncionarioEndereco>();
@@ -132,6 +145,46 @@ namespace PousadaClass
             return lista;
         }
 
+        /// <summary>
+        /// Listando todos os endereços ou pelo logradouro desejado de um funcionario demitido
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
+        public static List<FuncionarioEndereco> ListarDemitidos(string nome = "")
+        {
+            List<FuncionarioEndereco> lista = new List<FuncionarioEndereco>();
+            var cmd = Banco.Abrir();
+            if (nome.Length > 0)
+                cmd.CommandText = "select enderecos_func.*, funcionarios.nome FROM funcionarios" +
+                    " INNER JOIN enderecos_func ON funcionarios.id = enderecos_func.funcionario_id" +
+                    " where funcionarios.NOME like '%" + nome + "%' and demissao is not null";
+            else
+                cmd.CommandText = "select enderecos_func.*, funcionarios.nome FROM funcionarios" +
+                    " INNER JOIN enderecos_func ON funcionarios.id = enderecos_func.funcionario_id" +
+                    " where demissao is not null";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new FuncionarioEndereco(
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2),
+                        dr.GetString(3),
+                        dr.GetString(4),
+                        dr.GetString(5),
+                        dr.GetString(6),
+                        Funcionario.ObterPorId(dr.GetInt32(7))
+                    ));
+            }
+            Banco.Fechar(cmd);
+            return lista;
+        }
+
+        /// <summary>
+        /// Listando o endereço de um funcionario pelo Id desejado
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static List<FuncionarioEndereco> ListarPorFuncionario(int id)
         {
             List<FuncionarioEndereco> lista = new List<FuncionarioEndereco>();
@@ -154,6 +207,11 @@ namespace PousadaClass
             return lista;
         }
 
+        /// <summary>
+        /// Listando o endereço de um funcionario pela chave estrangeira da tabela de Funcionario
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static FuncionarioEndereco ObterPorIdForeign(int id)
         {
             var cmd = Banco.Abrir();

@@ -663,7 +663,7 @@
             this.Controls.Add(this.gbDados);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CadastrarFuncionario";
-            this.Text = "Cadastrar";
+            this.Text = "Cadastrar Funcionario";
             this.Load += new System.EventHandler(this.CadastrarFuncionario_Load);
             this.gbDados.ResumeLayout(false);
             this.gbDados.PerformLayout();

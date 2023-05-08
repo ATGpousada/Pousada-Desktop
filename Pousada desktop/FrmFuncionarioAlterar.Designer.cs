@@ -704,7 +704,7 @@
             this.Controls.Add(this.txtId);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmFuncionarioAlterar";
-            this.Text = "FrmFuncionarioAlterar";
+            this.Text = "Alterar Funcionario ";
             this.Load += new System.EventHandler(this.FrmFuncionarioAlterar_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
