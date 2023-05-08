@@ -484,7 +484,7 @@ namespace PousadaClass
         public static bool BuscarRG(string rg)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "select id, rg from funcionarios where email = '" + rg + "';";
+            cmd.CommandText = "select id, rg from funcionarios where rg = '" + rg + "';";
             var dr = cmd.ExecuteReader();
             bool existe = dr.HasRows;
             Banco.Fechar(cmd);

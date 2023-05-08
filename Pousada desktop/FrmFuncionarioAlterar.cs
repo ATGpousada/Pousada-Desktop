@@ -231,10 +231,11 @@ namespace Pousada_desktop
                     Telefones.Add(new FuncionarioTelefone(cmbTipoTel2.Text, txtNumeroTel2.Text));
                 }
 
+
+                // Verificando se houve alteração no email
                 bool existe;
                 Funcionario funcionario;
 
-                // Verificando se houve alteração no email
                 if (TrocarEmail != txtEmail.Text)
                 {
                     existe = Funcionario.BuscarEmail(txtEmail.Text);

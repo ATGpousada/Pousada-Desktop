@@ -97,20 +97,5 @@ namespace Pousada_desktop
                 c++;
             }
         }
-        private void txtPesquisar_TextChanged(object sender, EventArgs e)
-        {
-            if (txtPesquisarcli.Text.Length > 1)
-            {
-                CarregaGrid(txtPesquisarcli.Text);
-                CarregaGridEndereco(txtPesquisarcli.Text);
-                CarregaGridTelefone(txtPesquisarcli.Text);
-            }
-            else
-            {
-                CarregaGrid(txtPesquisarcli.Text);
-                CarregaGridEndereco(txtPesquisarcli.Text);
-                CarregaGridTelefone(txtPesquisarcli.Text);
-            }
-        }
     }
 }

@@ -85,6 +85,14 @@ namespace PousadaClass
             Email = email;
         }
 
+        public Cliente(string nome, string cpf, string rg, string email)
+        {
+            Nome = nome;
+            Cpf = cpf;
+            Rg = rg;
+            Email = email;
+        }
+
         public Cliente(string nome, string cpf, string rg, string email,List<ClienteEndereco> endereco)
         {
             Nome = nome;
@@ -121,7 +129,7 @@ namespace PousadaClass
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "insert clientes (nome,cpf, rg, senha, email) " +
-              "values (@nome, @cpf, @rg, @senha, @email)";
+              "values (@nome, @cpf, @rg, MD5(@senha), @email)";
             cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
             cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = Cpf;
             cmd.Parameters.Add("@rg", MySqlDbType.VarChar).Value = Rg;
@@ -148,12 +156,11 @@ namespace PousadaClass
         public void Alterar(int id)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "update clientes set nome = @nome, cpf = @cpf, rg = @rg,senha = @senha, email = @email, recuperar_senha = @rs, arquivar_em = @ae " +
+            cmd.CommandText = "update clientes set nome = @nome, cpf = @cpf, rg = @rg, email = @email, recuperar_senha = @rs, arquivar_em = @ae " +
                 "where id = " + id;
             cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
             cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = Cpf;
-            cmd.Parameters.Add("@rg", MySqlDbType.VarChar).Value = Rg;
-            cmd.Parameters.Add("@senha", MySqlDbType.VarChar).Value = Senha;
+            cmd.Parameters.Add("@rg", MySqlDbType.VarChar).Value = Rg; 
             cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = Email;
             cmd.Parameters.Add("@rs", MySqlDbType.VarChar).Value = Recupera;
             cmd.Parameters.Add("@ae", MySqlDbType.VarChar).Value = Arquivar_EM ;
@@ -162,22 +169,6 @@ namespace PousadaClass
             {
                 endereco.Alterar(id);
             }
-            Banco.Fechar(cmd);
-        }
-
-
-        // ----------------------------------- ATUALIZAR -------------------------------------
-        /// <summary>
-        /// Atualizando usuarios
-        /// </summary>
-        public void Atualizar()
-        {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "update cliente set nome = @nome where id = @id";
-            cmd.Parameters.AddWithValue("@id", Id);
-            cmd.Parameters.AddWithValue("@nome", Nome);
-            cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }
 
@@ -212,7 +203,7 @@ namespace PousadaClass
             if (nome.Length > 0)
                 cmd.CommandText = "select id, nome, cpf, rg,senha, email from clientes where nome like '%" + nome + "%'";
             else
-                cmd.CommandText = "select id, nome,  cpf, rg,senha,email from clientes";
+                cmd.CommandText = "select id, nome,  cpf, rg,senha, email from clientes";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -247,18 +238,128 @@ namespace PousadaClass
             return cliente;
         }
 
-        // ---------------------------------- ARQUIVAR ---------------------------------------
-
-        public void Arquivar()
+        //
+        /// <summary>
+        /// Alterando apenas o email de clientes
+        /// </summary>
+        /// <param name="id"></param>
+        public void AlterarEmail(int id)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "update clientes set arquivar = default where id = @id";
-            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.CommandText = "update clientes set nome = @nome,cpf = @cpf, rg = @rg, email = @email, " +
+                " where id = " + id;
+            cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
+            cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = Cpf;
+            cmd.Parameters.Add("@rg", MySqlDbType.VarChar).Value = Rg;
+            cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = Email;
             cmd.ExecuteNonQuery();
+        
+            foreach (ClienteEndereco endereco in Enderecos)
+            {
+                endereco.Alterar(id);
+            }
             Banco.Fechar(cmd);
-
         }
+
+        /// <summary>
+        /// Alterando apenas o RG de um determinado clientes
+        /// </summary>
+        /// <param name="id"></param>
+        public void AlterarRG(int id)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update clientes set nome = @nome,cpf = @cpf, rg = @rg, email = @email, " +
+                " where id = " + id;
+            cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
+            cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = Cpf;
+            cmd.Parameters.Add("@rg", MySqlDbType.VarChar).Value = Rg;
+            cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = Email;
+            cmd.ExecuteNonQuery();
+
+            foreach (ClienteEndereco endereco in Enderecos)
+            {
+                endereco.Alterar(id);
+            }
+            Banco.Fechar(cmd);
+        }
+
+        /// <summary>
+        /// Alterando o CPF de um unico funcionario pelo Id
+        /// </summary>
+        /// <param name="id"></param>
+        public void AlterarCPF(int id)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update clientes set nome = @nome,cpf = @cpf, rg = @rg, email = @email, " +
+                " where id = " + id;
+            cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
+            cmd.Parameters.Add("@data", MySqlDbType.DateTime).Value = Cpf;
+            cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = Rg;
+            cmd.Parameters.Add("@salario", MySqlDbType.VarChar).Value = Email;
+            cmd.ExecuteNonQuery();
+
+            foreach (ClienteEndereco endereco in Enderecos)
+            {
+                endereco.Alterar(id);
+            }
+            Banco.Fechar(cmd);
+        }
+
+        public static bool BuscarCampos(string email, string rg, string cpf)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select id, cpf, rg, email from clientes where email = '" + email + "' or rg = '" + rg + "' or cpf = '" + cpf + "';";
+            var dr = cmd.ExecuteReader();
+            bool existe = dr.HasRows;
+            Banco.Fechar(cmd);
+            return existe;
+        }
+
+        /// <summary>
+        /// Buscando pelo Email se o Email já está cadastrado ou não
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public static bool BuscarEmail(string email)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select id, email from clientes where email = '" + email + "';";
+            var dr = cmd.ExecuteReader();
+            bool existe = dr.HasRows;
+            Banco.Fechar(cmd);
+            return existe;
+        }
+
+        /// <summary>
+        /// Buscando pelo RG se o RG já está cadastrado ou não
+        /// </summary>
+        /// <param name="rg"></param>
+        /// <returns></returns>
+        public static bool BuscarRG(string rg)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select id, rg from clientes where rg = '" + rg + "';";
+            var dr = cmd.ExecuteReader();
+            bool existe = dr.HasRows;
+            Banco.Fechar(cmd);
+            return existe;
+        }
+
+        /// <summary>
+        /// Buscando pelo CPF se o CPF já está cadastrado ou não
+        /// </summary>
+        /// <param name="cpf"></param>
+        /// <returns></returns>
+        public static bool BuscarCPF(string cpf)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select id, cpf from clientes where cpf = '" + cpf + "';";
+            var dr = cmd.ExecuteReader();
+            bool existe = dr.HasRows;
+            Banco.Fechar(cmd);
+            return existe;
+        }
+
     }
 }
 

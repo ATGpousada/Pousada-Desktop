@@ -21,6 +21,13 @@ namespace Pousada_desktop
 
         // Varivel para saber se o telefone vai ser alterado ou inserido
         private int add;
+
+        // Varivel de Trocar Campo Unico
+        private string TrocarEmail;
+        private string TrocarCpf;
+        private string TrocarRg;
+
+
         public FrmClienteAlterar()
         {
             InitializeComponent();
@@ -80,7 +87,7 @@ namespace Pousada_desktop
                     txtCepEndcli.Text = endereco.Cep;
                     cmbUfEndcli.Text = endereco.Uf;
                     txtLogradouroend.Text = endereco.Logradouro;
-
+                    txtnnumeroend.Text = endereco.Numero;
 
                     // Retorna telefone do cliente
                     txtNumeroTelcli.Text = telefone.Telefone;
@@ -147,6 +154,8 @@ namespace Pousada_desktop
 
         private void btnAlterar_Click_1(object sender, EventArgs e)
         {
+          
+
             // Confirmando que não faltará dados para ser gravado
             if (txtCepEndcli.Text.Length > 0 && txtCidadeEndcli.Text.Length > 0 && cmbUfEndcli.Text.Length > 0 && cmbTipoTelcli.Text.Length > 0 && txtNumeroTelcli.Text.Length > 0 &&
             TxtNomecli.Text.Length > 0 && TxtCpfcli.Text.Length > 0 && TxtRgcli.Text.Length > 0 && TxtEmailcli.Text.Length > 0)
@@ -156,7 +165,7 @@ namespace Pousada_desktop
 
                 // Alterando Endereço do Cliente
                 Enderecos = new List<ClienteEndereco>();
-                Enderecos.Add(new ClienteEndereco(txtCepEndcli.Text, txtCidadeEndcli.Text, cmbUfEndcli.Text,txtLogradouroend.Text,txtnnumeroend.Text));
+                Enderecos.Add(new ClienteEndereco(txtCepEndcli.Text, txtCidadeEndcli.Text, cmbUfEndcli.Text, txtnnumeroend.Text, txtLogradouroend.Text));
 
                 // Alterando Telefone do Cliente
                 Telefones = new List<ClienteTelefone>();
@@ -167,8 +176,60 @@ namespace Pousada_desktop
                 {
                     Telefones.Add(new ClienteTelefone(cmbTipoTel2cli.Text, txtNumeroTel2cli.Text));
                 }
+                // Verificando se houve alteração no email
+                bool existe;
+                Cliente cliente;
 
-                 // Gravando tudo em um unico metodo construtor
+                if (TrocarEmail != TxtEmailcli.Text)
+                {
+                    existe = Cliente.BuscarEmail(TxtEmailcli.Text);
+
+                    if (existe)
+                    {
+                        MessageBox.Show("Email já cadastrado em outro Cliente!");
+                        return;
+                    }
+
+                    cliente = new Cliente(
+                        TxtNomecli.Text,TxtCpfcli.Text,TxtRgcli.Text,TxtEmailcli.Text,Enderecos);
+                    cliente.AlterarEmail(Convert.ToInt32(txtId.Text));
+                }
+
+                // Verificando se houve alteração no RG
+                if (TrocarRg != TxtRgcli.Text)
+                {
+                    existe = Cliente.BuscarRG(TxtRgcli.Text);
+
+                    if (existe)
+                    {
+                        MessageBox.Show("RG já cadastrado em outro Cliente!");
+                        return;
+                    }
+
+                    cliente = new Cliente(
+                        TxtNomecli.Text, TxtCpfcli.Text, TxtRgcli.Text, TxtEmailcli.Text);
+                    cliente.AlterarRG(Convert.ToInt32(txtId.Text));
+                }
+
+                // Verificando se houve alteração no CPF
+                if (TrocarCpf != TxtCpfcli.Text)
+                {
+                    existe = Cliente.BuscarCPF(TxtCpfcli.Text);
+
+                    if (existe)
+                    {
+                        MessageBox.Show("CPF já cadastrado em outro Cliente!");
+                        return;
+                    }
+
+                    cliente = new Cliente(
+                        TxtNomecli.Text, TxtCpfcli.Text, TxtRgcli.Text,TxtEmailcli.Text,Enderecos );
+                    cliente.AlterarCPF(Convert.ToInt32(txtId.Text));
+                }
+
+
+
+                // Gravando tudo em um unico metodo construtor
                 Cliente cli = new Cliente(
                TxtNomecli.Text, TxtCpfcli.Text, TxtRgcli.Text, TxtEmailcli.Text,Enderecos);
 
