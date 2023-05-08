@@ -115,5 +115,10 @@ namespace Pousada_desktop
         {
 
         }
+
+        private void TxtCpfcli_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -127,6 +127,7 @@
             // TxtNomecli
             // 
             this.TxtNomecli.Location = new System.Drawing.Point(27, 57);
+            this.TxtNomecli.MaxLength = 70;
             this.TxtNomecli.Name = "TxtNomecli";
             this.TxtNomecli.Size = new System.Drawing.Size(131, 26);
             this.TxtNomecli.TabIndex = 5;
@@ -134,13 +135,16 @@
             // TxtCpfcli
             // 
             this.TxtCpfcli.Location = new System.Drawing.Point(205, 57);
+            this.TxtCpfcli.MaxLength = 14;
             this.TxtCpfcli.Name = "TxtCpfcli";
             this.TxtCpfcli.Size = new System.Drawing.Size(137, 26);
             this.TxtCpfcli.TabIndex = 6;
+            this.TxtCpfcli.TextChanged += new System.EventHandler(this.TxtCpfcli_TextChanged);
             // 
             // TxtRgcli
             // 
             this.TxtRgcli.Location = new System.Drawing.Point(428, 57);
+            this.TxtRgcli.MaxLength = 12;
             this.TxtRgcli.Name = "TxtRgcli";
             this.TxtRgcli.Size = new System.Drawing.Size(140, 26);
             this.TxtRgcli.TabIndex = 7;
@@ -157,6 +161,7 @@
             // TxtEmailcli
             // 
             this.TxtEmailcli.Location = new System.Drawing.Point(205, 129);
+            this.TxtEmailcli.MaxLength = 100;
             this.TxtEmailcli.Name = "TxtEmailcli";
             this.TxtEmailcli.Size = new System.Drawing.Size(137, 26);
             this.TxtEmailcli.TabIndex = 9;
@@ -209,6 +214,7 @@
             // txtNumeroend
             // 
             this.txtNumeroend.Location = new System.Drawing.Point(326, 138);
+            this.txtNumeroend.MaxLength = 6;
             this.txtNumeroend.Name = "txtNumeroend";
             this.txtNumeroend.Size = new System.Drawing.Size(83, 24);
             this.txtNumeroend.TabIndex = 27;
@@ -262,6 +268,7 @@
             // txtLogradouroend
             // 
             this.txtLogradouroend.Location = new System.Drawing.Point(56, 138);
+            this.txtLogradouroend.MaxLength = 60;
             this.txtLogradouroend.Name = "txtLogradouroend";
             this.txtLogradouroend.Size = new System.Drawing.Size(162, 24);
             this.txtLogradouroend.TabIndex = 10;
@@ -308,6 +315,7 @@
             // txtCepEndcli
             // 
             this.txtCepEndcli.Location = new System.Drawing.Point(326, 62);
+            this.txtCepEndcli.MaxLength = 9;
             this.txtCepEndcli.Name = "txtCepEndcli";
             this.txtCepEndcli.Size = new System.Drawing.Size(102, 24);
             this.txtCepEndcli.TabIndex = 23;
@@ -316,6 +324,7 @@
             // txtCidadeEndcli
             // 
             this.txtCidadeEndcli.Location = new System.Drawing.Point(58, 62);
+            this.txtCidadeEndcli.MaxLength = 30;
             this.txtCidadeEndcli.Name = "txtCidadeEndcli";
             this.txtCidadeEndcli.Size = new System.Drawing.Size(159, 24);
             this.txtCidadeEndcli.TabIndex = 21;
@@ -439,6 +448,7 @@
             // txtNumeroTel2cli
             // 
             this.txtNumeroTel2cli.Location = new System.Drawing.Point(383, 59);
+            this.txtNumeroTel2cli.MaxLength = 20;
             this.txtNumeroTel2cli.Name = "txtNumeroTel2cli";
             this.txtNumeroTel2cli.Size = new System.Drawing.Size(137, 24);
             this.txtNumeroTel2cli.TabIndex = 30;
@@ -458,6 +468,7 @@
             // txtNumeroTelcli
             // 
             this.txtNumeroTelcli.Location = new System.Drawing.Point(70, 59);
+            this.txtNumeroTelcli.MaxLength = 20;
             this.txtNumeroTelcli.Name = "txtNumeroTelcli";
             this.txtNumeroTelcli.Size = new System.Drawing.Size(137, 24);
             this.txtNumeroTelcli.TabIndex = 26;
@@ -478,13 +489,16 @@
             // 
             // BTNInserir
             // 
-            this.BTNInserir.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.BTNInserir.BackColor = System.Drawing.Color.SeaGreen;
+            this.BTNInserir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BTNInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNInserir.ForeColor = System.Drawing.Color.Honeydew;
             this.BTNInserir.Location = new System.Drawing.Point(295, 644);
             this.BTNInserir.Name = "BTNInserir";
-            this.BTNInserir.Size = new System.Drawing.Size(189, 43);
+            this.BTNInserir.Size = new System.Drawing.Size(193, 55);
             this.BTNInserir.TabIndex = 47;
             this.BTNInserir.Text = "Inserir";
-            this.BTNInserir.UseVisualStyleBackColor = true;
+            this.BTNInserir.UseVisualStyleBackColor = false;
             this.BTNInserir.Click += new System.EventHandler(this.BTNInserir_Click);
             // 
             // FrmClienteCadastrar
