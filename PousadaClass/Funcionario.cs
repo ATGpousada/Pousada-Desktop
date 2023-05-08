@@ -154,7 +154,7 @@ namespace PousadaClass
         // Construtor
 
         /// <summary>
-        /// Inserindo funcionario no banco de dados
+        /// Inserindo Funcionario no banco de dados e adicionando uma lista de telefones e um endereço
         /// </summary>
         public void Inserir()
         {
@@ -184,6 +184,10 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
+        /// <summary>
+        /// Alterando dados de um funcionarios especifico puxando pelo ID
+        /// </summary>
+        /// <param name="id"></param>
         public void Alterar(int id)
         {
             var cmd = Banco.Abrir();
@@ -206,6 +210,10 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
+        /// <summary>
+        /// Demitir um determinado funcionario pelo ID desejado
+        /// </summary>
+        /// <param name="id"></param>
         public void Demitir(int id)
         {
             var cmd = Banco.Abrir();
@@ -214,6 +222,11 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
+        /// <summary>
+        /// Verificando se esse Funcionario pesquisado foi demitido ou não
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool VerificarDemissao(int id)
         {
             bool demitido = false;
@@ -229,6 +242,10 @@ namespace PousadaClass
             return demitido;
         }
 
+        /// <summary>
+        /// Alterando apenas o email de funcionario
+        /// </summary>
+        /// <param name="id"></param>
         public void AlterarEmail(int id)
         {
             var cmd = Banco.Abrir();
@@ -249,6 +266,10 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
+        /// <summary>
+        /// Alterando apenas o RG de um determinado funcionario
+        /// </summary>
+        /// <param name="id"></param>
         public void AlterarRG(int id)
         {
             var cmd = Banco.Abrir();
@@ -269,6 +290,10 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
+        /// <summary>
+        /// Alterando o CPF de um unico funcionario pelo Id
+        /// </summary>
+        /// <param name="id"></param>
         public void AlterarCPF(int id)
         {
             var cmd = Banco.Abrir();
@@ -289,6 +314,11 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
+        /// <summary>
+        /// Listando todos os funcionarios que estão ativos na empresa e pode buscar por determinado Nome
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
         public static List<Funcionario> Listar(string nome = "")
         {
             List<Funcionario> lista = new List<Funcionario>();
@@ -317,6 +347,11 @@ namespace PousadaClass
             return lista;
         }
 
+        /// <summary>
+        /// Buscando determinado Funcionario ou listando todos os funcionarios demitidos na empresa
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
         public static List<Funcionario> ListarDemitido(string nome = "")
         {
             List<Funcionario> lista = new List<Funcionario>();
@@ -347,6 +382,11 @@ namespace PousadaClass
             return lista;
         }
         
+        /// <summary>
+        /// Buscando determinado funcionario pelo Id desejado
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Funcionario ObterPorId(int id)
         {
             var cmd = Banco.Abrir();
@@ -373,6 +413,11 @@ namespace PousadaClass
             return funcionario;
         }
 
+        /// <summary>
+        /// Buscando determinado funcionario pelo Email inserido
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public static Funcionario ObterPorEmail(string email)
         {
             var cmd = Banco.Abrir();
@@ -399,6 +444,13 @@ namespace PousadaClass
             return funcionario;
         }
 
+        /// <summary>
+        /// Buscando Campos que são Unico no banco de dados para descobrir se poderá ser alterado ou não, serve para descobrir se determinado email ja foi cadastrado ou não
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="rg"></param>
+        /// <param name="cpf"></param>
+        /// <returns></returns>
         public static bool BuscarCampos(string email, string rg, string cpf)
         {
             var cmd = Banco.Abrir();
@@ -409,6 +461,11 @@ namespace PousadaClass
             return existe;
         }
 
+        /// <summary>
+        /// Buscando pelo Email se o Email já está cadastrado ou não
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public static bool BuscarEmail(string email)
         {
             var cmd = Banco.Abrir();
@@ -419,6 +476,11 @@ namespace PousadaClass
             return existe;
         }
 
+        /// <summary>
+        /// Buscando pelo RG se o RG já está cadastrado ou não
+        /// </summary>
+        /// <param name="rg"></param>
+        /// <returns></returns>
         public static bool BuscarRG(string rg)
         {
             var cmd = Banco.Abrir();
@@ -428,6 +490,12 @@ namespace PousadaClass
             Banco.Fechar(cmd);
             return existe;
         }
+
+        /// <summary>
+        /// Buscando pelo CPF se o CPF já está cadastrado ou não
+        /// </summary>
+        /// <param name="cpf"></param>
+        /// <returns></returns>
         public static bool BuscarCPF(string cpf)
         {
             var cmd = Banco.Abrir();
