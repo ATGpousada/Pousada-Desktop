@@ -495,7 +495,7 @@
             this.BTNInserir.ForeColor = System.Drawing.Color.Honeydew;
             this.BTNInserir.Location = new System.Drawing.Point(295, 644);
             this.BTNInserir.Name = "BTNInserir";
-            this.BTNInserir.Size = new System.Drawing.Size(193, 55);
+            this.BTNInserir.Size = new System.Drawing.Size(189, 46);
             this.BTNInserir.TabIndex = 47;
             this.BTNInserir.Text = "Inserir";
             this.BTNInserir.UseVisualStyleBackColor = false;
@@ -506,7 +506,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(832, 834);
+            this.ClientSize = new System.Drawing.Size(832, 722);
             this.Controls.Add(this.BTNInserir);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
