@@ -50,8 +50,6 @@
             this.TIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TELEFONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CLIENTETEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pesquisar = new System.Windows.Forms.Label();
-            this.txtPesquisarcli = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDados)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -71,13 +69,12 @@
             this.CPF,
             this.RG,
             this.EMAIL});
-            this.DgvDados.Location = new System.Drawing.Point(128, 38);
-            this.DgvDados.Margin = new System.Windows.Forms.Padding(4);
+            this.DgvDados.Location = new System.Drawing.Point(96, 31);
             this.DgvDados.Name = "DgvDados";
             this.DgvDados.ReadOnly = true;
             this.DgvDados.RowHeadersVisible = false;
             this.DgvDados.RowHeadersWidth = 51;
-            this.DgvDados.Size = new System.Drawing.Size(588, 223);
+            this.DgvDados.Size = new System.Drawing.Size(592, 181);
             this.DgvDados.TabIndex = 0;
             this.DgvDados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDados_CellContentClick);
             // 
@@ -131,12 +128,10 @@
             // 
             this.groupBox1.Controls.Add(this.DgvDados);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(64, 97);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox1.Location = new System.Drawing.Point(48, 79);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(971, 300);
+            this.groupBox1.Size = new System.Drawing.Size(728, 244);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Pessoais";
@@ -144,12 +139,10 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvEndCli);
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(64, 405);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox2.Location = new System.Drawing.Point(48, 329);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(971, 286);
+            this.groupBox2.Size = new System.Drawing.Size(728, 232);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
@@ -167,13 +160,12 @@
             this.CIDADE,
             this.UF,
             this.CLIENTE});
-            this.dgvEndCli.Location = new System.Drawing.Point(107, 23);
-            this.dgvEndCli.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvEndCli.Location = new System.Drawing.Point(80, 19);
             this.dgvEndCli.Name = "dgvEndCli";
             this.dgvEndCli.ReadOnly = true;
             this.dgvEndCli.RowHeadersVisible = false;
             this.dgvEndCli.RowHeadersWidth = 51;
-            this.dgvEndCli.Size = new System.Drawing.Size(746, 223);
+            this.dgvEndCli.Size = new System.Drawing.Size(560, 181);
             this.dgvEndCli.TabIndex = 1;
             this.dgvEndCli.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -244,12 +236,10 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dgvTelcli);
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox3.Location = new System.Drawing.Point(64, 698);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox3.Location = new System.Drawing.Point(48, 567);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(971, 276);
+            this.groupBox3.Size = new System.Drawing.Size(728, 224);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Telefone";
@@ -264,13 +254,12 @@
             this.TIPO,
             this.TELEFONE,
             this.CLIENTETEL});
-            this.dgvTelcli.Location = new System.Drawing.Point(187, 36);
-            this.dgvTelcli.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvTelcli.Location = new System.Drawing.Point(140, 29);
             this.dgvTelcli.Name = "dgvTelcli";
             this.dgvTelcli.ReadOnly = true;
             this.dgvTelcli.RowHeadersVisible = false;
             this.dgvTelcli.RowHeadersWidth = 51;
-            this.dgvTelcli.Size = new System.Drawing.Size(448, 223);
+            this.dgvTelcli.Size = new System.Drawing.Size(446, 181);
             this.dgvTelcli.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn6
@@ -310,36 +299,15 @@
             this.CLIENTETEL.ReadOnly = true;
             this.CLIENTETEL.Width = 125;
             // 
-            // Pesquisar
-            // 
-            this.Pesquisar.AutoSize = true;
-            this.Pesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pesquisar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Pesquisar.Location = new System.Drawing.Point(311, 39);
-            this.Pesquisar.Name = "Pesquisar";
-            this.Pesquisar.Size = new System.Drawing.Size(99, 25);
-            this.Pesquisar.TabIndex = 4;
-            this.Pesquisar.Text = "Pesquisar";
-            // 
-            // txtPesquisarcli
-            // 
-            this.txtPesquisarcli.Location = new System.Drawing.Point(433, 39);
-            this.txtPesquisarcli.Name = "txtPesquisarcli";
-            this.txtPesquisarcli.Size = new System.Drawing.Size(302, 22);
-            this.txtPesquisarcli.TabIndex = 5;
-            // 
             // FrmClienteListar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(1065, 1001);
-            this.Controls.Add(this.txtPesquisarcli);
-            this.Controls.Add(this.Pesquisar);
+            this.ClientSize = new System.Drawing.Size(799, 813);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmClienteListar";
             this.Text = "FrmClienteListar";
             this.Load += new System.EventHandler(this.FrmClienteListar_Load);
@@ -350,7 +318,6 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelcli)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -378,7 +345,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn RG;
         private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL;
-        private System.Windows.Forms.Label Pesquisar;
-        private System.Windows.Forms.TextBox txtPesquisarcli;
     }
 }

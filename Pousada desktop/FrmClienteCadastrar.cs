@@ -55,7 +55,7 @@ namespace Pousada_desktop
                 if (txtCidadeEndcli.Text.Length > 0 && txtCepEndcli.Text.Length > 0 && cmbUfEndcli.Text.Length > 0 && txtLogradouroend.Text.Length > 0 && txtNumeroend.Text.Length > 0)
                 {
                     Enderecos = new List<ClienteEndereco>();
-                    Enderecos.Add(new ClienteEndereco(txtCepEndcli.Text, txtCidadeEndcli.Text, cmbUfEndcli.Text, txtNumeroend.Text, txtLogradouroend.Text));
+                    Enderecos.Add(new ClienteEndereco(txtCepEndcli.Text, txtCidadeEndcli.Text, cmbUfEndcli.Text, txtLogradouroend.Text, txtNumeroend.Text));
 
 
 

@@ -100,7 +100,7 @@ namespace PousadaClass
         public void Alterar(int id)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "update enderecos_cli set cep = @cep,cidade = @cidade" +
+            cmd.CommandText = "update enderecos_cli set cep = @cep, cidade = @cidade," +
                 " uf = @uf,logradouro = @logradouro, numero =  @numero  where cliente_id = " + id;
 
             cmd.Parameters.Add("@cep", MySqlDbType.VarChar).Value = Cep;

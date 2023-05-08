@@ -115,13 +115,12 @@
             this.clnPeriodo,
             this.clnAdmissao,
             this.clnCargo});
-            this.dgvFuncionarioPrincipal.Location = new System.Drawing.Point(22, 66);
-            this.dgvFuncionarioPrincipal.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvFuncionarioPrincipal.Location = new System.Drawing.Point(16, 54);
             this.dgvFuncionarioPrincipal.Name = "dgvFuncionarioPrincipal";
             this.dgvFuncionarioPrincipal.ReadOnly = true;
             this.dgvFuncionarioPrincipal.RowHeadersVisible = false;
             this.dgvFuncionarioPrincipal.RowHeadersWidth = 51;
-            this.dgvFuncionarioPrincipal.Size = new System.Drawing.Size(1366, 287);
+            this.dgvFuncionarioPrincipal.Size = new System.Drawing.Size(1024, 233);
             this.dgvFuncionarioPrincipal.TabIndex = 0;
             this.dgvFuncionarioPrincipal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionarioPrincipal_CellContentClick);
             // 
@@ -230,13 +229,12 @@
             this.clnCidadeEndereco,
             this.clnUfEndereco,
             this.clnFuncionarioEndereco});
-            this.dgvEndereco.Location = new System.Drawing.Point(22, 404);
-            this.dgvEndereco.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvEndereco.Location = new System.Drawing.Point(16, 328);
             this.dgvEndereco.Name = "dgvEndereco";
             this.dgvEndereco.ReadOnly = true;
             this.dgvEndereco.RowHeadersVisible = false;
             this.dgvEndereco.RowHeadersWidth = 51;
-            this.dgvEndereco.Size = new System.Drawing.Size(807, 185);
+            this.dgvEndereco.Size = new System.Drawing.Size(605, 150);
             this.dgvEndereco.TabIndex = 1;
             // 
             // clnIdEndereco
@@ -246,7 +244,7 @@
             this.clnIdEndereco.MinimumWidth = 6;
             this.clnIdEndereco.Name = "clnIdEndereco";
             this.clnIdEndereco.ReadOnly = true;
-            this.clnIdEndereco.Width = 49;
+            this.clnIdEndereco.Width = 43;
             // 
             // clnLogradouroEndereco
             // 
@@ -255,7 +253,7 @@
             this.clnLogradouroEndereco.MinimumWidth = 6;
             this.clnLogradouroEndereco.Name = "clnLogradouroEndereco";
             this.clnLogradouroEndereco.ReadOnly = true;
-            this.clnLogradouroEndereco.Width = 106;
+            this.clnLogradouroEndereco.Width = 86;
             // 
             // clnNumeroEndereco
             // 
@@ -264,7 +262,7 @@
             this.clnNumeroEndereco.MinimumWidth = 6;
             this.clnNumeroEndereco.Name = "clnNumeroEndereco";
             this.clnNumeroEndereco.ReadOnly = true;
-            this.clnNumeroEndereco.Width = 84;
+            this.clnNumeroEndereco.Width = 69;
             // 
             // clnCepEndereco
             // 
@@ -273,7 +271,7 @@
             this.clnCepEndereco.MinimumWidth = 6;
             this.clnCepEndereco.Name = "clnCepEndereco";
             this.clnCepEndereco.ReadOnly = true;
-            this.clnCepEndereco.Width = 63;
+            this.clnCepEndereco.Width = 53;
             // 
             // clnBairroEndereco
             // 
@@ -282,7 +280,7 @@
             this.clnBairroEndereco.MinimumWidth = 6;
             this.clnBairroEndereco.Name = "clnBairroEndereco";
             this.clnBairroEndereco.ReadOnly = true;
-            this.clnBairroEndereco.Width = 72;
+            this.clnBairroEndereco.Width = 59;
             // 
             // clnCidadeEndereco
             // 
@@ -291,7 +289,7 @@
             this.clnCidadeEndereco.MinimumWidth = 6;
             this.clnCidadeEndereco.Name = "clnCidadeEndereco";
             this.clnCidadeEndereco.ReadOnly = true;
-            this.clnCidadeEndereco.Width = 80;
+            this.clnCidadeEndereco.Width = 65;
             // 
             // clnUfEndereco
             // 
@@ -300,7 +298,7 @@
             this.clnUfEndereco.MinimumWidth = 6;
             this.clnUfEndereco.Name = "clnUfEndereco";
             this.clnUfEndereco.ReadOnly = true;
-            this.clnUfEndereco.Width = 54;
+            this.clnUfEndereco.Width = 46;
             // 
             // clnFuncionarioEndereco
             // 
@@ -309,7 +307,7 @@
             this.clnFuncionarioEndereco.MinimumWidth = 6;
             this.clnFuncionarioEndereco.Name = "clnFuncionarioEndereco";
             this.clnFuncionarioEndereco.ReadOnly = true;
-            this.clnFuncionarioEndereco.Width = 106;
+            this.clnFuncionarioEndereco.Width = 87;
             // 
             // dgvTelefone
             // 
@@ -322,13 +320,12 @@
             this.clnTipoTelefone,
             this.clnNumeroTelefone,
             this.clnFuncionarioTelefone});
-            this.dgvTelefone.Location = new System.Drawing.Point(957, 404);
-            this.dgvTelefone.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvTelefone.Location = new System.Drawing.Point(718, 328);
             this.dgvTelefone.Name = "dgvTelefone";
             this.dgvTelefone.ReadOnly = true;
             this.dgvTelefone.RowHeadersVisible = false;
             this.dgvTelefone.RowHeadersWidth = 51;
-            this.dgvTelefone.Size = new System.Drawing.Size(431, 185);
+            this.dgvTelefone.Size = new System.Drawing.Size(323, 150);
             this.dgvTelefone.TabIndex = 3;
             // 
             // clnIdTelefone
@@ -338,7 +335,7 @@
             this.clnIdTelefone.MinimumWidth = 6;
             this.clnIdTelefone.Name = "clnIdTelefone";
             this.clnIdTelefone.ReadOnly = true;
-            this.clnIdTelefone.Width = 49;
+            this.clnIdTelefone.Width = 43;
             // 
             // clnTipoTelefone
             // 
@@ -347,7 +344,7 @@
             this.clnTipoTelefone.MinimumWidth = 6;
             this.clnTipoTelefone.Name = "clnTipoTelefone";
             this.clnTipoTelefone.ReadOnly = true;
-            this.clnTipoTelefone.Width = 64;
+            this.clnTipoTelefone.Width = 53;
             // 
             // clnNumeroTelefone
             // 
@@ -356,7 +353,7 @@
             this.clnNumeroTelefone.MinimumWidth = 6;
             this.clnNumeroTelefone.Name = "clnNumeroTelefone";
             this.clnNumeroTelefone.ReadOnly = true;
-            this.clnNumeroTelefone.Width = 84;
+            this.clnNumeroTelefone.Width = 69;
             // 
             // clnFuncionarioTelefone
             // 
@@ -365,16 +362,15 @@
             this.clnFuncionarioTelefone.MinimumWidth = 6;
             this.clnFuncionarioTelefone.Name = "clnFuncionarioTelefone";
             this.clnFuncionarioTelefone.ReadOnly = true;
-            this.clnFuncionarioTelefone.Width = 106;
+            this.clnFuncionarioTelefone.Width = 87;
             // 
             // btnAtivos
             // 
             this.btnAtivos.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAtivos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAtivos.Location = new System.Drawing.Point(583, 46);
-            this.btnAtivos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAtivos.Location = new System.Drawing.Point(437, 37);
             this.btnAtivos.Name = "btnAtivos";
-            this.btnAtivos.Size = new System.Drawing.Size(115, 52);
+            this.btnAtivos.Size = new System.Drawing.Size(86, 42);
             this.btnAtivos.TabIndex = 52;
             this.btnAtivos.Text = "ATIVOS";
             this.btnAtivos.UseVisualStyleBackColor = false;
@@ -384,10 +380,9 @@
             // 
             this.btnDemitido.BackColor = System.Drawing.Color.Crimson;
             this.btnDemitido.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDemitido.Location = new System.Drawing.Point(737, 46);
-            this.btnDemitido.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDemitido.Location = new System.Drawing.Point(553, 37);
             this.btnDemitido.Name = "btnDemitido";
-            this.btnDemitido.Size = new System.Drawing.Size(115, 52);
+            this.btnDemitido.Size = new System.Drawing.Size(86, 42);
             this.btnDemitido.TabIndex = 53;
             this.btnDemitido.Text = "DEMITIDOS";
             this.btnDemitido.UseVisualStyleBackColor = false;
@@ -401,9 +396,11 @@
             this.gpListaAtivos.Controls.Add(this.dgvFuncionarioPrincipal);
             this.gpListaAtivos.Controls.Add(this.dgvEndereco);
             this.gpListaAtivos.Controls.Add(this.dgvTelefone);
-            this.gpListaAtivos.Location = new System.Drawing.Point(38, 156);
+            this.gpListaAtivos.Location = new System.Drawing.Point(28, 127);
+            this.gpListaAtivos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gpListaAtivos.Name = "gpListaAtivos";
-            this.gpListaAtivos.Size = new System.Drawing.Size(1404, 621);
+            this.gpListaAtivos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gpListaAtivos.Size = new System.Drawing.Size(1053, 505);
             this.gpListaAtivos.TabIndex = 54;
             this.gpListaAtivos.TabStop = false;
             this.gpListaAtivos.Text = "Funcionarios Ativos";
@@ -412,9 +409,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(938, 380);
+            this.label7.Location = new System.Drawing.Point(704, 309);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 20);
+            this.label7.Size = new System.Drawing.Size(80, 17);
             this.label7.TabIndex = 7;
             this.label7.Text = "Telefones";
             // 
@@ -422,9 +420,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 380);
+            this.label6.Location = new System.Drawing.Point(14, 309);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 20);
+            this.label6.Size = new System.Drawing.Size(85, 17);
             this.label6.TabIndex = 6;
             this.label6.Text = "Endereços";
             // 
@@ -432,9 +431,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 42);
+            this.label5.Location = new System.Drawing.Point(14, 34);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 20);
+            this.label5.Size = new System.Drawing.Size(124, 17);
             this.label5.TabIndex = 5;
             this.label5.Text = "Dados Pessoais";
             // 
@@ -446,9 +446,11 @@
             this.gpListaDemitidos.Controls.Add(this.dgvDadosDemitidos);
             this.gpListaDemitidos.Controls.Add(this.dgvEnderecoDemitidos);
             this.gpListaDemitidos.Controls.Add(this.dgvTelefoneDemitidos);
-            this.gpListaDemitidos.Location = new System.Drawing.Point(38, 146);
+            this.gpListaDemitidos.Location = new System.Drawing.Point(28, 119);
+            this.gpListaDemitidos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gpListaDemitidos.Name = "gpListaDemitidos";
-            this.gpListaDemitidos.Size = new System.Drawing.Size(1471, 611);
+            this.gpListaDemitidos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gpListaDemitidos.Size = new System.Drawing.Size(1103, 496);
             this.gpListaDemitidos.TabIndex = 55;
             this.gpListaDemitidos.TabStop = false;
             this.gpListaDemitidos.Text = "Funcionarios Demitidos";
@@ -458,9 +460,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(987, 375);
+            this.label4.Location = new System.Drawing.Point(740, 305);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 20);
+            this.label4.Size = new System.Drawing.Size(80, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Telefones";
             // 
@@ -468,9 +471,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 375);
+            this.label3.Location = new System.Drawing.Point(14, 305);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 20);
+            this.label3.Size = new System.Drawing.Size(85, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Endereços";
             // 
@@ -478,9 +482,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 32);
+            this.label2.Location = new System.Drawing.Point(14, 26);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 20);
+            this.label2.Size = new System.Drawing.Size(124, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Dados Pessoais";
             // 
@@ -501,13 +506,12 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
-            this.dgvDadosDemitidos.Location = new System.Drawing.Point(22, 56);
-            this.dgvDadosDemitidos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDadosDemitidos.Location = new System.Drawing.Point(108, 46);
             this.dgvDadosDemitidos.Name = "dgvDadosDemitidos";
             this.dgvDadosDemitidos.ReadOnly = true;
             this.dgvDadosDemitidos.RowHeadersVisible = false;
             this.dgvDadosDemitidos.RowHeadersWidth = 51;
-            this.dgvDadosDemitidos.Size = new System.Drawing.Size(1414, 287);
+            this.dgvDadosDemitidos.Size = new System.Drawing.Size(635, 233);
             this.dgvDadosDemitidos.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -517,7 +521,7 @@
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 49;
+            this.dataGridViewTextBoxColumn1.Width = 43;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -526,7 +530,7 @@
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 73;
+            this.dataGridViewTextBoxColumn2.Width = 60;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -535,7 +539,7 @@
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 122;
+            this.dataGridViewTextBoxColumn3.Width = 101;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -544,7 +548,7 @@
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 62;
+            this.dataGridViewTextBoxColumn4.Width = 52;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -553,7 +557,7 @@
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 56;
+            this.dataGridViewTextBoxColumn5.Width = 48;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -562,7 +566,7 @@
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 79;
+            this.dataGridViewTextBoxColumn6.Width = 64;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -571,7 +575,7 @@
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 70;
+            this.dataGridViewTextBoxColumn7.Width = 57;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -580,7 +584,7 @@
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 84;
+            this.dataGridViewTextBoxColumn8.Width = 70;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -589,7 +593,7 @@
             this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 97;
+            this.dataGridViewTextBoxColumn9.Width = 77;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -598,7 +602,7 @@
             this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 73;
+            this.dataGridViewTextBoxColumn10.Width = 60;
             // 
             // dgvEnderecoDemitidos
             // 
@@ -615,13 +619,12 @@
             this.dataGridViewTextBoxColumn16,
             this.dataGridViewTextBoxColumn17,
             this.dataGridViewTextBoxColumn18});
-            this.dgvEnderecoDemitidos.Location = new System.Drawing.Point(22, 399);
-            this.dgvEnderecoDemitidos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvEnderecoDemitidos.Location = new System.Drawing.Point(16, 324);
             this.dgvEnderecoDemitidos.Name = "dgvEnderecoDemitidos";
             this.dgvEnderecoDemitidos.ReadOnly = true;
             this.dgvEnderecoDemitidos.RowHeadersVisible = false;
             this.dgvEnderecoDemitidos.RowHeadersWidth = 51;
-            this.dgvEnderecoDemitidos.Size = new System.Drawing.Size(792, 185);
+            this.dgvEnderecoDemitidos.Size = new System.Drawing.Size(512, 150);
             this.dgvEnderecoDemitidos.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn11
@@ -631,7 +634,7 @@
             this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 49;
+            this.dataGridViewTextBoxColumn11.Width = 43;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -640,7 +643,7 @@
             this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Width = 106;
+            this.dataGridViewTextBoxColumn12.Width = 86;
             // 
             // dataGridViewTextBoxColumn13
             // 
@@ -649,7 +652,7 @@
             this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 84;
+            this.dataGridViewTextBoxColumn13.Width = 69;
             // 
             // dataGridViewTextBoxColumn14
             // 
@@ -658,7 +661,7 @@
             this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Width = 63;
+            this.dataGridViewTextBoxColumn14.Width = 53;
             // 
             // dataGridViewTextBoxColumn15
             // 
@@ -667,7 +670,7 @@
             this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Width = 72;
+            this.dataGridViewTextBoxColumn15.Width = 59;
             // 
             // dataGridViewTextBoxColumn16
             // 
@@ -676,7 +679,7 @@
             this.dataGridViewTextBoxColumn16.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Width = 80;
+            this.dataGridViewTextBoxColumn16.Width = 65;
             // 
             // dataGridViewTextBoxColumn17
             // 
@@ -685,7 +688,7 @@
             this.dataGridViewTextBoxColumn17.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.Width = 54;
+            this.dataGridViewTextBoxColumn17.Width = 46;
             // 
             // dataGridViewTextBoxColumn18
             // 
@@ -694,7 +697,7 @@
             this.dataGridViewTextBoxColumn18.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            this.dataGridViewTextBoxColumn18.Width = 106;
+            this.dataGridViewTextBoxColumn18.Width = 87;
             // 
             // dgvTelefoneDemitidos
             // 
@@ -707,13 +710,12 @@
             this.dataGridViewTextBoxColumn20,
             this.dataGridViewTextBoxColumn21,
             this.dataGridViewTextBoxColumn22});
-            this.dgvTelefoneDemitidos.Location = new System.Drawing.Point(991, 399);
-            this.dgvTelefoneDemitidos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvTelefoneDemitidos.Location = new System.Drawing.Point(743, 324);
             this.dgvTelefoneDemitidos.Name = "dgvTelefoneDemitidos";
             this.dgvTelefoneDemitidos.ReadOnly = true;
             this.dgvTelefoneDemitidos.RowHeadersVisible = false;
             this.dgvTelefoneDemitidos.RowHeadersWidth = 51;
-            this.dgvTelefoneDemitidos.Size = new System.Drawing.Size(445, 185);
+            this.dgvTelefoneDemitidos.Size = new System.Drawing.Size(253, 150);
             this.dgvTelefoneDemitidos.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn19
@@ -723,7 +725,7 @@
             this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             this.dataGridViewTextBoxColumn19.ReadOnly = true;
-            this.dataGridViewTextBoxColumn19.Width = 49;
+            this.dataGridViewTextBoxColumn19.Width = 43;
             // 
             // dataGridViewTextBoxColumn20
             // 
@@ -732,7 +734,7 @@
             this.dataGridViewTextBoxColumn20.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
             this.dataGridViewTextBoxColumn20.ReadOnly = true;
-            this.dataGridViewTextBoxColumn20.Width = 64;
+            this.dataGridViewTextBoxColumn20.Width = 53;
             // 
             // dataGridViewTextBoxColumn21
             // 
@@ -741,7 +743,7 @@
             this.dataGridViewTextBoxColumn21.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            this.dataGridViewTextBoxColumn21.Width = 84;
+            this.dataGridViewTextBoxColumn21.Width = 69;
             // 
             // dataGridViewTextBoxColumn22
             // 
@@ -750,20 +752,19 @@
             this.dataGridViewTextBoxColumn22.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.ReadOnly = true;
-            this.dataGridViewTextBoxColumn22.Width = 106;
+            this.dataGridViewTextBoxColumn22.Width = 87;
             // 
             // FrmFuncionarioListar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1539, 789);
+            this.ClientSize = new System.Drawing.Size(1154, 641);
             this.Controls.Add(this.gpListaDemitidos);
             this.Controls.Add(this.gpListaAtivos);
             this.Controls.Add(this.btnDemitido);
             this.Controls.Add(this.btnAtivos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmFuncionarioListar";
             this.Text = "Listar Funcionarios";
             this.Load += new System.EventHandler(this.FrmFuncionarioListar_Load);
