@@ -81,6 +81,7 @@
             // btnAlterar
             // 
             this.btnAlterar.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnAlterar.Enabled = false;
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAlterar.Location = new System.Drawing.Point(779, 24);

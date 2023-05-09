@@ -41,7 +41,7 @@ namespace PousadaClass
             Status = status;
         }
 
-        public void GerarReserva(int id_pedido, int id_funcionario)
+        public void GerarReserva(int id_pedido, int id_funcionario, int id)
         {
             var cmd = Banco.Abrir();
             cmd.CommandText = "insert reservas (preco_total, parcelas_total, data_entrada, data_saida, pedidos_reservas_id, funcionarios_id, status_id) " +
@@ -50,6 +50,8 @@ namespace PousadaClass
             cmd.Parameters.Add("@parcelas", MySqlDbType.Double).Value = Parcelas;
             cmd.Parameters.Add("@entrada", MySqlDbType.DateTime).Value = Data_entrada;
             cmd.Parameters.Add("@saida", MySqlDbType.DateTime).Value = Data_saida;
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "update pedidos_reservas set status_ID = 5 where id = " + id;
             cmd.ExecuteNonQuery();
         }
     }

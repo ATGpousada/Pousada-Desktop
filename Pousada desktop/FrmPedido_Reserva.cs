@@ -56,9 +56,15 @@ namespace Pousada_desktop
                 txtQuarto.Text = reserva.Quartos.Quarto1.ToString();
                 cmbStatus.Text = reserva.Status.Nome;
 
-                if (cmbStatus.Text == "PENDENTE")
+                if (cmbStatus.Text == "EM ANDAMENTO")
+                {
+                    btnAlterar.Enabled = true;
+                }
+
+                if (cmbStatus.Text == "CONFIRMADO" || cmbStatus.Text == "CANCELADO")
                 {
                     btnAlterar.Enabled = false;
+                    cmbStatus.Enabled = false;
                 }
             }
         }
@@ -75,17 +81,17 @@ namespace Pousada_desktop
             if (txtDataEntrada.Text.Length > 0)
             {
                 // verifica qual opção está selecionada
-                string opcao = (string)cmbStatus.SelectedItem;
-                if (opcao == "PENDENTE")
+
+                if (cmbStatus.Text == "CONFIRMADO")
                 {
                     Reserva reservar = new Reserva();
-                    reservar.GerarReserva(Convert.ToInt32(txtId.Text), userId);
+                    reservar.GerarReserva(Convert.ToInt32(txtId.Text), userId, Convert.ToInt32(txtId.Text));
                 }
-                else if (opcao == "EM ANDAMENTO")
+                else if (cmbStatus.Text == "EM ANDAMENTO")
                 {
 
                 }
-                else if (opcao == "CANCELADO")
+                else if (cmbStatus.Text == "CANCELADO")
                 {
 
                 }
