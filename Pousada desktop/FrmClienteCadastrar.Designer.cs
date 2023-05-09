@@ -37,7 +37,10 @@
             this.TxtSenhacli = new System.Windows.Forms.TextBox();
             this.TxtEmailcli = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TxtRgcli = new System.Windows.Forms.MaskedTextBox();
+            this.TxtCpfcli = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtCepEndcli = new System.Windows.Forms.MaskedTextBox();
             this.txtNumeroend = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -60,9 +63,6 @@
             this.txtNumeroTelcli = new System.Windows.Forms.TextBox();
             this.cmbTipoTelcli = new System.Windows.Forms.ComboBox();
             this.BTNInserir = new System.Windows.Forms.Button();
-            this.TxtCpfcli = new System.Windows.Forms.MaskedTextBox();
-            this.TxtRgcli = new System.Windows.Forms.MaskedTextBox();
-            this.txtCepEndcli = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -170,6 +170,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Pessoais";
             // 
+            // TxtRgcli
+            // 
+            this.TxtRgcli.Location = new System.Drawing.Point(472, 57);
+            this.TxtRgcli.Mask = "00.000.000-0";
+            this.TxtRgcli.Name = "TxtRgcli";
+            this.TxtRgcli.Size = new System.Drawing.Size(119, 26);
+            this.TxtRgcli.TabIndex = 12;
+            // 
+            // TxtCpfcli
+            // 
+            this.TxtCpfcli.Location = new System.Drawing.Point(250, 57);
+            this.TxtCpfcli.Mask = "000.000.000/00";
+            this.TxtCpfcli.Name = "TxtCpfcli";
+            this.TxtCpfcli.Size = new System.Drawing.Size(126, 26);
+            this.TxtCpfcli.TabIndex = 11;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtCepEndcli);
@@ -193,6 +209,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // txtCepEndcli
+            // 
+            this.txtCepEndcli.Location = new System.Drawing.Point(330, 62);
+            this.txtCepEndcli.Mask = "00000-000";
+            this.txtCepEndcli.Name = "txtCepEndcli";
+            this.txtCepEndcli.Size = new System.Drawing.Size(100, 24);
+            this.txtCepEndcli.TabIndex = 28;
             // 
             // txtNumeroend
             // 
@@ -474,30 +498,6 @@
             this.BTNInserir.Text = "Inserir";
             this.BTNInserir.UseVisualStyleBackColor = false;
             this.BTNInserir.Click += new System.EventHandler(this.BTNInserir_Click);
-            // 
-            // TxtCpfcli
-            // 
-            this.TxtCpfcli.Location = new System.Drawing.Point(250, 57);
-            this.TxtCpfcli.Mask = "000.000.000/00";
-            this.TxtCpfcli.Name = "TxtCpfcli";
-            this.TxtCpfcli.Size = new System.Drawing.Size(126, 26);
-            this.TxtCpfcli.TabIndex = 11;
-            // 
-            // TxtRgcli
-            // 
-            this.TxtRgcli.Location = new System.Drawing.Point(472, 57);
-            this.TxtRgcli.Mask = "00.000.000 - 0";
-            this.TxtRgcli.Name = "TxtRgcli";
-            this.TxtRgcli.Size = new System.Drawing.Size(119, 26);
-            this.TxtRgcli.TabIndex = 12;
-            // 
-            // txtCepEndcli
-            // 
-            this.txtCepEndcli.Location = new System.Drawing.Point(330, 62);
-            this.txtCepEndcli.Mask = "00000-000";
-            this.txtCepEndcli.Name = "txtCepEndcli";
-            this.txtCepEndcli.Size = new System.Drawing.Size(100, 24);
-            this.txtCepEndcli.TabIndex = 28;
             // 
             // FrmClienteCadastrar
             // 
