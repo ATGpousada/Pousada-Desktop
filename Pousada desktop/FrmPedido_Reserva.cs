@@ -30,7 +30,7 @@ namespace Pousada_desktop
 
         private void FrmPedido_Reserva_Load(object sender, EventArgs e)
         {
-            CarregaStatus();
+
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -54,20 +54,8 @@ namespace Pousada_desktop
                 txtEmail.Text = reserva.Email;
                 txtPessoas.Text = reserva.Acompanhantes.ToString();
                 txtQuarto.Text = reserva.Quartos.Quarto1.ToString();
-                cmbStatus.Text = reserva.Status.Nome;
-
-                if (cmbStatus.Text == "PENDENTE")
-                {
-                    btnAlterar.Enabled = false;
-                }
+                cmbStatus.Text = reserva.Status.Status1.ToString();
             }
-        }
-
-        private void CarregaStatus()
-        {
-            cmbStatus.DataSource = Status.Listar();
-            cmbStatus.ValueMember = "Id";
-            cmbStatus.DisplayMember = "Nome";
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -76,10 +64,10 @@ namespace Pousada_desktop
             {
                 // verifica qual opção está selecionada
                 string opcao = (string)cmbStatus.SelectedItem;
-                if (opcao == "PENDENTE")
+                if (opcao == "CONFIRMADO")
                 {
                     Reserva reservar = new Reserva();
-                    reservar.GerarReserva(Convert.ToInt32(txtId.Text), userId);
+                    //reservar.GerarReserva(Convert.ToInt32(txtId.Text), userId, txtDataEntrada.Text, txtDataSaida.Text);
                 }
                 else if (opcao == "EM ANDAMENTO")
                 {
@@ -90,11 +78,6 @@ namespace Pousada_desktop
 
                 }
             }
-        }
-
-        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
