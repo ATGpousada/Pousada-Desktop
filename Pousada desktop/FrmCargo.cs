@@ -213,5 +213,10 @@ namespace Pousada_desktop
                 Cargo.RestaurarCargo(int.Parse(txtId.Text));
             CarregaGrid();
         }
+
+        private void cmbCargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
