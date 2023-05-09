@@ -52,10 +52,10 @@ namespace Pousada_desktop
 
 
 
-                if (txtCidadeEndcli.Text.Length > 0 && txtCepEndcli.Text.Length > 0 && cmbUfEndcli.Text.Length > 0 && txtLogradouroend.Text.Length > 0 && txtNumeroend.Text.Length > 0)
+                if (txtCidadeEndcli.Text.Length > 0 && labelTipo.Text.Length > 0 && cmbUfEndcli.Text.Length > 0 && txtLogradouroend.Text.Length > 0 && txtNumeroend.Text.Length > 0)
                 {
                     Enderecos = new List<ClienteEndereco>();
-                    Enderecos.Add(new ClienteEndereco(txtCepEndcli.Text, txtCidadeEndcli.Text, cmbUfEndcli.Text, txtLogradouroend.Text, txtNumeroend.Text));
+                    Enderecos.Add(new ClienteEndereco(labelTipo.Text, txtCidadeEndcli.Text, cmbUfEndcli.Text, txtLogradouroend.Text, txtNumeroend.Text));
 
 
 
@@ -76,7 +76,7 @@ namespace Pousada_desktop
 
                 cli.Inserir();
                 TxtNomecli.Clear(); TxtCpfcli.Clear(); TxtRgcli.Clear(); TxtSenhacli.Clear(); TxtEmailcli.Clear();
-                txtCepEndcli.Clear();txtCidadeEndcli.Clear();
+                labelTipo.Clear();txtCidadeEndcli.Clear();
                 txtNumeroTelcli.Clear();
 
                 labelNumero.Visible = false;

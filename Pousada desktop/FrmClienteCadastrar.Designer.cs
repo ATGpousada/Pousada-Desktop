@@ -34,8 +34,6 @@
             this.Label3 = new System.Windows.Forms.Label();
             this.Label222 = new System.Windows.Forms.Label();
             this.TxtNomecli = new System.Windows.Forms.TextBox();
-            this.TxtCpfcli = new System.Windows.Forms.TextBox();
-            this.TxtRgcli = new System.Windows.Forms.TextBox();
             this.TxtSenhacli = new System.Windows.Forms.TextBox();
             this.TxtEmailcli = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -47,7 +45,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtLogradouroend = new System.Windows.Forms.TextBox();
             this.cmbUfEndcli = new System.Windows.Forms.ComboBox();
-            this.txtCepEndcli = new System.Windows.Forms.TextBox();
             this.txtCidadeEndcli = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -63,6 +60,9 @@
             this.txtNumeroTelcli = new System.Windows.Forms.TextBox();
             this.cmbTipoTelcli = new System.Windows.Forms.ComboBox();
             this.BTNInserir = new System.Windows.Forms.Button();
+            this.TxtCpfcli = new System.Windows.Forms.MaskedTextBox();
+            this.TxtRgcli = new System.Windows.Forms.MaskedTextBox();
+            this.txtCepEndcli = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -118,7 +118,7 @@
             this.Label222.AutoSize = true;
             this.Label222.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label222.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Label222.Location = new System.Drawing.Point(224, 101);
+            this.Label222.Location = new System.Drawing.Point(245, 101);
             this.Label222.Name = "Label222";
             this.Label222.Size = new System.Drawing.Size(75, 25);
             this.Label222.TabIndex = 4;
@@ -126,32 +126,15 @@
             // 
             // TxtNomecli
             // 
-            this.TxtNomecli.Location = new System.Drawing.Point(27, 57);
+            this.TxtNomecli.Location = new System.Drawing.Point(56, 57);
             this.TxtNomecli.MaxLength = 70;
             this.TxtNomecli.Name = "TxtNomecli";
             this.TxtNomecli.Size = new System.Drawing.Size(131, 26);
             this.TxtNomecli.TabIndex = 5;
             // 
-            // TxtCpfcli
-            // 
-            this.TxtCpfcli.Location = new System.Drawing.Point(205, 57);
-            this.TxtCpfcli.MaxLength = 14;
-            this.TxtCpfcli.Name = "TxtCpfcli";
-            this.TxtCpfcli.Size = new System.Drawing.Size(137, 26);
-            this.TxtCpfcli.TabIndex = 6;
-            this.TxtCpfcli.TextChanged += new System.EventHandler(this.TxtCpfcli_TextChanged);
-            // 
-            // TxtRgcli
-            // 
-            this.TxtRgcli.Location = new System.Drawing.Point(428, 57);
-            this.TxtRgcli.MaxLength = 12;
-            this.TxtRgcli.Name = "TxtRgcli";
-            this.TxtRgcli.Size = new System.Drawing.Size(140, 26);
-            this.TxtRgcli.TabIndex = 7;
-            // 
             // TxtSenhacli
             // 
-            this.TxtSenhacli.Location = new System.Drawing.Point(27, 129);
+            this.TxtSenhacli.Location = new System.Drawing.Point(56, 129);
             this.TxtSenhacli.Name = "TxtSenhacli";
             this.TxtSenhacli.Size = new System.Drawing.Size(131, 26);
             this.TxtSenhacli.TabIndex = 8;
@@ -160,7 +143,7 @@
             // 
             // TxtEmailcli
             // 
-            this.TxtEmailcli.Location = new System.Drawing.Point(205, 129);
+            this.TxtEmailcli.Location = new System.Drawing.Point(250, 129);
             this.TxtEmailcli.MaxLength = 100;
             this.TxtEmailcli.Name = "TxtEmailcli";
             this.TxtEmailcli.Size = new System.Drawing.Size(137, 26);
@@ -168,14 +151,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.TxtRgcli);
+            this.groupBox1.Controls.Add(this.TxtCpfcli);
             this.groupBox1.Controls.Add(this.TxtSenhacli);
             this.groupBox1.Controls.Add(this.Label3);
-            this.groupBox1.Controls.Add(this.TxtRgcli);
             this.groupBox1.Controls.Add(this.TxtEmailcli);
             this.groupBox1.Controls.Add(this.Label4);
             this.groupBox1.Controls.Add(this.TxtNomecli);
             this.groupBox1.Controls.Add(this.Label222);
-            this.groupBox1.Controls.Add(this.TxtCpfcli);
             this.groupBox1.Controls.Add(this.Label1);
             this.groupBox1.Controls.Add(this.Label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,6 +172,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtCepEndcli);
             this.groupBox2.Controls.Add(this.txtNumeroend);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label8);
@@ -196,7 +180,6 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtLogradouroend);
             this.groupBox2.Controls.Add(this.cmbUfEndcli);
-            this.groupBox2.Controls.Add(this.txtCepEndcli);
             this.groupBox2.Controls.Add(this.txtCidadeEndcli);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label13);
@@ -311,15 +294,6 @@
             this.cmbUfEndcli.Name = "cmbUfEndcli";
             this.cmbUfEndcli.Size = new System.Drawing.Size(48, 26);
             this.cmbUfEndcli.TabIndex = 24;
-            // 
-            // txtCepEndcli
-            // 
-            this.txtCepEndcli.Location = new System.Drawing.Point(326, 62);
-            this.txtCepEndcli.MaxLength = 9;
-            this.txtCepEndcli.Name = "txtCepEndcli";
-            this.txtCepEndcli.Size = new System.Drawing.Size(102, 24);
-            this.txtCepEndcli.TabIndex = 23;
-            this.txtCepEndcli.TextChanged += new System.EventHandler(this.txtCepEnd_TextChanged);
             // 
             // txtCidadeEndcli
             // 
@@ -501,6 +475,30 @@
             this.BTNInserir.UseVisualStyleBackColor = false;
             this.BTNInserir.Click += new System.EventHandler(this.BTNInserir_Click);
             // 
+            // TxtCpfcli
+            // 
+            this.TxtCpfcli.Location = new System.Drawing.Point(250, 57);
+            this.TxtCpfcli.Mask = "000.000.000/00";
+            this.TxtCpfcli.Name = "TxtCpfcli";
+            this.TxtCpfcli.Size = new System.Drawing.Size(126, 26);
+            this.TxtCpfcli.TabIndex = 11;
+            // 
+            // TxtRgcli
+            // 
+            this.TxtRgcli.Location = new System.Drawing.Point(472, 57);
+            this.TxtRgcli.Mask = "00.000.000 - 0";
+            this.TxtRgcli.Name = "TxtRgcli";
+            this.TxtRgcli.Size = new System.Drawing.Size(119, 26);
+            this.TxtRgcli.TabIndex = 12;
+            // 
+            // txtCepEndcli
+            // 
+            this.txtCepEndcli.Location = new System.Drawing.Point(330, 62);
+            this.txtCepEndcli.Mask = "00000-000";
+            this.txtCepEndcli.Name = "txtCepEndcli";
+            this.txtCepEndcli.Size = new System.Drawing.Size(100, 24);
+            this.txtCepEndcli.TabIndex = 28;
+            // 
             // FrmClienteCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -532,14 +530,11 @@
         private System.Windows.Forms.Label Label3;
         private System.Windows.Forms.Label Label222;
         private System.Windows.Forms.TextBox TxtNomecli;
-        private System.Windows.Forms.TextBox TxtCpfcli;
-        private System.Windows.Forms.TextBox TxtRgcli;
         private System.Windows.Forms.TextBox TxtSenhacli;
         private System.Windows.Forms.TextBox TxtEmailcli;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cmbUfEndcli;
-        private System.Windows.Forms.TextBox txtCepEndcli;
         private System.Windows.Forms.TextBox txtCidadeEndcli;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label13;
@@ -561,5 +556,8 @@
         private System.Windows.Forms.TextBox txtLogradouroend;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.MaskedTextBox TxtRgcli;
+        private System.Windows.Forms.MaskedTextBox TxtCpfcli;
+        private System.Windows.Forms.MaskedTextBox txtCepEndcli;
     }
 }

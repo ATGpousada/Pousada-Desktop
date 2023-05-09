@@ -452,7 +452,7 @@
             // TxtCpfcli
             // 
             this.TxtCpfcli.Location = new System.Drawing.Point(250, 62);
-            this.TxtCpfcli.Mask = "000.000.000/00";
+            this.TxtCpfcli.Mask = "000.000.000-00";
             this.TxtCpfcli.Name = "TxtCpfcli";
             this.TxtCpfcli.Size = new System.Drawing.Size(126, 26);
             this.TxtCpfcli.TabIndex = 10;
