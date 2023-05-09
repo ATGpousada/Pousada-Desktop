@@ -76,7 +76,7 @@ namespace Pousada_desktop
 
                 cli.Inserir();
                 TxtNomecli.Clear(); TxtCpfcli.Clear(); TxtRgcli.Clear(); TxtSenhacli.Clear(); TxtEmailcli.Clear();
-                labelTipo.Clear();txtCidadeEndcli.Clear();
+                txtCidadeEndcli.Clear();
                 txtNumeroTelcli.Clear();
 
                 labelNumero.Visible = false;
