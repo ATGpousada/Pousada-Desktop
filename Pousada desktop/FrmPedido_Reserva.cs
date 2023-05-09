@@ -44,7 +44,14 @@ namespace Pousada_desktop
                 txtCpf.Text = reserva.Cpf;
                 txtEmail.Text = reserva.Email;
                 txtPessoas.Text = reserva.Acompanhantes.ToString();
+                txtQuarto.Text = reserva.Quartos.Quarto1.ToString();
+                cmbStatus.Text = reserva.Status.Status1.ToString();
             }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

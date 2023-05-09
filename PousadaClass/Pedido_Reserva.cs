@@ -71,7 +71,5 @@ namespace PousadaClass
             Banco.Fechar(cmd);
             return pedido;
         }
-
-
     }
 }
