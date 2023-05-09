@@ -9,11 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySqlX.XDevAPI;
 using PousadaClass;
+using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Status = PousadaClass.Status;
 
 namespace Pousada_desktop
 {
     public partial class FrmPedido_Reserva : Form
     {
+        private int userId;
+
+        public FrmPedido_Reserva(int userId) : this()
+        {
+            this.userId = userId;
+        }
         public FrmPedido_Reserva()
         {
             InitializeComponent();
@@ -51,7 +60,24 @@ namespace Pousada_desktop
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+            if (txtDataEntrada.Text.Length > 0)
+            {
+                // verifica qual opção está selecionada
+                string opcao = (string)cmbStatus.SelectedItem;
+                if (opcao == "CONFIRMADO")
+                {
+                    Reserva reservar = new Reserva();
+                    reservar.GerarReserva(Convert.ToInt32(txtId.Text), userId, txtDataEntrada.Text, txtDataSaida.Text);
+                }
+                else if (opcao == "EM ANDAMENTO")
+                {
 
+                }
+                else if (opcao == "CANCELADO")
+                {
+
+                }
+            }
         }
     }
 }

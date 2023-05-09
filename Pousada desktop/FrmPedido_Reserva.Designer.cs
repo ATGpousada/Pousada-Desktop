@@ -45,6 +45,7 @@
             this.clnStatus_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDataReserva = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.txtQuarto = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDataEntrada = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +71,7 @@
             this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnConsultar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConsultar.Location = new System.Drawing.Point(238, 382);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(113, 48);
             this.btnConsultar.TabIndex = 57;
@@ -82,15 +82,14 @@
             // btnAlterar
             // 
             this.btnAlterar.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnAlterar.Enabled = false;
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAlterar.Location = new System.Drawing.Point(1039, 30);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(121, 55);
             this.btnAlterar.TabIndex = 56;
-            this.btnAlterar.Text = "CONFIRMAR";
+            this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
@@ -109,7 +108,7 @@
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(139, 395);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(72, 22);
             this.txtId.TabIndex = 52;
@@ -131,7 +130,7 @@
             this.clnID_Quartos,
             this.clnStatus_ID});
             this.dgvPedidos.Location = new System.Drawing.Point(39, 78);
-            this.dgvPedidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPedidos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.ReadOnly = true;
             this.dgvPedidos.RowHeadersVisible = false;
@@ -233,7 +232,7 @@
             // 
             this.txtDataReserva.Enabled = false;
             this.txtDataReserva.Location = new System.Drawing.Point(115, 87);
-            this.txtDataReserva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDataReserva.Margin = new System.Windows.Forms.Padding(4);
             this.txtDataReserva.Mask = "00/00/0000 90:00";
             this.txtDataReserva.Name = "txtDataReserva";
             this.txtDataReserva.Size = new System.Drawing.Size(156, 29);
@@ -263,19 +262,32 @@
             this.groupBox1.Controls.Add(this.txtDataReserva);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(80, 468);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1188, 364);
             this.groupBox1.TabIndex = 60;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados da Reserva";
             // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "CONFIRMADO",
+            "CANCELADO",
+            "EM ANDAMENTO"});
+            this.cmbStatus.Location = new System.Drawing.Point(692, 190);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(246, 32);
+            this.cmbStatus.TabIndex = 78;
+            // 
             // txtQuarto
             // 
             this.txtQuarto.Enabled = false;
             this.txtQuarto.Location = new System.Drawing.Point(692, 87);
-            this.txtQuarto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtQuarto.Margin = new System.Windows.Forms.Padding(4);
             this.txtQuarto.Name = "txtQuarto";
             this.txtQuarto.Size = new System.Drawing.Size(246, 29);
             this.txtQuarto.TabIndex = 77;
@@ -304,7 +316,7 @@
             // 
             this.txtPessoas.Enabled = false;
             this.txtPessoas.Location = new System.Drawing.Point(692, 288);
-            this.txtPessoas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPessoas.Margin = new System.Windows.Forms.Padding(4);
             this.txtPessoas.Name = "txtPessoas";
             this.txtPessoas.Size = new System.Drawing.Size(129, 29);
             this.txtPessoas.TabIndex = 72;
@@ -323,7 +335,7 @@
             // 
             this.txtEmail.Enabled = false;
             this.txtEmail.Location = new System.Drawing.Point(385, 193);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(238, 29);
             this.txtEmail.TabIndex = 70;
@@ -342,7 +354,7 @@
             // 
             this.txtCpf.Enabled = false;
             this.txtCpf.Location = new System.Drawing.Point(385, 288);
-            this.txtCpf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCpf.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(148, 29);
             this.txtCpf.TabIndex = 68;
@@ -361,7 +373,7 @@
             // 
             this.txtNome.Enabled = false;
             this.txtNome.Location = new System.Drawing.Point(385, 87);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(238, 29);
             this.txtNome.TabIndex = 66;
@@ -390,7 +402,7 @@
             // 
             this.txtDataSaida.Enabled = false;
             this.txtDataSaida.Location = new System.Drawing.Point(115, 288);
-            this.txtDataSaida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDataSaida.Margin = new System.Windows.Forms.Padding(4);
             this.txtDataSaida.Mask = "00/00/0000 90:00";
             this.txtDataSaida.Name = "txtDataSaida";
             this.txtDataSaida.Size = new System.Drawing.Size(156, 29);
@@ -411,7 +423,7 @@
             // 
             this.txtDataEntrada.Enabled = false;
             this.txtDataEntrada.Location = new System.Drawing.Point(111, 193);
-            this.txtDataEntrada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDataEntrada.Margin = new System.Windows.Forms.Padding(4);
             this.txtDataEntrada.Mask = "00/00/0000 90:00";
             this.txtDataEntrada.Name = "txtDataEntrada";
             this.txtDataEntrada.Size = new System.Drawing.Size(156, 29);
@@ -428,19 +440,6 @@
             this.label2.TabIndex = 60;
             this.label2.Text = "Data da Reserva";
             // 
-            // cmbStatus
-            // 
-            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "CONFIRMADO",
-            "CANCELADO",
-            "EM ANDAMENTO"});
-            this.cmbStatus.Location = new System.Drawing.Point(692, 190);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(246, 32);
-            this.cmbStatus.TabIndex = 78;
-            // 
             // FrmPedido_Reserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -452,7 +451,7 @@
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtId);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPedido_Reserva";
             this.Text = "FrmPedido_Reserva";
             this.Load += new System.EventHandler(this.FrmPedido_Reserva_Load);

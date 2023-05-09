@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace PousadaClass
 {
-    internal static class Banco
+    public static class Banco
     {
         private static string strConn;
         public static MySqlCommand Abrir()

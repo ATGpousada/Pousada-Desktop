@@ -16,6 +16,12 @@ namespace PousadaDesk
 {
     public partial class FrmPrincipal : Form
     {
+        private int userId;
+
+        public FrmPrincipal(int userId) : this()
+        {
+            this.userId = userId;
+        }
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -85,7 +91,7 @@ namespace PousadaDesk
 
         private void consultarAlterarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmPedido_Reserva pedido = new FrmPedido_Reserva();
+            FrmPedido_Reserva pedido = new FrmPedido_Reserva(userId);
             pedido.Show();
         }
     }
