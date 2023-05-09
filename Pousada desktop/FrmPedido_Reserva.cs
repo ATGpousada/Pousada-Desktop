@@ -67,7 +67,7 @@ namespace Pousada_desktop
                 if (opcao == "CONFIRMADO")
                 {
                     Reserva reservar = new Reserva();
-                    reservar.GerarReserva(Convert.ToInt32(txtId.Text), userId, txtDataEntrada.Text, txtDataSaida.Text);
+                    //reservar.GerarReserva(Convert.ToInt32(txtId.Text), userId, txtDataEntrada.Text, txtDataSaida.Text);
                 }
                 else if (opcao == "EM ANDAMENTO")
                 {

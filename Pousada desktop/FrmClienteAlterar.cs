@@ -78,7 +78,7 @@ namespace Pousada_desktop
                 {
                     // Retorna dados pessoais do cliente
                     TxtNomecli.Text = cliente.Nome;
-                    TxtCpfcli.Text = cliente.Cpf;
+                    kdfkdfkn.Text = cliente.Cpf;
                     TxtRgcli.Text = cliente.Rg;
                     TxtEmailcli.Text = cliente.Email;
 
@@ -158,7 +158,7 @@ namespace Pousada_desktop
 
             // Confirmando que não faltará dados para ser gravado
             if (txtCepEndcli.Text.Length > 0 && txtCidadeEndcli.Text.Length > 0 && cmbUfEndcli.Text.Length > 0 && cmbTipoTelcli.Text.Length > 0 && txtNumeroTelcli.Text.Length > 0 &&
-            TxtNomecli.Text.Length > 0 && TxtCpfcli.Text.Length > 0 && TxtRgcli.Text.Length > 0 && TxtEmailcli.Text.Length > 0)
+            TxtNomecli.Text.Length > 0 && kdfkdfkn.Text.Length > 0 && TxtRgcli.Text.Length > 0 && TxtEmailcli.Text.Length > 0)
             {
                 List<ClienteEndereco> Enderecos;
                 List<ClienteTelefone> Telefones;
@@ -191,7 +191,7 @@ namespace Pousada_desktop
                     }
 
                     cliente = new Cliente(
-                        TxtNomecli.Text,TxtCpfcli.Text,TxtRgcli.Text,TxtEmailcli.Text,Enderecos);
+                        TxtNomecli.Text,kdfkdfkn.Text,TxtRgcli.Text,TxtEmailcli.Text,Enderecos);
                     cliente.AlterarEmail(Convert.ToInt32(txtId.Text));
                 }
 
@@ -207,14 +207,14 @@ namespace Pousada_desktop
                     }
 
                     cliente = new Cliente(
-                        TxtNomecli.Text, TxtCpfcli.Text, TxtRgcli.Text, TxtEmailcli.Text);
+                        TxtNomecli.Text, kdfkdfkn.Text, TxtRgcli.Text, TxtEmailcli.Text);
                     cliente.AlterarRG(Convert.ToInt32(txtId.Text));
                 }
 
                 // Verificando se houve alteração no CPF
-                if (TrocarCpf != TxtCpfcli.Text)
+                if (TrocarCpf != kdfkdfkn.Text)
                 {
-                    existe = Cliente.BuscarCPF(TxtCpfcli.Text);
+                    existe = Cliente.BuscarCPF(kdfkdfkn.Text);
 
                     if (existe)
                     {
@@ -223,7 +223,7 @@ namespace Pousada_desktop
                     }
 
                     cliente = new Cliente(
-                        TxtNomecli.Text, TxtCpfcli.Text, TxtRgcli.Text,TxtEmailcli.Text,Enderecos );
+                        TxtNomecli.Text, kdfkdfkn.Text, TxtRgcli.Text,TxtEmailcli.Text,Enderecos );
                     cliente.AlterarCPF(Convert.ToInt32(txtId.Text));
                 }
 
@@ -231,7 +231,7 @@ namespace Pousada_desktop
 
                 // Gravando tudo em um unico metodo construtor
                 Cliente cli = new Cliente(
-               TxtNomecli.Text, TxtCpfcli.Text, TxtRgcli.Text, TxtEmailcli.Text,Enderecos);
+               TxtNomecli.Text, kdfkdfkn.Text, TxtRgcli.Text, TxtEmailcli.Text,Enderecos);
 
                 // Chamando metodo de classe Alterar
                 cli.Alterar(Convert.ToInt32(txtId.Text));
@@ -259,7 +259,7 @@ namespace Pousada_desktop
                 btnAlterar.Enabled = false;
 
                 // Limpando TextBox que foram gravados no Banco
-                TxtNomecli.Clear(); TxtCpfcli.Clear(); TxtRgcli.Clear(); TxtEmailcli.Clear();
+                TxtNomecli.Clear(); kdfkdfkn.Clear(); TxtRgcli.Clear(); TxtEmailcli.Clear();
                 cmbUfEndcli.Items.Add(""); cmbUfEndcli.SelectedIndex = -1; txtCepEndcli.Clear();
                 txtCidadeEndcli.Clear(); txtNumeroTelcli.Clear(); cmbTipoTelcli.Items.Add(""); cmbTipoTelcli.SelectedIndex = -1;
             }
