@@ -62,6 +62,7 @@
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(129, 33);
             this.cmbCargo.TabIndex = 0;
+            this.cmbCargo.SelectedIndexChanged += new System.EventHandler(this.cmbCargo_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -151,7 +152,7 @@
             this.btnArquivar.AutoSize = true;
             this.btnArquivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArquivar.Location = new System.Drawing.Point(190, 27);
-            this.btnArquivar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnArquivar.Margin = new System.Windows.Forms.Padding(2);
             this.btnArquivar.Name = "btnArquivar";
             this.btnArquivar.Size = new System.Drawing.Size(94, 24);
             this.btnArquivar.TabIndex = 47;
@@ -243,7 +244,7 @@
             this.clnDescricao,
             this.clnArquivar});
             this.dgvCargos.Location = new System.Drawing.Point(58, 395);
-            this.dgvCargos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvCargos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvCargos.Name = "dgvCargos";
             this.dgvCargos.ReadOnly = true;
             this.dgvCargos.RowHeadersVisible = false;

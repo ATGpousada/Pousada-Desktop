@@ -10,38 +10,38 @@ namespace PousadaClass
     public class Status
     {
         private int id;
-        private string status;
+        private string nome;
 
         public int Id { get => id; set => id = value; }
-        public string Status1 { get => status; set => status = value; }
+        public string Nome { get => nome; set => nome = value; }
 
         public Status(){}
-        public Status(int id, string status1)
+        public Status(int id, string nome)
         {
             Id = id;
-            Status1 = status1;
+            Nome = nome;
         }
 
-        public Status(string status1)
+        public Status(string nome)
         {
-            Status1 = status1;
+            Nome = nome;
         }
 
         public static List<Status> Listar()
         {
-            List<Status> statuss = new List<Status>();
+            List<Status> status = new List<Status>();
             MySqlCommand cmd = Banco.Abrir();
-            cmd.CommandText = "select * from status";
+            cmd.CommandText = "select * from status where id > 3";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                statuss.Add(new Status(
+                status.Add(new Status(
                         dr.GetInt32(0),
                         dr.GetString(1)
                         ));
             }
             Banco.Fechar(cmd);
-            return statuss;
+            return status;
         }
 
         public static Status ObterPorId(int id)
