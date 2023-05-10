@@ -124,10 +124,16 @@
   <data name="loginwall1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loginwall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="olho" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\olho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="loginwall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loginwall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="olho" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\olho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LOGO POUSADA DO SOSSEGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO POUSADA DO SOSSEGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="POUSADA DO SOSSEGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\POUSADA DO SOSSEGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

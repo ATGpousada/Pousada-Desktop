@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Mail;
+using System.Xml.Linq;
 
 namespace PousadaClass
 {
@@ -70,6 +73,71 @@ namespace PousadaClass
             }
             Banco.Fechar(cmd);
             return pedido;
+        }
+
+        public static List<Pedido_Reserva> Listar(string email = "")
+        {
+            List<Pedido_Reserva> lista = new List<Pedido_Reserva>();
+            var cmd = Banco.Abrir();
+            if (email.Length > 0)
+                cmd.CommandText = "select * from pedidos_reservas where nome like '%" + email + "%'";
+            else
+                cmd.CommandText = "select * from pedidos_reservas";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new Pedido_Reserva(
+                    dr.GetInt32(0),
+                    dr.GetDateTime(1),
+                    dr.GetDateTime(2),
+                    dr.GetDateTime(3),
+                    dr.GetString(4),
+                    dr.GetString(5),
+                    dr.GetString(6),
+                    dr.GetInt32(7),
+                    Quarto.ObterPorId(dr.GetInt32(8)),
+                    Status.ObterPorId(dr.GetInt32(9))                    
+                    ));
+            }
+            return lista;
+        }
+
+        public void EnviarEmail(string email, string data, string nome)
+        {
+            MailMessage mail = new MailMessage("pousada_do_sossego@outlook.com", email);
+            SmtpClient client = new SmtpClient();
+
+            client.EnableSsl = true;
+            client.Host = "smtp.office365.com";
+            client.UseDefaultCredentials = false;
+            client.Credentials = new System.Net.NetworkCredential("pousada_do_sossego@outlook.com", "pousadadosossegoHJMMPV");
+
+            client.Port = 587;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+            mail.Subject = "Reserva - Pousada Do Sossego";
+            mail.Body = "Olá " + nome + ". \n\n acabamos de notar que a sua reserva na Pousada do Sossego em Conceição de Jacareí, RJ no dia " + data + ", está faltando apenas o pagamento para concluimos a sua reserva. \n\n Atenciosamente,\n\n Equipe da Pousada do Sossego";
+
+            client.Send(mail);
+        }
+
+        public void EnviarEmailCancelado(string email, string data, string nome)
+        {
+            MailMessage mail = new MailMessage("pousada_do_sossego@outlook.com", email);
+            SmtpClient client = new SmtpClient();
+
+            client.EnableSsl = true;
+            client.Host = "smtp.office365.com";
+            client.UseDefaultCredentials = false;
+            client.Credentials = new System.Net.NetworkCredential("pousada_do_sossego@outlook.com", "pousadadosossegoHJMMPV");
+
+            client.Port = 587;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+            mail.Subject = "Reserva - Pousada Do Sossego";
+            mail.Body = "Olá " + nome + " \n\n Infelizmente cancelamos a sua reserva na Pousada do Sossego em Conceição de Jacareí, RJ no dia " + data + ", devido a um imprevisto interno! \n\n Atenciosamente,\n\n Equipe da Pousada do Sossego";
+
+            client.Send(mail);
         }
     }
 }

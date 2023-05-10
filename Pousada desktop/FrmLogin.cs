@@ -68,5 +68,15 @@ namespace Pousada_desktop
                 MessageBox.Show("Email ou Senha incorreta, Tente novamente.");
             }
         }
+
+        private void btnOlhoSenha_Click(object sender, EventArgs e)
+        {
+            txtSenha.UseSystemPasswordChar = !txtSenha.UseSystemPasswordChar;
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

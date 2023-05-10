@@ -41,17 +41,31 @@ namespace PousadaClass
             Status = status;
         }
 
-        public void GerarReserva(int id_pedido, int id_funcionario, int id)
+        public void GerarReserva(int id_pedido, int id_funcionario, int id, string entrada, string saida)
         {
             var cmd = Banco.Abrir();
             cmd.CommandText = "insert reservas (preco_total, parcelas_total, data_entrada, data_saida, pedidos_reservas_id, funcionarios_id, status_id) " +
                 "values (@preco, @parcelas, @entrada, @saida, " + id_pedido +", " + id_funcionario + ", 4)";
             cmd.Parameters.Add("@preco", MySqlDbType.Int32).Value = Preco_total;
             cmd.Parameters.Add("@parcelas", MySqlDbType.Double).Value = Parcelas;
-            cmd.Parameters.Add("@entrada", MySqlDbType.DateTime).Value = Data_entrada;
-            cmd.Parameters.Add("@saida", MySqlDbType.DateTime).Value = Data_saida;
+            cmd.Parameters.Add("@entrada", MySqlDbType.DateTime).Value = DateTime.Parse(entrada);
+            cmd.Parameters.Add("@saida", MySqlDbType.DateTime).Value = DateTime.Parse(saida);
             cmd.ExecuteNonQuery();
-            cmd.CommandText = "update pedidos_reservas set status_ID = 5 where id = " + id;
+            cmd.CommandText = "update pedidos_reservas set status_ID = 4 where id = " + id;
+            cmd.ExecuteNonQuery();
+        }
+
+        public void CancelarReserva(int id_pedido, int id_funcionario, int id, string entrada, string saida)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "insert reservas (preco_total, parcelas_total, data_entrada, data_saida, pedidos_reservas_id, funcionarios_id, status_id) " +
+                "values (@preco, @parcelas, @entrada, @saida, " + id_pedido + ", " + id_funcionario + ", 6)";
+            cmd.Parameters.Add("@preco", MySqlDbType.Int32).Value = Preco_total;
+            cmd.Parameters.Add("@parcelas", MySqlDbType.Double).Value = Parcelas;
+            cmd.Parameters.Add("@entrada", MySqlDbType.DateTime).Value = DateTime.Parse(entrada);
+            cmd.Parameters.Add("@saida", MySqlDbType.DateTime).Value = DateTime.Parse(saida);
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "update pedidos_reservas set status_ID = 6 where id = " + id;
             cmd.ExecuteNonQuery();
         }
     }

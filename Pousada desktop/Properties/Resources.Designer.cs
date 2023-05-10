@@ -83,6 +83,16 @@ namespace Pousada_desktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LOGO_POUSADA_DO_SOSSEGO {
+            get {
+                object obj = ResourceManager.GetObject("LOGO POUSADA DO SOSSEGO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mais {
             get {
                 object obj = ResourceManager.GetObject("mais", resourceCulture);
@@ -96,6 +106,16 @@ namespace Pousada_desktop.Properties {
         internal static System.Drawing.Bitmap olho {
             get {
                 object obj = ResourceManager.GetObject("olho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap POUSADA_DO_SOSSEGO {
+            get {
+                object obj = ResourceManager.GetObject("POUSADA DO SOSSEGO", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

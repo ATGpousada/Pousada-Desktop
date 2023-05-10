@@ -13,6 +13,7 @@ using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Status = PousadaClass.Status;
 
+
 namespace Pousada_desktop
 {
     public partial class FrmPedido_Reserva : Form
@@ -31,10 +32,39 @@ namespace Pousada_desktop
         private void FrmPedido_Reserva_Load(object sender, EventArgs e)
         {
             CarregaStatus();
+            CarregaGrid();
+        }
+
+        private void CarregaGrid(string nome = "")
+        {
+            List<Pedido_Reserva> lista = null;
+            if (nome != string.Empty)
+                lista = Pedido_Reserva.Listar(nome);
+            else
+                lista = Pedido_Reserva.Listar(nome);
+            int contador = 0;
+            dgvPedidos.Rows.Clear();
+            foreach (Pedido_Reserva pedido in lista)
+            {
+                dgvPedidos.Rows.Add();
+                dgvPedidos.Rows[contador].Cells[0].Value = pedido.Id;
+                dgvPedidos.Rows[contador].Cells[1].Value = pedido.Data_reserva;
+                dgvPedidos.Rows[contador].Cells[2].Value = pedido.Data_entrada;
+                dgvPedidos.Rows[contador].Cells[3].Value = pedido.Data_saida;
+                dgvPedidos.Rows[contador].Cells[4].Value = pedido.Nome;
+                dgvPedidos.Rows[contador].Cells[5].Value = pedido.Cpf;
+                dgvPedidos.Rows[contador].Cells[6].Value = pedido.Email;
+                dgvPedidos.Rows[contador].Cells[7].Value = pedido.Acompanhantes;
+                dgvPedidos.Rows[contador].Cells[8].Value = pedido.Quartos.Quarto1;
+                dgvPedidos.Rows[contador].Cells[9].Value = pedido.Status.Nome;
+                contador++;
+            }
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
+            gbDados.Enabled = true;
+
             var reserva = (Pedido_Reserva)null;
             if (txtId.Text.Length > 0)
             {
@@ -82,18 +112,29 @@ namespace Pousada_desktop
             {
                 // verifica qual opção está selecionada
 
-                if (cmbStatus.Text == "CONFIRMADO")
+                if (cmbStatus.Text == "PENDENTE")
                 {
                     Reserva reservar = new Reserva();
-                    reservar.GerarReserva(Convert.ToInt32(txtId.Text), userId, Convert.ToInt32(txtId.Text));
-                }
-                else if (cmbStatus.Text == "EM ANDAMENTO")
-                {
+                    reservar.GerarReserva(Convert.ToInt32(txtId.Text), userId, Convert.ToInt32(txtId.Text), txtDataEntrada.Text, txtDataSaida.Text);
 
+                    Pedido_Reserva email = new Pedido_Reserva();
+                    email.EnviarEmail(txtEmail.Text, txtDataReserva.Text, txtNome.Text);
+
+                    MessageBox.Show("Pedido Pendente, Email enviado!");
+                    btnAlterar.Enabled = false;
+                    CarregaGrid();
                 }
                 else if (cmbStatus.Text == "CANCELADO")
                 {
+                    Reserva reservar = new Reserva();
+                    reservar.CancelarReserva(Convert.ToInt32(txtId.Text), userId, Convert.ToInt32(txtId.Text), txtDataEntrada.Text, txtDataSaida.Text);
 
+                    Pedido_Reserva email = new Pedido_Reserva();
+                    email.EnviarEmailCancelado(txtEmail.Text, txtDataReserva.Text, txtNome.Text);
+
+                    MessageBox.Show("Pedido Cancelado, Email enviado!");
+                    btnAlterar.Enabled = false;
+                    CarregaGrid();
                 }
             }
         }
