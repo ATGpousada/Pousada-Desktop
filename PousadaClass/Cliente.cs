@@ -51,9 +51,6 @@ namespace PousadaClass
 
         public Cliente(int id, string nome, string cpf, string rg, string senha, string email)
         {
-
-            // ----------  Metodo Construtor com ID ---------------------
-
             Id = id;
             Nome = nome;
             Cpf = cpf;
@@ -65,9 +62,6 @@ namespace PousadaClass
 
         public Cliente(string nome, string cpf, string rg, string senha, string email, string recupera, DateTime arquivar)
         {
-
-            // ----------  Metodo Construtor sem ID ---------------------
-
             Nome = nome;
             Cpf = cpf;
             Rg = rg;
@@ -102,7 +96,6 @@ namespace PousadaClass
             Enderecos = endereco;
         }
 
-
         public Cliente(string nome, string cpf, string rg, string senha, string email, List<ClienteEndereco> endereco, List<ClienteTelefone>telefones)
         {
             Nome = nome;
@@ -114,16 +107,15 @@ namespace PousadaClass
             Telefones = telefones;
         }
 
-
-
-
         public Cliente(int _id)
         {
             Telefones = ClienteTelefone.ListarPorClintes(_id);
             Enderecos = ClienteEndereco.ListarPorCliente(_id);
         }
 
-        // ---------------------------------- INSERIR --------------------------------------
+        /// <summary>
+        /// Inserindo Cliente no banco de dados, adicionando uma lista de telefones e um endereço (Só irá inserir se o cliente ligar para a pousada)
+        /// </summary>
         public void Inserir()
         {
             var cmd = Banco.Abrir();
@@ -152,7 +144,10 @@ namespace PousadaClass
 
         }
 
-
+        /// <summary>
+        /// Alterando dados de um cliente especifico puxando pelo ID
+        /// </summary>
+        /// <param name="id"></param>
         public void Alterar(int id)
         {
             var cmd = Banco.Abrir();
@@ -172,9 +167,11 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
-        // ---------------------------------- OBTER POR ID ---------------------------------------
-
-
+        /// <summary>
+        /// Buscando determinado cliente pelo Id desejado
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Cliente ObterPorId(int id)
         {
             var cmd = Banco.Abrir();
@@ -194,8 +191,12 @@ namespace PousadaClass
             }
             return cliente;
         }
-        // --------------------------------- Listar Clientes ---------------------------------
-     
+
+        /// <summary>
+        /// Listando clientes por um nome especifico ou todos os clientes cadastrados
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
         public static List<Cliente> Listar(string nome = "")
         {
             List<Cliente> lista = new List<Cliente>();
@@ -218,6 +219,11 @@ namespace PousadaClass
             return lista;
         }
 
+        /// <summary>
+        /// Buscando determinado cliente pelo Email desejado
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public static Cliente ObterPorEmail(string email)
         {
             var cmd = Banco.Abrir();
@@ -305,6 +311,13 @@ namespace PousadaClass
             Banco.Fechar(cmd);
         }
 
+        /// <summary>
+        /// Buscando campos existentes no banco de dados, retornando verdadeiro ou falso
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="rg"></param>
+        /// <param name="cpf"></param>
+        /// <returns></returns>
         public static bool BuscarCampos(string email, string rg, string cpf)
         {
             var cmd = Banco.Abrir();

@@ -27,6 +27,10 @@ namespace PousadaClass
             Nome = nome;
         }
 
+        /// <summary>
+        /// Listando todos os Status de Pedido de Reserva
+        /// </summary>
+        /// <returns></returns>
         public static List<Status> Listar()
         {
             List<Status> status = new List<Status>();
@@ -44,6 +48,11 @@ namespace PousadaClass
             return status;
         }
 
+        /// <summary>
+        /// Obtem o Id de um determinado status
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Status ObterPorId(int id)
         {
             var cmd = Banco.Abrir();

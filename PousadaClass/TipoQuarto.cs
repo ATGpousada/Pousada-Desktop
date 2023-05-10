@@ -22,6 +22,11 @@ namespace PousadaClass
             Tipo = tipo;
         }
 
+        /// <summary>
+        /// Obtendo o tipo do quarto pelo Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static TipoQuarto ObterPorId(int id)
         {
             var cmd = Banco.Abrir();

@@ -33,14 +33,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPesquisaEmail = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtNumeroTel = new System.Windows.Forms.MaskedTextBox();
             this.btnAdicionarNumero = new System.Windows.Forms.Button();
             this.labelTipo = new System.Windows.Forms.Label();
             this.labelNumero = new System.Windows.Forms.Label();
             this.cmbTipoTel2 = new System.Windows.Forms.ComboBox();
+            this.txtNumeroTel2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbTipoTel = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCepEnd = new System.Windows.Forms.MaskedTextBox();
             this.cmbUfEnd = new System.Windows.Forms.ComboBox();
             this.txtCidadeEnd = new System.Windows.Forms.TextBox();
             this.txtLogradouroEnd = new System.Windows.Forms.TextBox();
@@ -53,6 +56,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.gbDados = new System.Windows.Forms.GroupBox();
+            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
+            this.txtRg = new System.Windows.Forms.MaskedTextBox();
             this.dtpDataNasc = new System.Windows.Forms.DateTimePicker();
             this.cmbPeriodo = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -70,11 +75,6 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnDemissao = new System.Windows.Forms.Button();
-            this.txtRg = new System.Windows.Forms.MaskedTextBox();
-            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
-            this.txtCepEnd = new System.Windows.Forms.MaskedTextBox();
-            this.txtNumeroTel = new System.Windows.Forms.MaskedTextBox();
-            this.txtNumeroTel2 = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbDados.SuspendLayout();
@@ -148,6 +148,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Telefone";
             // 
+            // txtNumeroTel
+            // 
+            this.txtNumeroTel.Location = new System.Drawing.Point(66, 69);
+            this.txtNumeroTel.Mask = "+00 (00) 00000-0000";
+            this.txtNumeroTel.Name = "txtNumeroTel";
+            this.txtNumeroTel.Size = new System.Drawing.Size(206, 29);
+            this.txtNumeroTel.TabIndex = 53;
+            // 
             // btnAdicionarNumero
             // 
             this.btnAdicionarNumero.BackColor = System.Drawing.Color.SteelBlue;
@@ -202,6 +210,15 @@
             this.cmbTipoTel2.Size = new System.Drawing.Size(203, 32);
             this.cmbTipoTel2.TabIndex = 33;
             this.cmbTipoTel2.Visible = false;
+            // 
+            // txtNumeroTel2
+            // 
+            this.txtNumeroTel2.Location = new System.Drawing.Point(66, 236);
+            this.txtNumeroTel2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumeroTel2.Name = "txtNumeroTel2";
+            this.txtNumeroTel2.Size = new System.Drawing.Size(206, 29);
+            this.txtNumeroTel2.TabIndex = 34;
+            this.txtNumeroTel2.Visible = false;
             // 
             // label3
             // 
@@ -265,6 +282,14 @@
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Endereço";
+            // 
+            // txtCepEnd
+            // 
+            this.txtCepEnd.Location = new System.Drawing.Point(403, 193);
+            this.txtCepEnd.Mask = "00000-000";
+            this.txtCepEnd.Name = "txtCepEnd";
+            this.txtCepEnd.Size = new System.Drawing.Size(109, 29);
+            this.txtCepEnd.TabIndex = 26;
             // 
             // cmbUfEnd
             // 
@@ -436,6 +461,22 @@
             this.gbDados.TabIndex = 46;
             this.gbDados.TabStop = false;
             this.gbDados.Text = "Dados Pessoais";
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(417, 240);
+            this.txtCpf.Mask = "000.000.000-00";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(156, 29);
+            this.txtCpf.TabIndex = 50;
+            // 
+            // txtRg
+            // 
+            this.txtRg.Location = new System.Drawing.Point(755, 163);
+            this.txtRg.Mask = "00.000.000-0";
+            this.txtRg.Name = "txtRg";
+            this.txtRg.Size = new System.Drawing.Size(156, 29);
+            this.txtRg.TabIndex = 49;
             // 
             // dtpDataNasc
             // 
@@ -635,7 +676,7 @@
             this.btnDemissao.BackColor = System.Drawing.Color.Red;
             this.btnDemissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDemissao.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDemissao.Location = new System.Drawing.Point(107, 798);
+            this.btnDemissao.Location = new System.Drawing.Point(716, 36);
             this.btnDemissao.Margin = new System.Windows.Forms.Padding(4);
             this.btnDemissao.Name = "btnDemissao";
             this.btnDemissao.Size = new System.Drawing.Size(101, 40);
@@ -644,47 +685,6 @@
             this.btnDemissao.UseVisualStyleBackColor = false;
             this.btnDemissao.Visible = false;
             this.btnDemissao.Click += new System.EventHandler(this.btnDemissao_Click);
-            // 
-            // txtRg
-            // 
-            this.txtRg.Location = new System.Drawing.Point(755, 163);
-            this.txtRg.Mask = "00.000.000-0";
-            this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(156, 29);
-            this.txtRg.TabIndex = 49;
-            // 
-            // txtCpf
-            // 
-            this.txtCpf.Location = new System.Drawing.Point(417, 240);
-            this.txtCpf.Mask = "000.000.000-00";
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(156, 29);
-            this.txtCpf.TabIndex = 50;
-            // 
-            // txtCepEnd
-            // 
-            this.txtCepEnd.Location = new System.Drawing.Point(403, 193);
-            this.txtCepEnd.Mask = "00000-000";
-            this.txtCepEnd.Name = "txtCepEnd";
-            this.txtCepEnd.Size = new System.Drawing.Size(109, 29);
-            this.txtCepEnd.TabIndex = 26;
-            // 
-            // txtNumeroTel
-            // 
-            this.txtNumeroTel.Location = new System.Drawing.Point(66, 69);
-            this.txtNumeroTel.Mask = "+00 (00) 00000-0000";
-            this.txtNumeroTel.Name = "txtNumeroTel";
-            this.txtNumeroTel.Size = new System.Drawing.Size(206, 29);
-            this.txtNumeroTel.TabIndex = 53;
-            // 
-            // txtNumeroTel2
-            // 
-            this.txtNumeroTel2.Location = new System.Drawing.Point(66, 236);
-            this.txtNumeroTel2.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNumeroTel2.Name = "txtNumeroTel2";
-            this.txtNumeroTel2.Size = new System.Drawing.Size(206, 29);
-            this.txtNumeroTel2.TabIndex = 34;
-            this.txtNumeroTel2.Visible = false;
             // 
             // FrmFuncionarioAlterar
             // 

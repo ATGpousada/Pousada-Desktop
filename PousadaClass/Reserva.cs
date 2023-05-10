@@ -41,6 +41,14 @@ namespace PousadaClass
             Status = status;
         }
 
+        /// <summary>
+        /// Gerando uma reserva Pendente para um determinado pedido de reserva
+        /// </summary>
+        /// <param name="id_pedido"></param>
+        /// <param name="id_funcionario"></param>
+        /// <param name="id"></param>
+        /// <param name="entrada"></param>
+        /// <param name="saida"></param>
         public void GerarReserva(int id_pedido, int id_funcionario, int id, string entrada, string saida)
         {
             var cmd = Banco.Abrir();
@@ -55,6 +63,14 @@ namespace PousadaClass
             cmd.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Cancelando um pedido de reserva
+        /// </summary>
+        /// <param name="id_pedido"></param>
+        /// <param name="id_funcionario"></param>
+        /// <param name="id"></param>
+        /// <param name="entrada"></param>
+        /// <param name="saida"></param>
         public void CancelarReserva(int id_pedido, int id_funcionario, int id, string entrada, string saida)
         {
             var cmd = Banco.Abrir();

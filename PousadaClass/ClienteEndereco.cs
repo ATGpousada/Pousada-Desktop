@@ -27,13 +27,12 @@ namespace PousadaClass
         public string Numero { get => numero; set => numero = value; }
         public string Logradouro { get => logradouro; set => logradouro = value; }
         public List<ClienteEndereco> Enderecos { get; set; }
+
         // -------------- Metodos Construtores ---------------------
         public ClienteEndereco() { }
 
         public ClienteEndereco(int id, string cep, string cidade, string uf, string numero,string logradouro, Cliente cliente)
         {
-            // ---------------- Metodo com ID e Chave estrangeira ----------------------
-
             Id = id;
             Cep = cep;
             Cidade = cidade;
@@ -45,7 +44,6 @@ namespace PousadaClass
 
         public ClienteEndereco(string cep, string cidade, string uf, string logradouro, string numero, Cliente cliente)
         {
-            // ---------------- Metodo sem ID ----------------------
             Cep = cep;
             Cidade = cidade;
             Uf = uf;
@@ -65,8 +63,6 @@ namespace PousadaClass
           
         }
 
-        // -------------------- -----------------------------------------
-
         public ClienteEndereco(string cep, string cidade, string uf, string numero, string logradouro)
         {
             Cep = cep;
@@ -76,11 +72,15 @@ namespace PousadaClass
             Logradouro = logradouro;
         }
 
-     
+
 
 
         // ------------------ Inserir --------------------------------------
 
+        /// <summary>
+        /// Inserindo no banco de dados um determinado endereço de acordo com o cliente que está sendo cadastrado
+        /// </summary>
+        /// <param name="id"></param>
         public void Inserir(int id)
         {
             var cmd = Banco.Abrir();
@@ -97,6 +97,10 @@ namespace PousadaClass
 
         // --------------------------  Alterar ----------------------------------
 
+        /// <summary>
+        /// Alterando endereço de um determinado cliente pela chave estrangeira do cliente
+        /// </summary>
+        /// <param name="id"></param>
         public void Alterar(int id)
         {
             var cmd = Banco.Abrir();
@@ -115,6 +119,11 @@ namespace PousadaClass
 
         // ------------------------  Listar por nome ----------------------------------
 
+        /// <summary>
+        /// Listando todos os endereços ou pelo logradouro desejado de um cliente
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
         public static List<ClienteEndereco> Listar(string nome = "")
         {
             List<ClienteEndereco> lista = new List<ClienteEndereco>();
@@ -144,6 +153,11 @@ namespace PousadaClass
 
         //  ---------------------------- Listar por ID ------------------------------------
 
+        /// <summary>
+        /// Listando o endereço de um cliente pelo Id desejado
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static List<ClienteEndereco> ListarPorCliente(int id)
         {
             List<ClienteEndereco> lista = new List<ClienteEndereco>();
@@ -167,6 +181,11 @@ namespace PousadaClass
 
         // ------------------------  Obtendo Chave estrangeira ---------------------------------
 
+        /// <summary>
+        /// Listando o endereço de um cliente pela chave estrangeira da tabela de clientes
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static ClienteEndereco ObterPorIdForeign(int id)
         {
             var cmd = Banco.Abrir();

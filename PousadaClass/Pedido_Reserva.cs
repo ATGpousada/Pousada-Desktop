@@ -50,6 +50,11 @@ namespace PousadaClass
             Status = status;
         }
 
+        /// <summary>
+        /// Buscando as informações do pedido da reserva pelo ID inserido
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Pedido_Reserva ObterPorId(int id)
         {
             var cmd = Banco.Abrir();
@@ -75,6 +80,11 @@ namespace PousadaClass
             return pedido;
         }
 
+        /// <summary>
+        /// Listando todas os pedidos de reservas ou filtrando por email
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public static List<Pedido_Reserva> Listar(string email = "")
         {
             List<Pedido_Reserva> lista = new List<Pedido_Reserva>();
@@ -102,6 +112,12 @@ namespace PousadaClass
             return lista;
         }
 
+        /// <summary>
+        /// Envia email do outlook com as credenciais da pousada (automatico quando for alterado o status de um pedido de reserva), precisa do email do destinatario, data de entrada do pedido da reserva e o nome do cliente
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="data"></param>
+        /// <param name="nome"></param>
         public void EnviarEmail(string email, string data, string nome)
         {
             MailMessage mail = new MailMessage("pousada_do_sossego@outlook.com", email);
@@ -121,6 +137,12 @@ namespace PousadaClass
             client.Send(mail);
         }
 
+        /// <summary>
+        /// Envia email do outlook com as credenciais da pousada; Quando cancelar o pedido de reserva
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="data"></param>
+        /// <param name="nome"></param>
         public void EnviarEmailCancelado(string email, string data, string nome)
         {
             MailMessage mail = new MailMessage("pousada_do_sossego@outlook.com", email);
