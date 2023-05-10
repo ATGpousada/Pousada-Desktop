@@ -45,7 +45,7 @@ namespace Pousada_desktop
 
         private void BTNInserir_Click(object sender, EventArgs e)
         {
-            if (TxtNomecli.Text.Length > 0 && TxtSenhacli.Text.Length > 0 && TxtRgcli.Text.Length > 0 && TxtCpfcli.Text.Length > 0 && TxtEmailcli.Text.Length > 0)
+            if (TxtNomecli.Text.Length > 0 && TxtSenhacli.Text.Length > 0 && TxtRgcli.MaskCompleted && TxtCpfcli.MaskCompleted && TxtEmailcli.Text.Length > 0)
             {
                 List<ClienteEndereco> Enderecos = new List<ClienteEndereco>();
                 List<ClienteTelefone> Telefones = new List<ClienteTelefone>();
@@ -98,14 +98,6 @@ namespace Pousada_desktop
             cmbTipoTel2cli.Visible = true;
         }
 
-        private void txtNumeroTelcli_TextChanged(object sender, EventArgs e)
-        {
-            if (txtNumeroTelcli.Text.Length >0)
-            {
-                btnAdicionarNumerocli.Enabled = true;
-            }
-        }
-
         private void label7_Click(object sender, EventArgs e)
         {
 
@@ -119,6 +111,34 @@ namespace Pousada_desktop
         private void TxtCpfcli_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TxtCpfcli_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            TxtCpfcli.SelectionStart = 0;
+        }
+
+        private void TxtRgcli_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            TxtRgcli.SelectionStart = 0;
+        }
+
+        private void txtCepEndcli_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            txtCepEndcli.SelectionStart = 0;
+        }
+
+        private void txtNumeroTelcli_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            txtNumeroend.SelectionStart = 0;
+        }
+
+        private void txtNumeroTelcli_TextChanged_1(object sender, EventArgs e)
+        {
+            if (txtNumeroTelcli.Text.Length > 0)
+            {
+                btnAdicionarNumerocli.Enabled = true;
+            }
         }
     }
 }

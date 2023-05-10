@@ -59,9 +59,9 @@ namespace Pousada_desktop
         private void button2_Click(object sender, EventArgs e)
         {
             // Verificando se todos os campos estão preenchidos
-            if (txtLogradouroEnd.Text.Length > 0 && txtNumeroEnd.Text.Length > 0 && txtCepEnd.Text.Length > 0 && txtBairroEnd.Text.Length > 0 &&
-                txtCidadeEnd.Text.Length > 0 && cmbUfEnd.Text.Length > 0 && cmbTipoTel.Text.Length > 0 && txtNumeroTel.Text.Length > 0 && txtSenha.Text.Length > 0 &&
-                txtNome.Text.Length > 0 && dtpDataNasc.Text.Length > 0 && txtCpf.Text.Length > 0 && txtRg.Text.Length > 0 && txtSalario.Text.Length > 0 &&
+            if (txtLogradouroEnd.Text.Length > 0 && txtNumeroEnd.Text.Length > 0 && txtCepEnd.MaskCompleted && txtBairroEnd.Text.Length > 0 &&
+                txtCidadeEnd.Text.Length > 0 && cmbUfEnd.Text.Length > 0 && cmbTipoTel.Text.Length > 0 && txtNumeroTel.MaskCompleted && txtSenha.Text.Length > 0 &&
+                txtNome.Text.Length > 0 && dtpDataNasc.Text.Length > 0 && txtCpf.MaskCompleted && txtRg.MaskCompleted && txtSalario.Text.Length > 0 &&
                 txtEmail.Text.Length > 0 && cmbPeriodo.Text.Length > 0)
             {
                 List<FuncionarioEndereco> Enderecos = new List<FuncionarioEndereco>();
@@ -153,6 +153,31 @@ namespace Pousada_desktop
             {
                 btnAdicionarNumero.Enabled = true;
             }
+        }
+
+        private void txtRg_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            txtRg.SelectionStart = 0;
+        }
+
+        private void txtCpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            txtCpf.SelectionStart = 0;
+        }
+
+        private void txtNumeroTel_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            txtNumeroTel.SelectionStart = 0;
+        }
+
+        private void txtCepEnd_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            txtCepEnd.SelectionStart = 0;
+        }
+
+        private void txtNumeroTel2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            txtNumeroTel2.SelectionStart = 0;
         }
     }
 }

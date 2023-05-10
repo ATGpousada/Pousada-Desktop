@@ -69,12 +69,13 @@
             this.CPF,
             this.RG,
             this.EMAIL});
-            this.DgvDados.Location = new System.Drawing.Point(96, 31);
+            this.DgvDados.Location = new System.Drawing.Point(107, 38);
+            this.DgvDados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DgvDados.Name = "DgvDados";
             this.DgvDados.ReadOnly = true;
             this.DgvDados.RowHeadersVisible = false;
             this.DgvDados.RowHeadersWidth = 51;
-            this.DgvDados.Size = new System.Drawing.Size(592, 181);
+            this.DgvDados.Size = new System.Drawing.Size(782, 223);
             this.DgvDados.TabIndex = 0;
             this.DgvDados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDados_CellContentClick);
             // 
@@ -129,9 +130,11 @@
             this.groupBox1.Controls.Add(this.DgvDados);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox1.Location = new System.Drawing.Point(48, 79);
+            this.groupBox1.Location = new System.Drawing.Point(64, 97);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(728, 244);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(971, 300);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Pessoais";
@@ -140,9 +143,11 @@
             // 
             this.groupBox2.Controls.Add(this.dgvEndCli);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox2.Location = new System.Drawing.Point(48, 329);
+            this.groupBox2.Location = new System.Drawing.Point(64, 405);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(728, 232);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(971, 286);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
@@ -160,12 +165,13 @@
             this.CIDADE,
             this.UF,
             this.CLIENTE});
-            this.dgvEndCli.Location = new System.Drawing.Point(80, 19);
+            this.dgvEndCli.Location = new System.Drawing.Point(107, 23);
+            this.dgvEndCli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvEndCli.Name = "dgvEndCli";
             this.dgvEndCli.ReadOnly = true;
             this.dgvEndCli.RowHeadersVisible = false;
             this.dgvEndCli.RowHeadersWidth = 51;
-            this.dgvEndCli.Size = new System.Drawing.Size(560, 181);
+            this.dgvEndCli.Size = new System.Drawing.Size(747, 223);
             this.dgvEndCli.TabIndex = 1;
             this.dgvEndCli.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -237,9 +243,11 @@
             // 
             this.groupBox3.Controls.Add(this.dgvTelcli);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox3.Location = new System.Drawing.Point(48, 567);
+            this.groupBox3.Location = new System.Drawing.Point(64, 698);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(728, 224);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(971, 276);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Telefone";
@@ -254,12 +262,13 @@
             this.TIPO,
             this.TELEFONE,
             this.CLIENTETEL});
-            this.dgvTelcli.Location = new System.Drawing.Point(140, 29);
+            this.dgvTelcli.Location = new System.Drawing.Point(107, 45);
+            this.dgvTelcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvTelcli.Name = "dgvTelcli";
             this.dgvTelcli.ReadOnly = true;
             this.dgvTelcli.RowHeadersVisible = false;
             this.dgvTelcli.RowHeadersWidth = 51;
-            this.dgvTelcli.Size = new System.Drawing.Size(446, 181);
+            this.dgvTelcli.Size = new System.Drawing.Size(595, 223);
             this.dgvTelcli.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn6
@@ -301,13 +310,14 @@
             // 
             // FrmClienteListar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(799, 813);
+            this.ClientSize = new System.Drawing.Size(1065, 1001);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmClienteListar";
             this.Text = "FrmClienteListar";
             this.Load += new System.EventHandler(this.FrmClienteListar_Load);

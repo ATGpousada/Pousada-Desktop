@@ -83,9 +83,9 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox3.Location = new System.Drawing.Point(68, 634);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(951, 261);
             this.groupBox3.TabIndex = 49;
             this.groupBox3.TabStop = false;
@@ -94,7 +94,7 @@
             // txtNumeroTel2cli
             // 
             this.txtNumeroTel2cli.Location = new System.Drawing.Point(441, 80);
-            this.txtNumeroTel2cli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumeroTel2cli.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroTel2cli.Mask = "+(00) 00 000000000 ";
             this.txtNumeroTel2cli.Name = "txtNumeroTel2cli";
             this.txtNumeroTel2cli.Size = new System.Drawing.Size(203, 29);
@@ -103,31 +103,33 @@
             // txtNumeroTelcli
             // 
             this.txtNumeroTelcli.Location = new System.Drawing.Point(43, 76);
-            this.txtNumeroTelcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumeroTelcli.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroTelcli.Mask = "+(00) 00 000000000 ";
             this.txtNumeroTelcli.Name = "txtNumeroTelcli";
             this.txtNumeroTelcli.Size = new System.Drawing.Size(209, 29);
             this.txtNumeroTelcli.TabIndex = 47;
+            this.txtNumeroTelcli.TextChanged += new System.EventHandler(this.txtNumeroTelcli_TextChanged);
             // 
             // btnAdicionarNumerocli
             // 
-            this.btnAdicionarNumerocli.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAdicionarNumerocli.BackColor = System.Drawing.Color.OliveDrab;
             this.btnAdicionarNumerocli.Enabled = false;
             this.btnAdicionarNumerocli.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAdicionarNumerocli.Location = new System.Drawing.Point(877, 14);
-            this.btnAdicionarNumerocli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdicionarNumerocli.Location = new System.Drawing.Point(867, 30);
+            this.btnAdicionarNumerocli.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdicionarNumerocli.Name = "btnAdicionarNumerocli";
             this.btnAdicionarNumerocli.Size = new System.Drawing.Size(65, 58);
             this.btnAdicionarNumerocli.TabIndex = 46;
             this.btnAdicionarNumerocli.Text = "+";
             this.btnAdicionarNumerocli.UseVisualStyleBackColor = false;
+            this.btnAdicionarNumerocli.Click += new System.EventHandler(this.btnAdicionarNumerocli_Click);
             // 
             // labelTipo
             // 
             this.labelTipo.AutoSize = true;
             this.labelTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTipo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelTipo.Location = new System.Drawing.Point(436, 134);
+            this.labelTipo.Location = new System.Drawing.Point(436, 140);
             this.labelTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTipo.Name = "labelTipo";
             this.labelTipo.Size = new System.Drawing.Size(63, 25);
@@ -156,8 +158,8 @@
             "Pessoal",
             "Comercial",
             "Residencial"});
-            this.cmbTipoTel2cli.Location = new System.Drawing.Point(424, 169);
-            this.cmbTipoTel2cli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoTel2cli.Location = new System.Drawing.Point(441, 169);
+            this.cmbTipoTel2cli.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoTel2cli.Name = "cmbTipoTel2cli";
             this.cmbTipoTel2cli.Size = new System.Drawing.Size(184, 32);
             this.cmbTipoTel2cli.TabIndex = 29;
@@ -168,7 +170,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(37, 134);
+            this.label5.Location = new System.Drawing.Point(37, 140);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 25);
@@ -195,8 +197,8 @@
             "Pessoal",
             "Comercial",
             "Residencial"});
-            this.cmbTipoTelcli.Location = new System.Drawing.Point(36, 169);
-            this.cmbTipoTelcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoTelcli.Location = new System.Drawing.Point(43, 169);
+            this.cmbTipoTelcli.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoTelcli.Name = "cmbTipoTelcli";
             this.cmbTipoTelcli.Size = new System.Drawing.Size(184, 32);
             this.cmbTipoTelcli.TabIndex = 25;
@@ -216,9 +218,9 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Location = new System.Drawing.Point(68, 391);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(951, 217);
             this.groupBox2.TabIndex = 48;
             this.groupBox2.TabStop = false;
@@ -227,7 +229,7 @@
             // txtCepEndcli
             // 
             this.txtCepEndcli.Location = new System.Drawing.Point(403, 73);
-            this.txtCepEndcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCepEndcli.Margin = new System.Windows.Forms.Padding(4);
             this.txtCepEndcli.Mask = "00000 - 00";
             this.txtCepEndcli.Name = "txtCepEndcli";
             this.txtCepEndcli.Size = new System.Drawing.Size(132, 29);
@@ -236,7 +238,7 @@
             // txtnnumeroend
             // 
             this.txtnnumeroend.Location = new System.Drawing.Point(409, 170);
-            this.txtnnumeroend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtnnumeroend.Margin = new System.Windows.Forms.Padding(4);
             this.txtnnumeroend.Name = "txtnnumeroend";
             this.txtnnumeroend.Size = new System.Drawing.Size(109, 29);
             this.txtnnumeroend.TabIndex = 31;
@@ -269,7 +271,7 @@
             // txtLogradouroend
             // 
             this.txtLogradouroend.Location = new System.Drawing.Point(57, 170);
-            this.txtLogradouroend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLogradouroend.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogradouroend.Name = "txtLogradouroend";
             this.txtLogradouroend.Size = new System.Drawing.Size(215, 29);
             this.txtLogradouroend.TabIndex = 28;
@@ -309,7 +311,7 @@
             "SP",
             "TO"});
             this.cmbUfEndcli.Location = new System.Drawing.Point(711, 73);
-            this.cmbUfEndcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbUfEndcli.Margin = new System.Windows.Forms.Padding(4);
             this.cmbUfEndcli.Name = "cmbUfEndcli";
             this.cmbUfEndcli.Size = new System.Drawing.Size(63, 32);
             this.cmbUfEndcli.TabIndex = 24;
@@ -317,7 +319,7 @@
             // txtCidadeEndcli
             // 
             this.txtCidadeEndcli.Location = new System.Drawing.Point(57, 73);
-            this.txtCidadeEndcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCidadeEndcli.Margin = new System.Windows.Forms.Padding(4);
             this.txtCidadeEndcli.Name = "txtCidadeEndcli";
             this.txtCidadeEndcli.Size = new System.Drawing.Size(192, 29);
             this.txtCidadeEndcli.TabIndex = 21;
@@ -371,9 +373,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(68, 153);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(951, 230);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
@@ -382,20 +384,22 @@
             // TxtRgcli
             // 
             this.TxtRgcli.Location = new System.Drawing.Point(629, 76);
-            this.TxtRgcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtRgcli.Margin = new System.Windows.Forms.Padding(4);
             this.TxtRgcli.Mask = "00.000.000 -  0";
             this.TxtRgcli.Name = "TxtRgcli";
             this.TxtRgcli.Size = new System.Drawing.Size(164, 30);
             this.TxtRgcli.TabIndex = 11;
+            this.TxtRgcli.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.TxtRgcli_MaskInputRejected);
             // 
             // TxtCpfcli
             // 
             this.TxtCpfcli.Location = new System.Drawing.Point(333, 76);
-            this.TxtCpfcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtCpfcli.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCpfcli.Mask = "000.000.000-00";
             this.TxtCpfcli.Name = "TxtCpfcli";
             this.TxtCpfcli.Size = new System.Drawing.Size(167, 30);
             this.TxtCpfcli.TabIndex = 10;
+            this.TxtCpfcli.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.TxtCpfcli_MaskInputRejected);
             // 
             // Label3
             // 
@@ -412,7 +416,7 @@
             // TxtEmailcli
             // 
             this.TxtEmailcli.Location = new System.Drawing.Point(79, 165);
-            this.TxtEmailcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtEmailcli.Margin = new System.Windows.Forms.Padding(4);
             this.TxtEmailcli.Name = "TxtEmailcli";
             this.TxtEmailcli.Size = new System.Drawing.Size(181, 30);
             this.TxtEmailcli.TabIndex = 9;
@@ -420,7 +424,7 @@
             // TxtNomecli
             // 
             this.TxtNomecli.Location = new System.Drawing.Point(79, 70);
-            this.TxtNomecli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtNomecli.Margin = new System.Windows.Forms.Padding(4);
             this.TxtNomecli.Name = "TxtNomecli";
             this.TxtNomecli.Size = new System.Drawing.Size(173, 30);
             this.TxtNomecli.TabIndex = 5;
@@ -463,10 +467,10 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnConsultar.BackColor = System.Drawing.Color.OliveDrab;
             this.btnConsultar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConsultar.Location = new System.Drawing.Point(415, 65);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(115, 52);
             this.btnConsultar.TabIndex = 57;
@@ -476,11 +480,11 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnAlterar.BackColor = System.Drawing.Color.OliveDrab;
             this.btnAlterar.Enabled = false;
             this.btnAlterar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAlterar.Location = new System.Drawing.Point(898, 59);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(121, 58);
             this.btnAlterar.TabIndex = 56;
@@ -503,7 +507,7 @@
             // txtclienteEmail
             // 
             this.txtclienteEmail.Location = new System.Drawing.Point(131, 92);
-            this.txtclienteEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtclienteEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtclienteEmail.Name = "txtclienteEmail";
             this.txtclienteEmail.Size = new System.Drawing.Size(249, 22);
             this.txtclienteEmail.TabIndex = 54;
@@ -523,7 +527,7 @@
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(131, 60);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(72, 22);
             this.txtId.TabIndex = 52;
@@ -543,7 +547,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmClienteAlterar";
             this.Text = "FrmClienteAlterar";
             this.Load += new System.EventHandler(this.FrmClienteAlterar_Load);

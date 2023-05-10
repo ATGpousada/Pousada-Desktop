@@ -273,6 +273,25 @@ namespace Pousada_desktop
         {
 
         }
+
+        private void TxtCpfcli_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            TxtCpfcli.SelectionStart = 0;
+        }
+
+        private void TxtRgcli_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            TxtRgcli.SelectionStart = 0;
+        }
+
+        private void btnAdicionarNumerocli_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNumeroTelcli_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }
 

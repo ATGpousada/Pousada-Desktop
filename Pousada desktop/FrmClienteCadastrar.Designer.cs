@@ -53,6 +53,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtNumeroTelcli = new System.Windows.Forms.MaskedTextBox();
             this.btnAdicionarNumerocli = new System.Windows.Forms.Button();
             this.labelTipo = new System.Windows.Forms.Label();
             this.labelNumero = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtNumeroTel2cli = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtNumeroTelcli = new System.Windows.Forms.TextBox();
             this.cmbTipoTelcli = new System.Windows.Forms.ComboBox();
             this.BTNInserir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -132,7 +132,7 @@
             // TxtNomecli
             // 
             this.TxtNomecli.Location = new System.Drawing.Point(75, 70);
-            this.TxtNomecli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtNomecli.Margin = new System.Windows.Forms.Padding(4);
             this.TxtNomecli.MaxLength = 70;
             this.TxtNomecli.Name = "TxtNomecli";
             this.TxtNomecli.Size = new System.Drawing.Size(173, 30);
@@ -141,7 +141,7 @@
             // TxtSenhacli
             // 
             this.TxtSenhacli.Location = new System.Drawing.Point(75, 159);
-            this.TxtSenhacli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtSenhacli.Margin = new System.Windows.Forms.Padding(4);
             this.TxtSenhacli.Name = "TxtSenhacli";
             this.TxtSenhacli.Size = new System.Drawing.Size(173, 30);
             this.TxtSenhacli.TabIndex = 8;
@@ -151,7 +151,7 @@
             // TxtEmailcli
             // 
             this.TxtEmailcli.Location = new System.Drawing.Point(333, 159);
-            this.TxtEmailcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtEmailcli.Margin = new System.Windows.Forms.Padding(4);
             this.TxtEmailcli.MaxLength = 100;
             this.TxtEmailcli.Name = "TxtEmailcli";
             this.TxtEmailcli.Size = new System.Drawing.Size(181, 30);
@@ -172,9 +172,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(77, 60);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(949, 254);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
@@ -183,20 +183,22 @@
             // TxtRgcli
             // 
             this.TxtRgcli.Location = new System.Drawing.Point(629, 70);
-            this.TxtRgcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtRgcli.Margin = new System.Windows.Forms.Padding(4);
             this.TxtRgcli.Mask = "00.000.000-0";
             this.TxtRgcli.Name = "TxtRgcli";
             this.TxtRgcli.Size = new System.Drawing.Size(157, 30);
             this.TxtRgcli.TabIndex = 12;
+            this.TxtRgcli.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.TxtRgcli_MaskInputRejected);
             // 
             // TxtCpfcli
             // 
             this.TxtCpfcli.Location = new System.Drawing.Point(333, 70);
-            this.TxtCpfcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.TxtCpfcli.Mask = "000.000.000/00";
+            this.TxtCpfcli.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtCpfcli.Mask = "000.000.000-00";
             this.TxtCpfcli.Name = "TxtCpfcli";
             this.TxtCpfcli.Size = new System.Drawing.Size(167, 30);
             this.TxtCpfcli.TabIndex = 11;
+            this.TxtCpfcli.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.TxtCpfcli_MaskInputRejected);
             // 
             // groupBox2
             // 
@@ -215,9 +217,9 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Location = new System.Drawing.Point(77, 322);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(949, 219);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
@@ -227,16 +229,17 @@
             // txtCepEndcli
             // 
             this.txtCepEndcli.Location = new System.Drawing.Point(440, 76);
-            this.txtCepEndcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCepEndcli.Margin = new System.Windows.Forms.Padding(4);
             this.txtCepEndcli.Mask = "00000-000";
             this.txtCepEndcli.Name = "txtCepEndcli";
             this.txtCepEndcli.Size = new System.Drawing.Size(132, 29);
             this.txtCepEndcli.TabIndex = 28;
+            this.txtCepEndcli.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCepEndcli_MaskInputRejected);
             // 
             // txtNumeroend
             // 
             this.txtNumeroend.Location = new System.Drawing.Point(435, 170);
-            this.txtNumeroend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumeroend.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroend.MaxLength = 6;
             this.txtNumeroend.Name = "txtNumeroend";
             this.txtNumeroend.Size = new System.Drawing.Size(109, 29);
@@ -295,7 +298,7 @@
             // txtLogradouroend
             // 
             this.txtLogradouroend.Location = new System.Drawing.Point(75, 170);
-            this.txtLogradouroend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLogradouroend.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogradouroend.MaxLength = 60;
             this.txtLogradouroend.Name = "txtLogradouroend";
             this.txtLogradouroend.Size = new System.Drawing.Size(215, 29);
@@ -336,7 +339,7 @@
             "SP",
             "TO"});
             this.cmbUfEndcli.Location = new System.Drawing.Point(749, 76);
-            this.cmbUfEndcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbUfEndcli.Margin = new System.Windows.Forms.Padding(4);
             this.cmbUfEndcli.Name = "cmbUfEndcli";
             this.cmbUfEndcli.Size = new System.Drawing.Size(63, 32);
             this.cmbUfEndcli.TabIndex = 24;
@@ -344,7 +347,7 @@
             // txtCidadeEndcli
             // 
             this.txtCidadeEndcli.Location = new System.Drawing.Point(77, 76);
-            this.txtCidadeEndcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCidadeEndcli.Margin = new System.Windows.Forms.Padding(4);
             this.txtCidadeEndcli.MaxLength = 30;
             this.txtCidadeEndcli.Name = "txtCidadeEndcli";
             this.txtCidadeEndcli.Size = new System.Drawing.Size(211, 29);
@@ -389,6 +392,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtNumeroTelcli);
             this.groupBox3.Controls.Add(this.btnAdicionarNumerocli);
             this.groupBox3.Controls.Add(this.labelTipo);
             this.groupBox3.Controls.Add(this.labelNumero);
@@ -396,26 +400,36 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.txtNumeroTel2cli);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.txtNumeroTelcli);
             this.groupBox3.Controls.Add(this.cmbTipoTelcli);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox3.Location = new System.Drawing.Point(77, 561);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(957, 223);
             this.groupBox3.TabIndex = 46;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Telefone";
+            // 
+            // txtNumeroTelcli
+            // 
+            this.txtNumeroTelcli.Location = new System.Drawing.Point(93, 75);
+            this.txtNumeroTelcli.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumeroTelcli.Mask = "+00 (00) 00000-0000";
+            this.txtNumeroTelcli.Name = "txtNumeroTelcli";
+            this.txtNumeroTelcli.Size = new System.Drawing.Size(210, 29);
+            this.txtNumeroTelcli.TabIndex = 47;
+            this.txtNumeroTelcli.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtNumeroTelcli_MaskInputRejected);
+            this.txtNumeroTelcli.TextChanged += new System.EventHandler(this.txtNumeroTelcli_TextChanged_1);
             // 
             // btnAdicionarNumerocli
             // 
             this.btnAdicionarNumerocli.BackColor = System.Drawing.Color.ForestGreen;
             this.btnAdicionarNumerocli.Enabled = false;
             this.btnAdicionarNumerocli.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAdicionarNumerocli.Location = new System.Drawing.Point(884, 12);
-            this.btnAdicionarNumerocli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdicionarNumerocli.Location = new System.Drawing.Point(873, 28);
+            this.btnAdicionarNumerocli.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdicionarNumerocli.Name = "btnAdicionarNumerocli";
             this.btnAdicionarNumerocli.Size = new System.Drawing.Size(65, 58);
             this.btnAdicionarNumerocli.TabIndex = 46;
@@ -458,7 +472,7 @@
             "Comercial",
             "Residencial"});
             this.cmbTipoTel2cli.Location = new System.Drawing.Point(508, 160);
-            this.cmbTipoTel2cli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoTel2cli.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoTel2cli.Name = "cmbTipoTel2cli";
             this.cmbTipoTel2cli.Size = new System.Drawing.Size(184, 32);
             this.cmbTipoTel2cli.TabIndex = 29;
@@ -479,7 +493,7 @@
             // txtNumeroTel2cli
             // 
             this.txtNumeroTel2cli.Location = new System.Drawing.Point(511, 73);
-            this.txtNumeroTel2cli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumeroTel2cli.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroTel2cli.MaxLength = 20;
             this.txtNumeroTel2cli.Name = "txtNumeroTel2cli";
             this.txtNumeroTel2cli.Size = new System.Drawing.Size(181, 29);
@@ -498,16 +512,6 @@
             this.label6.TabIndex = 27;
             this.label6.Text = "NÚMERO";
             // 
-            // txtNumeroTelcli
-            // 
-            this.txtNumeroTelcli.Location = new System.Drawing.Point(93, 73);
-            this.txtNumeroTelcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtNumeroTelcli.MaxLength = 20;
-            this.txtNumeroTelcli.Name = "txtNumeroTelcli";
-            this.txtNumeroTelcli.Size = new System.Drawing.Size(181, 29);
-            this.txtNumeroTelcli.TabIndex = 26;
-            this.txtNumeroTelcli.TextChanged += new System.EventHandler(this.txtNumeroTelcli_TextChanged);
-            // 
             // cmbTipoTelcli
             // 
             this.cmbTipoTelcli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -517,7 +521,7 @@
             "Comercial",
             "Residencial"});
             this.cmbTipoTelcli.Location = new System.Drawing.Point(93, 160);
-            this.cmbTipoTelcli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoTelcli.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoTelcli.Name = "cmbTipoTelcli";
             this.cmbTipoTelcli.Size = new System.Drawing.Size(184, 32);
             this.cmbTipoTelcli.TabIndex = 25;
@@ -526,10 +530,10 @@
             // 
             this.BTNInserir.BackColor = System.Drawing.Color.SeaGreen;
             this.BTNInserir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BTNInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNInserir.ForeColor = System.Drawing.Color.Honeydew;
             this.BTNInserir.Location = new System.Drawing.Point(910, 13);
-            this.BTNInserir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTNInserir.Margin = new System.Windows.Forms.Padding(4);
             this.BTNInserir.Name = "BTNInserir";
             this.BTNInserir.Size = new System.Drawing.Size(116, 51);
             this.BTNInserir.TabIndex = 47;
@@ -547,7 +551,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmClienteCadastrar";
             this.Text = "FrmCliente";
             this.Load += new System.EventHandler(this.FrmClienteCadastrar_Load);
@@ -586,7 +590,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNumeroTel2cli;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtNumeroTelcli;
         private System.Windows.Forms.ComboBox cmbTipoTelcli;
         private System.Windows.Forms.Button BTNInserir;
         private System.Windows.Forms.TextBox txtNumeroend;
@@ -598,5 +601,6 @@
         private System.Windows.Forms.MaskedTextBox TxtRgcli;
         private System.Windows.Forms.MaskedTextBox TxtCpfcli;
         private System.Windows.Forms.MaskedTextBox txtCepEndcli;
+        private System.Windows.Forms.MaskedTextBox txtNumeroTelcli;
     }
 }

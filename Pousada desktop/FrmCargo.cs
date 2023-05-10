@@ -23,20 +23,9 @@ namespace Pousada_desktop
 
         private void FrmInserirCargo_Load(object sender, EventArgs e)
         {
-            CarregaCargo();
             CarregaGrid();
             dgvCargos.CellFormatting += dgvCargos_CellFormatting;
             CheckBox = "N";
-        }
-
-        /// <summary>
-        /// Carrega o cargo para listar em um ComboBox
-        /// </summary>
-        private void CarregaCargo()
-        {
-            cmbCargo.DataSource = Cargo.Listar();
-            cmbCargo.ValueMember = "Id";
-            cmbCargo.DisplayMember = "NOME";
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
@@ -47,7 +36,6 @@ namespace Pousada_desktop
                 Cargo cargo = new Cargo(txtNomeCargo.Text, txtDescricao.Text);
                 cargo.Inserir();
 
-                CarregaCargo();
                 CarregaGrid();
 
                 MessageBox.Show("Cargo cadastrado com sucesso!");
@@ -69,7 +57,6 @@ namespace Pousada_desktop
                 Cargo alterar = new Cargo(Convert.ToInt32(txtId.Text), txtNomeCargo.Text, txtDescricao.Text, CheckBox);
                 alterar.Atualizar(Convert.ToInt32(txtId.Text));
                 CarregaGrid();
-                CarregaCargo();
                 MessageBox.Show("Cargo Alterado com Sucesso!");
             }
             else

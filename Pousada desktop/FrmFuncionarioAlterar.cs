@@ -369,5 +369,10 @@ namespace Pousada_desktop
                 MessageBox.Show("Você optou por não demitir.");
             }
         }
+
+        private void txtNumeroTel_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

@@ -155,6 +155,7 @@
             this.txtNumeroTel.Name = "txtNumeroTel";
             this.txtNumeroTel.Size = new System.Drawing.Size(206, 29);
             this.txtNumeroTel.TabIndex = 53;
+            this.txtNumeroTel.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtNumeroTel_MaskInputRejected);
             // 
             // btnAdicionarNumero
             // 

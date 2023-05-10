@@ -116,6 +116,7 @@
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(156, 29);
             this.txtCpf.TabIndex = 49;
+            this.txtCpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCpf_MaskInputRejected);
             // 
             // txtRg
             // 
@@ -124,6 +125,7 @@
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(156, 29);
             this.txtRg.TabIndex = 48;
+            this.txtRg.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtRg_MaskInputRejected);
             // 
             // btnOlhoSenha
             // 
@@ -372,6 +374,7 @@
             this.txtCepEnd.Name = "txtCepEnd";
             this.txtCepEnd.Size = new System.Drawing.Size(109, 29);
             this.txtCepEnd.TabIndex = 25;
+            this.txtCepEnd.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCepEnd_MaskInputRejected);
             // 
             // cmbUfEnd
             // 
@@ -546,6 +549,7 @@
             this.txtNumeroTel2.Size = new System.Drawing.Size(206, 29);
             this.txtNumeroTel2.TabIndex = 48;
             this.txtNumeroTel2.Visible = false;
+            this.txtNumeroTel2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtNumeroTel2_MaskInputRejected);
             // 
             // txtNumeroTel
             // 
@@ -554,6 +558,7 @@
             this.txtNumeroTel.Name = "txtNumeroTel";
             this.txtNumeroTel.Size = new System.Drawing.Size(206, 29);
             this.txtNumeroTel.TabIndex = 47;
+            this.txtNumeroTel.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtNumeroTel_MaskInputRejected);
             this.txtNumeroTel.TextChanged += new System.EventHandler(this.txtNumeroTel_TextChanged_1);
             // 
             // btnAdicionarNumero
